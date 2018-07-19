@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="newIncomingRecords" type="List" />
+    
+    <div aura:id="lookupMessages" >
+        {! $Label.smagicinteract.New_Message_Notification} 
+        <aura:iteration items="{!v.newIncomingRecords}" var="incoming">
+            <a  href="{!'/'+incoming.recordId}" target="_blank"> {!incoming.recordName} ({!incoming.objectLabel}) </a>
+        </aura:iteration>
+    </div>
+    <div aura:id="noLookupMessages" class="slds-hide"> 
+        {! $Label.smagicinteract.No_Lookup_Message} 
+    </div>
+</aura:component>

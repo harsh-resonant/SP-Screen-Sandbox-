@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_5911896</developerName>
+        <masterLabel>INSTALLS &amp; CM</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>SUBJECT</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>CCN Inhouse: Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCN ROCKFORD:Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CCN: CWS Book Customer Install (if not other product ordered)</sourceValue>
+            </sourceValues>
+            <value>INSTALLS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CCN ROCKFORD: Book Check_Measure or mark off if completed on quoting</sourceValue>
+            </sourceValues>
+            <value>CHECK MEASURES</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>WHAT_NAME</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Book Customer Install,Book Check</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Survey,SMS,Thankyou</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DUE_DATE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ASSIGNED</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Lusi,Amanda,Beulah</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>sms1,sms2,sms3,thankyou,survey</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>BNE,COFFS,SYD</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_5911896</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CCN_INSTALLS &amp; CM: USE THIS ONE</name>
+    <params>
+        <name>closed</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>t</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

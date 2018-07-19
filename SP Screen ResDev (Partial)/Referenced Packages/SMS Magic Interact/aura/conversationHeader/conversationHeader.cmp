@@ -1,0 +1,59 @@
+<aura:component implements="force:hasRecordId,force:hasSObjectName"
+	access="public" controller="smagicinteract.RecordInfoServerController">
+	<aura:attribute type="String" name="name" access="private" />
+	<aura:attribute type="String" name="class" access="public" />
+	<aura:attribute type="Boolean" name="isOptout" access="private" />
+	<aura:attribute type="String" name="iconName" access="private" />
+	<aura:attribute type="Boolean" name="isfilterChanged" access="private" />
+    <aura:attribute type="Boolean" name="isFilterOpen" access="public" default="false"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.onRecordIdChange}" /> 
+	<aura:handler event="smagicinteract:paginationCriteriaEvent" action="{!c.getPaginationCriteria}"/>
+
+	<aura:registerEvent name="openConversationDetail" type="smagicinteract:openDetailPanel" />
+	<aura:registerEvent name="openConversationFilter" type="smagicinteract:openDetailPanel" />
+	<aura:registerEvent name="openConversationTimeline" type="smagicinteract:openDetailPanel" />
+    <aura:registerEvent name="refreshEvent" type="smagicinteract:refreshEvent" />
+		
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+    
+	<div aura:id="headerDiv" 
+		class="{! join(' ', 'wrapper slds-clearfix', v.class)}">
+		<div class="slds-float--left headerContentWrap">
+            <aura:If isTrue="{! v.context.isSf1 ? !v.context.isDetailPage : (v.context.isHomeSection ? !v.context.isDetailPage : false)}">
+                <lightning:buttonIcon iconName="utility:back" class="backBtn" variant="bare" onclick="{! c.openRecipientSection }" title="{!$Label.smagicinteract.BACK}" alternativeText="Close" />
+            </aura:If>
+            <aura:If isTrue="{! if(v.iconName, true, false) }">
+			<lightning:icon iconName="{!v.iconName}" variant="error" class="leadIcon" />
+            </aura:If>
+			<a href="{! '/' + v.recordId}" target="_blank">
+			<h3>
+                <ui:outputText title="{!v.name}" value="{!v.name}" />
+            </h3>
+            </a>
+			<p>{!v.isOptout ? $Label.smagicinteract.OPT_OUT : ''}</p>
+		</div>
+
+		<div class="slds-float--right buttonWrap">
+			<!--lightning:buttonIcon iconName="utility:summary" class="filter-btn"
+				variant="bare" onclick="{! c.openConversationTimeline }" title="{!$Label.c.TIMELINE}"
+				alternativeText="Close window." /-->
+			<lightning:buttonIcon iconName="utility:filterList" class="{!join(' ', (v.isfilterChanged ? 'applied-filter' : ''), (v.isFilterOpen ? 'filter-Open' : ''))}"
+				variant="bare" onclick="{! c.openConversationFilter }" title="{!$Label.smagicinteract.FILTER}"
+				alternativeText="Close window." />
+			<!--lightning:buttonIcon iconName="utility:threedots_vertical" class=""
+				variant="bare" onclick="{! c.openPanel }" title="{!$Label.c.Detail}"
+				alternativeText="Close window." /-->
+		</div>
+	</div>
+</aura:component>

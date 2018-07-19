@@ -1,0 +1,29 @@
+<aura:component controller="NVMContactWorld.LightningLogACallController">
+    <aura:attribute name="field" type="NVMContactWorld.LightningAdditionalFieldsViewModel" access="global"/>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="PicklistUpdated" type="NVMContactWorld:ControllingPicklistUpdate" />
+    <aura:registerEvent name="ModelUpdated" type="NVMContactWorld:LogACallModelUpdate" />
+    <aura:handler event="NVMContactWorld:ControllingPicklistUpdate" action="{!c.onPicklistUpdated}" />
+    <aura:handler name="change" value="{!v.field.Value}" action="{!c.valueChanged}"/>
+
+    <aura:if isTrue="{!v.field.Type=='BOOLEAN'}">
+    	<ui:inputCheckbox label="{!v.field.Label}" value="{!v.field.Value}" name="{!v.field.ApiName}" disabled="{!v.field.ReadOnly}" click="{!c.fireModelUpdateEvent}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.field.Type=='PICKLIST'}">
+        <ui:inputSelect label="{!v.field.Label}" value="{!v.field.Value}" click="{!c.fireModelUpdateEvent}">
+            <ui:inputSelectOption label="--No Value--" text="{!null}" click="{!c.fireModelUpdateEvent}"/>
+            <aura:iteration items="{!v.field.Options}" var="selectOption">
+            	<ui:inputSelectOption label="{!selectOption.Label}" text="{!selectOption.Value}" value="{!v.field.Value==selectOption.Value}" click="{!c.fireModelUpdateEvent}"/>
+            </aura:iteration>
+        </ui:inputSelect>
+    </aura:if>
+    <aura:if isTrue="{!v.field.Type=='STRING'}">
+        <ui:inputText label="{!v.field.Label}" value="{!v.field.Value}" keyup="{!c.fireModelUpdateEvent}" updateOn="keyup" paste="{!c.fireModelUpdateEvent}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.field.Type=='DOUBLE'}">
+        <ui:inputNumber label="{!v.field.Label}" value="{!v.field.Value}" format="{!v.field.Options[0].Label}" keyup="{!c.fireModelUpdateEvent}" updateOn="keyup" paste="{!c.fireModelUpdateEvent}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.field.Type=='DATETIME'}">
+        <ui:inputDateTime label="{!v.field.Label}" value="{!v.field.Value}" displayDatePicker="true" select="{!c.fireModelUpdateEvent}" />
+    </aura:if>
+</aura:component>

@@ -1,0 +1,12 @@
+.THIS .slds-align-middle {
+    margin: 0  10px;
+}
+.THIS .closeToastBtn {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+.THIS .status-icon svg{
+    height: 20px;
+    width: 20px;
+}

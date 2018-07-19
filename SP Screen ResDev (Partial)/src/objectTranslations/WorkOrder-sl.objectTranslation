@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Area --></label>
+        <name>Account_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Measure Completed --></label>
+        <name>Check_Measure_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Measurer --></label>
+        <name>Check_Measurer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collect required paperwork --></label>
+        <name>Collect_required_paperwork__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirmed all measurements &amp; specs --></label>
+        <name>Confirmed_all_measurements_specs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Mobile Phone --></label>
+        <name>Contact_Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer confirmed they will be onsite for appointment --></help>
+        <label><!-- Customer onsite --></label>
+        <name>Customer_onsite__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimate number of Diamond Grille screens --></help>
+        <label><!-- Diamond Grille --></label>
+        <name>Diamond_Grille__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dry --></label>
+        <name>Dry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Fill In Candidate --></label>
+        <name>FSL__IsFillInCandidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevent Geocoding For Chatter Actions --></label>
+        <name>FSL__Prevent_Geocoding_For_Chatter_Actions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduling Priority --></label>
+        <name>FSL__Scheduling_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visiting Hours --></label>
+        <name>FSL__VisitingHours__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Estimate number of retractable flyscreens --></help>
+        <label><!-- Flyscreen Retractable --></label>
+        <name>Flyscreen_Retractable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimate number of Flyscreen windows or Doors --></help>
+        <label><!-- Flyscreen Window or Doors --></label>
+        <name>Flyscreen_Window_or_Door__c</name>
+    </fields>
+    <fields>
+        <label><!-- Important Notes --></label>
+        <name>Important_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please add how many hours that need to be booked for the install --></help>
+        <label><!-- Install time (hours) --></label>
+        <name>Install_time_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key in-factory --></label>
+        <name>Key_in_factory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key on-site --></label>
+        <name>Key_on_site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ladder --></label>
+        <name>Ladder__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Invoice Received (Factory Use Only) --></label>
+        <name>New_Invoice_Received_Factory_Use_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Powdercoating Sent Date --></label>
+        <name>Powdercoating_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Powdercoating --></label>
+        <name>Powdercoating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products Ordered --></label>
+        <name>Products_Ordered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ROCKFORD Notes --></label>
+        <name>ROCKFORD_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Paperwork to factory --></label>
+        <name>Return_Paperwork_to_factory__c</name>
+    </fields>
+    <fields>
+        <label><!-- SUPPLY ONLY (edit APlan as required) --></label>
+        <name>SUPPLY_ONLY_edit_APlan_as_required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Security Doors to be quoted as advised by customer --></help>
+        <label><!-- Security Doors --></label>
+        <name>Security_Doors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimate number of security screens --></help>
+        <label><!-- Security Screens --></label>
+        <name>Security_Screens__c</name>
+    </fields>
+    <fields>
+        <label><!-- Side rack required --></label>
+        <name>Side_rack_required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimate number of Steel Doors or Windows --></help>
+        <label><!-- Steel Door/Windows --></label>
+        <name>Steel_Door_Windows__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suburb --></label>
+        <name>Suburb__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please put supplier initials and PO # --></help>
+        <label><!-- Supplier Order Number (RF/CMDX/CWS/ACE) --></label>
+        <name>Supplier_Order_Number_RF_CMDX_CWS_ACE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Take photo and upload CM sheet --></label>
+        <name>Take_photo_and_upload_CM_sheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Installers --></label>
+        <name>of_Installers__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>FSL Check Measure Work Order Layout</layout>
+        <sections>
+            <label><!-- SMS Conversation View --></label>
+            <section>SMS Conversation View</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FSL Free Consultation Work Order Layout</layout>
+        <sections>
+            <label><!-- SMS Conversation View --></label>
+            <section>SMS Conversation View</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Complete - Pending --></label>
+        <name>Change_Status</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Complete --></label>
+        <name>Complete</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Complete Checklist --></label>
+        <name>Complete_Checklist</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Complete Work Order --></label>
+        <name>Complete_Work_Order</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Child Work Order Line Item --></label>
+        <name>WO_Item_Card</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Check Measure --></label>
+        <name>Check_Measure</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Free Consultation --></label>
+        <name>Free_Consultation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Work_Order_Action_Plan --></label>
+        <name>Create_Work_Order_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_CM_Work_Order --></label>
+        <name>New_CM_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Install --></label>
+        <name>New_Install</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Install_Work_Order --></label>
+        <name>New_Install_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_SMS --></label>
+        <name>Send_SMS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Survey --></label>
+        <name>Send_Survey</name>
+    </webLinks>
+</CustomObjectTranslation>

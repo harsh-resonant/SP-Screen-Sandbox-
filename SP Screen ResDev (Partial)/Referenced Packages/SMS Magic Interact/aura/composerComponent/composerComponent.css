@@ -1,0 +1,287 @@
+.THIS.dragComposer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.THIS .composerHead {
+    background-color: #636161 ;
+    padding: 0px 10px;
+}
+.THIS .splitter {
+    height: 4px;
+    background: #636161;
+    width: 100%;
+    cursor: ns-resize;
+}
+.THIS .splitter:hover {
+    background: #636161;
+}
+.THIS .toolTip{
+    color:white;
+    padding: 10px 10px;
+}
+.THIS .composerHead label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #fff;
+    margin-right: 5px;
+}
+.THIS .composerHead .slds-picklist {
+    display: inline-block;
+}
+.THIS .composerHead .slds-picklist select {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    box-shadow: none;
+    vertical-align: middle;
+    cursor:pointer;
+}
+.THIS .composerHead .slds-picklist select option {
+    color: #16325C ;
+}
+.THIS .composerHead .slds-picklist select:focus,
+.THIS .composerHead .slds-picklist select:active,
+.THIS .composerHead .slds-picklist select:hover {
+    outline:0;
+}
+.THIS .composerHead span {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    color: #fff;
+}
+.THIS .composerHead .senderNumberId .slds-popover.popover-body,
+.THIS .composerHead .phoneNumberId .slds-popover.popover-body {
+    padding: 5px 0;
+}
+.THIS .composerHead .senderNumberId .slds-popover.popover-body .contentPadding a,
+.THIS .composerHead .phoneNumberId .slds-popover.popover-body .contentPadding a {
+    padding: 2px 10px;
+}
+.THIS .composerHead .phoneNumberId {
+    width: 45%;
+}
+.THIS .composerHead .phoneNumberId .senderId .dropdown {
+    width: 85%;
+    cursor: pointer;
+}
+.THIS .composerHead .phoneNumberId .senderId .dropdown .slds-button {
+    width: 90%;
+    text-align: left;
+}
+.THIS .composerHead .phoneNumberId .senderId .dropdown .slds-button .slds-form-element__icon {
+    width: 100%;
+}
+.THIS .composerHead .phoneNumberId .senderId .dropdown .slds-button p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    max-width: 70%;
+    line-height: 15px;
+    font-size: 12px;
+}
+.THIS .composerHead .senderNumberId {
+    width: 45%;
+    text-align: right;
+}
+.THIS .composerHead .senderNumberId .senderId .dropdown {
+    width: 35%;
+    cursor: pointer;
+}
+.THIS .composerHead .senderNumberId .slds-popover.popover-body {
+    text-align: left;
+}
+.THIS .composerHead .senderNumberId .senderId .dropdown .slds-button {
+    width: 100%;
+    text-align: right;
+}
+.THIS .composerHead .senderNumberId .senderId .dropdown .slds-button .slds-form-element__icon {
+    width: 100%;
+}
+.THIS .composerHead .senderNumberId .senderId .dropdown .slds-button p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    width: 65%;
+    line-height: 14px;
+    min-width: 25px;
+    text-align: left;
+    font-size: 12px;
+}
+.THIS .composerHead .senderNumberId .senderId .dropdown .slds-button .slds-icon_container {
+    text-align: right;
+}
+.THIS .composeWrap{
+    position:relative;
+}
+.THIS .composeWrap textarea:focus,
+.THIS .composeWrap textarea:active {
+    outline: none;
+    box-shadow: none;
+}
+.THIS .composeWrap .textareaWrap {
+    border:1px solid #d8dde6;
+    background: #ffffff;
+}
+.THIS .composeWrap textarea {
+    width:100%;
+    resize:none;
+    height: 45px;
+    min-height: 45px;
+    max-height: 280px;
+    padding: 3px 5px;
+    border-radius: 0;
+    border:0;
+}
+.THIS .composeWrap textarea::placeholder {
+  font-size: 12px;
+}
+.THIS .composeWrap .mediaBtnWrap {
+    position: relative;
+    padding: 3px 0 3px 5px;
+    border: 1px solid #d8dde6;
+    border-top: 0;
+    background:#fff;
+}
+.THIS .composeWrap .mediaBtnWrap .slds-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.THIS .composeWrap .mediaDetails {
+    display:none;
+    width:220px;
+    margin-left: 4px;
+}
+.THIS .composeWrap .mediaDetails .fileDetail {
+    background: #eff2f5 ;
+    border:1px solid #A8B7C7 ;
+    padding: 3px;
+    border-radius: 3px 3px 0 0;
+    
+}
+.THIS .composeWrap .mediaDetails .fileDetail a,
+.THIS .composeWrap .mediaDetails .fileDetail .fileSize,
+.THIS .composeWrap .mediaDetails .fileDetail .fileName,
+.THIS .composeWrap .mediaDetails .fileDetail span{
+    display:inline-block;
+}
+.THIS .composeWrap .mediaDetails .fileDetail .fileSize {
+    float:right;
+}
+.THIS .composeWrap .mediaDetails .fileDetail span {
+    margin-right: 2px;
+}
+.THIS .composeWrap .mediaDetails .fileDetail .fileBox {
+    width: 95%;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.THIS .composeWrap .mediaDetails .fileDetail .fileName a{
+    vertical-align: middle;
+    width: 120px;
+}
+.THIS .composeWrap .composeIconWrap {
+    float:right;
+    display: inline-block;
+    margin-right: 5px;
+}
+.THIS .composeWrap .progressBar {
+    height:5px;
+    border-radius: 4px;
+}
+.THIS .composeWrap .composeIconWrap button {
+    margin-right: 1.5px;
+    margin-left: 1.5px;
+}
+.THIS .composeWrap .composeIconWrap button svg{
+    fill: #949494;
+    height: 18px;
+}
+.THIS .composeWrap .composeIconWrap button:hover svg {
+    fill: #949494;
+}
+.THIS .composeWrap .composeIconWrap button.slds-button.slds-button--brand {
+    background: #fe8080;
+    border-color: #fe8080;
+    width: 70px;
+    margin-left: 10px;
+} 
+.THIS .composeWrap .mediaBtnWrap .unicodeIcon {
+    width: 10px;
+    display: inline-block;
+    height: 10px;
+    vertical-align: baseline;
+    background :#ff9800;
+    border-radius: 33px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.THIS .composeWrap .mediaBtnWrap .tooltiptext--bottom-left {
+    bottom :177%;
+}
+.THIS .composeWrap .mediaBtnWrap .tooltiptext .slds-popover_body {
+    text-align: left;
+}
+.THIS .composeWrap .mediaBtnWrap span {
+    font-size: 12px;
+    color: #54698D;
+    line-height: 28px;
+}
+.THIS .composeIconWrap .dropdown button .templateWrapper .tooltip.smagicinteractToolTip:hover .tooltiptext{
+    visibility: visible !important;
+}
+.THIS .composeWrap .positionTextarea {
+    width: 100%;
+    resize: none;
+    height: 140px;
+    max-height: inherit;
+    padding: 3px 5px;
+    border-radius: 0;
+    border:1px solid #d8dde6;
+}
+.THIS .buttonSpinner{
+    position : relative;
+    display: inline-block;
+}
+.THIS .buttonSpinner .slds-spinner_container {
+    margin-left : 10px;
+}
+@media only screen and (max-width: 767px) { 
+	.THIS .composerHead .phoneNumberId,
+	.THIS .composerHead .senderNumberId {
+        width: 50%;
+    }
+    .THIS .composerHead .senderNumberId .senderId .dropdown {
+        width: 50%;
+    }
+    .THIS .composerHead .phoneNumberId .senderId .dropdown {
+        width: 80%;
+    }
+    .THIS .composerHead span {
+        line-height: 30px;
+        margin-top: 1px;
+    }
+}
+@media only screen and (max-width: 360px) { 
+	.THIS .composerHead span {
+        line-height:15px;
+        margin-top: 1px;
+    }
+}
+@media only screen and (max-width: 340px) { 
+	.THIS .composerHead .senderNumberId .senderId .dropdown .slds-button p {
+        width:60%;
+    }
+}

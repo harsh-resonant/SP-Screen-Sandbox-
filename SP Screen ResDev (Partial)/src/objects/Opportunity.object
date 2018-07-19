@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddInfluence</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fieldSets>
+        <fullName>MassManager__OpportunitiesMassEditFieldSet</fullName>
+        <availableFields>
+            <field>ContractId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>ExpectedRevenue</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>HasOpenActivity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>HasOpportunityLineItem</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>HasOverdueTask</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsClosed</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsPrivate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsWon</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastActivityDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastReferencedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastViewedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>NextStep</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Probability</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>TotalOpportunityQuantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>OpportunitiesMassEditFieldSet</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>StageName</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CloseDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Amount</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LeadSource</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>OpportunitiesMassEditFieldSet</label>
+    </fieldSets>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Referral_Source__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.AccountSource)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Referral Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Appointment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Appointment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BNE- Eastern Suburbs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Inner Suburbs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Ipswich Urban</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Logan City</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE-Moreton Bay - Rural Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE-Moreton Bay - Urban Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Northern Suburbs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Redland City</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Southern Suburbs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BNE - Western Suburbs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CCN-Central Coast</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CCN-Hunter Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CCN-Lake Macquarie</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CCN-Newcastle Region</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CCN-Port Stephens</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coffs_Central</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coffs_North</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coffs_NorthWest</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coffs_South</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coffs_SouthWest</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD: Outer West &amp; Greater Western (Penrith, Blacktown, Richmond)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD Canterbury/Bankstown Area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD -Eastern Suburbs (Bondi)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD -Hills District (Baulkham Hills)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD -Illawarra (Wollongong)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Illawarra Shoalhaven (Nowra)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Inner City (CBD)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Inner West (Newtown/Marrickville)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Northern Beaches (Manly)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD - North Shore Upper &amp; Lower &amp; North West (Epping, Ryde, Chatswood, Mosman, Hornsby)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Parramatta Area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-South West (Liverpool/Campbelltown)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-St George Area (Kogarah)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SYD-Sutherland Shire (Cronulla)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Balance_Outstanding_at_Install__c</fullName>
+        <externalId>false</externalId>
+        <label>Balance Outstanding at Install $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CloseDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Copy_in_Office__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>There is a copy of the quote in the office. Please look!</description>
+        <externalId>false</externalId>
+        <label>Copy in Office</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Deposit_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Deposit Paid</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Final_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Final Payment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Quote_Variation__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Quote Variation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deposit_Paid_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Deposit Paid Amount $ (50%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Deposit_Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Tick once deposit is paid and receipt is emailed via MYOB to customer every time.</description>
+        <externalId>false</externalId>
+        <label>Deposit Paid (MUST email receipt)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Diamond_Grille__c</fullName>
+        <description>Diamond Grille</description>
+        <externalId>false</externalId>
+        <label>Diamond Grille</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Final_Balance_Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Final Balance Paid</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Flyscreen_Retractable__c</fullName>
+        <description>Flyscreen Retractable</description>
+        <externalId>false</externalId>
+        <label>Flyscreen Retractable</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flyscreen_Window_or_Door__c</fullName>
+        <description>Flyscreen Window or Door</description>
+        <externalId>false</externalId>
+        <label>Flyscreen Window or Door</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GE_Interest_Free_Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>GE Interest Free</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non-Finance Customer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6 Month Interest Free Customer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12 Month Interest Free Customer</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IqScore</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsExcludedFromTerritory2Filter</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsPrivate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>NextStep</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>On_Site_Acknowledged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>On Site Acknowledged</description>
+        <externalId>false</externalId>
+        <label>On Site Acknowledged</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Probability</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Products_Ordered__c</fullName>
+        <externalId>false</externalId>
+        <label>Products Ordered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Products</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Promo_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Promo code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Installation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Installation Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quote_Variation_Amount__c</fullName>
+        <description>Please add the variation amount only. Not the new total.</description>
+        <externalId>false</externalId>
+        <label>Quote Variation Amount (different month)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Lost__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Lost</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Price: More than was willing to spend (no competitor)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Timing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Timing: Lead times too long</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reminder_call__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Reminder call</description>
+        <externalId>false</externalId>
+        <label>Reminder call</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SMS_Text_Message_reminder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SMS Text Message reminder</description>
+        <externalId>false</externalId>
+        <label>SMS Text Message reminder</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Security_Doors__c</fullName>
+        <description>Security Doors</description>
+        <externalId>false</externalId>
+        <label>Security Doors</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Security_Screens__c</fullName>
+        <description>Security Screens</description>
+        <externalId>false</externalId>
+        <label>Security Screens</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_Comments__c</fullName>
+        <description>Site Comments</description>
+        <externalId>false</externalId>
+        <label>Site Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Specific_Requests_and_Notes__c</fullName>
+        <description>Specific Requests and Notes</description>
+        <externalId>false</externalId>
+        <label>Specific Requests and Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>StageName</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Steel_Door_Windows__c</fullName>
+        <description>Steel Door Windows</description>
+        <externalId>false</externalId>
+        <label>Steel Door Windows</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SyncedQuoteId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Territory2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TotalOpportunityQuantity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>Clean_up_danielle_ozolins_Opportunties</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <operation>contains</operation>
+            <value>danielle</value>
+        </filters>
+        <label>Clean up danielle ozolins Opportunties</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingNextMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Closing Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>John_Bateman</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>OPPORTUNITY.CLOSED</columns>
+        <columns>OPPORTUNITY.WON</columns>
+        <columns>Deposit_Paid_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>contains</operation>
+            <value>Bateman</value>
+        </filters>
+        <label>John Bateman</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>Won</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.WON</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Won</label>
+    </listViews>
+    <listViews>
+        <fullName>clean_up_office_team_opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <operation>contains</operation>
+            <value>office</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <operation>contains</operation>
+            <value>sales</value>
+        </filters>
+        <label>clean up office team opportunities</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.SITE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Reason_Lost_is_Mandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>( isblank(Text(Reason_Lost__c))  &amp;&amp;  Text(StageName) == &apos;Closed Lost&apos;)</errorConditionFormula>
+        <errorMessage>Reason Lost is mandatory when stage is closed lost.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_Action_Plan</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Action Plan</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ActionPlanCreation?refType=Opportunity&amp;refId={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Action_Plans</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Opportunity Action Plans</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var records = {!GETRECORDIDS( $ObjectType.Opportunity )} ;
+var oName = &apos;Opportunity&apos;;
+var error = false;
+var msj = &apos;&apos;;
+
+if( records.length &gt; 40 ) { 
+    error = true; 
+    msj =&apos;{!$Label.ap_Errors_moreThan20records}&apos;;
+}
+if( records.length &lt; 1 ){
+   error = true;
+   msj = &apos;{!$Label.ap_Errors_selectOneRecord}&apos;; 
+}
+
+if( error ) {
+       alert(msj);    
+}
+else{
+       location.href = &apos;/apex/ActionPlanCreation?refId=&apos;+records+&apos;&amp;refType=&apos;+oName;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>MassManager__Mass_Delete</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Delete</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassManager__OpportunitiesMassDelete</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>MassManager__Mass_Edit_Standard_Fields</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Edit</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassManager__OpportunitiesMassEdit</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>MassManager__Mass_Update</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Update</masterLabel>
+        <openType>sidebar</openType>
+        <page>MassManager__OpportunitiesMassUpdate</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>New_CM_Work_Order</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New CM Work Order</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/0WO/e?
+&amp;CF00N2800000IlkaR_lkid={!Opportunity.Id}
+&amp;RecordType=01228000001Dhao
+&amp;WorkType=&quot;Check Measure&quot;
+&amp;Contact={!Opportunity.Contact__c}
+&amp;Account={!Opportunity.Account}
+&amp;ServiceTerritory={!Contact.Service_Territory__c}
+&amp;Subject={!Opportunity.Name} - Check Measure
+&amp;CF00N2800000IlkaR={!Opportunity.Name}
+&amp;retURL=%2F0062800000K49eh</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Install_Work_Order</fullName>
+        <availability>online</availability>
+        <description>New Install Work Order</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>New Install Work Order</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/0WO/e? 
+&amp;CF00N2800000IlkaR_lkid={!Opportunity.Id} 
+&amp;WorkType=&quot;Installation&quot; 
+&amp;RecordType=01228000001Dhat
+&amp;Contact={!Opportunity.Contact__c}
+&amp;Account={!Opportunity.Account}
+&amp;ServiceTerritory={!Contact.Service_Territory__c}
+&amp;CF00N2800000IlkaR={!Opportunity.Name} 
+&amp;Subject={!Opportunity.Name} - Installation 
+&amp;retURL=%2F0062800000K49eh</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Quote_WO</fullName>
+        <availability>online</availability>
+        <description>NewQuote WO</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>New Sales WO</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/0WO/e?
+&amp;CF00N2800000IlkaR_lkid={!Opportunity.Id}
+&amp;WorkType=&quot;Free Consultation&quot;
+&amp;RecordType=0120l0000002PBc
+&amp;Contact={!Opportunity.Contact__c}
+&amp;Account={!Opportunity.Account}
+&amp;CF00N2800000IlkaR={!Opportunity.Name}
+&amp;Subject={!Opportunity.Name} - Quote
+&amp;retURL=%2F0062800000K49eh</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Work_Order</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Work Order</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/0WO/e? 
+&amp;CF00N2800000IlkaR_lkid={!Opportunity.Id} 
+&amp;RecordType=01228000001Dhat 
+&amp;Contact={!Opportunity.Contact__c} 
+&amp;Account={!Opportunity.Account} 
+&amp;ServiceTerritory={!Contact.Service_Territory__c} 
+&amp;Subject={!Opportunity.Name} -
+&amp;CF00N2800000IlkaR={!Opportunity.Name} 
+&amp;retURL=%2F0062800000K49eh</url>
+    </webLinks>
+</CustomObject>

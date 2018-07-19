@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="filtercriteriaList" type="List" />
+    <aura:attribute name="isfilterChanged" type="Boolean"/>
+</aura:event>

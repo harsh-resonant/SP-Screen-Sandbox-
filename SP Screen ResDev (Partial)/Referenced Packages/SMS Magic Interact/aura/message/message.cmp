@@ -1,0 +1,156 @@
+<aura:component controller="smagicinteract.MessageListComponentServerController"
+	implements="force:hasRecordId,force:hasSObjectName" access="public">
+	<aura:attribute name="message" type="Object" />
+	<aura:attribute name="CRMActions" type="Object" />
+    <aura:attribute name="messageInfoList" type="List" />
+	<aura:attribute name="lastDateInIteration" type="String" />
+	<aura:attribute name="dateString" type="String" />
+	<aura:attribute name="timeString" type="String" />
+	<aura:attribute name="containerHeight" type="Integer" access="public" description="" />
+	<aura:attribute name="scrollTop" type="Integer" access="public" description="" />
+
+	<aura:registerEvent name="multimediaPreviewEvent"
+		type="smagicinteract:multiMediaPreviewEvent" />
+    <aura:registerEvent name="resendMessageSentEvent" type="smagicinteract:reloadConversation"
+                        description="" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+
+	<smagicinteract:NotificationManager aura:id="NotificationManager" />
+
+	<div aura:id="dateLine" class="dateDevider slds-clearfix">
+		<p>{!v.dateString}</p>
+	</div>
+
+	<div aura:id="message"
+		 class="{! join(' ',
+			'messageBox slds-clearfix',
+			(v.message.direction == 'Outbound' ? 'outGoing' : 'inComing'),
+			(v.message.channel == 'MMS' ? 'MMSMessage' : '')
+		 )}">
+		<span class="caret-icon" />
+        <div class="starSelected">
+           <lightning:Icon class="{! (v.message.isStarred ? 'slds-show' : 'slds-hide') }" iconName="utility:favorite" size="small" />
+        </div>
+		<div class="hover-btns">
+			<span id="{!v.message.messageId}" onclick="{! c.addStarToMessage }">
+				<lightning:buttonIcon class="{! (v.message.isStarred ? 'selected' : '') }"
+					iconName="utility:favorite" size="medium" alternativeText="Lead" />
+			</span>
+
+			<smagicinteract:popoverComponent aura:id="messageInfoPopover"
+								height="100px"
+								width="250px"
+								onChange="{!c.selectedOption}"
+								position="bottom-left"
+								onTrigger="{!c.onMessageInfoPopoverTrigger}">
+				<aura:set attribute="trigger">
+					<lightning:icon iconName="utility:info" size="medium" />
+				</aura:set>
+				<aura:set attribute="body">
+                    <aura:iteration items="{!v.messageInfoList}" var="item">
+						<div class="popOverContent">
+                            <ui:outputText value="{! item.value + ': '}"/> <ui:outputText class="numberId" value="{!item.label}" />
+						</div>
+					</aura:iteration>
+                    <span class="borderLine"></span>
+					<aura:iteration items="{!v.message.lookupInfoList}" var="item">
+						<div class="popOverContent">
+                            <ui:outputText value="{! item.value + ': '}"/>
+                            <a href="{!'/'+item.name}" target="_blank">
+                                <ui:outputText class="numberId" value="{!item.label}" />
+                            </a>
+						</div>
+					</aura:iteration>
+				</aura:set>
+			</smagicinteract:popoverComponent>
+
+			<smagicinteract:popoverComponent aura:id="crmActionPopover" 
+								height="100px"
+								width="200px"
+								position="bottom-left"
+								onTrigger="{!c.onCrmActionPopoverTrigger}">
+				<aura:set attribute="trigger">
+					<lightning:icon iconName="utility:threedots_vertical" size="medium" />
+				</aura:set>
+				<aura:set attribute="body">
+					<aura:iteration items="{!v.CRMActions.CRMActionsList}" var="item">
+						<div class="crmAction" id="{!item.value}"
+							onclick="{!c.performCRMActions}">
+							<span>{!item.label}</span>
+						</div>
+					</aura:iteration>
+				</aura:set>
+			</smagicinteract:popoverComponent>
+		</div>
+		<aura:iteration items="{!v.message.lookupList}" var="data"
+			indexVar="i">
+			<!-- <div> {!data.label} </div> -->
+		</aura:iteration>
+		<div class="slds-clearfix">
+			<div class="attachFile slds-float--left">
+				<aura:iteration items="{!v.message.attachedFilesList}" var="data"
+					indexVar="i">
+					<aura:if isTrue="{!data.type == 'VIDEO'}">
+                        <div class="videoFile" id="{!i}" onclick="{!c.openModal}" >
+                            <span class="videoPlayBtn" >
+                                <lightning:icon iconName="utility:video" variant="error"/>
+                            </span>
+						<video  width="125" height="70" >
+							<source src="{!data.path}" type="video/mp4" />
+							Your browser does not support HTML5 video.
+						</video>
+                        </div>
+					</aura:if>
+					<aura:if isTrue="{!data.type == 'IMAGE'}">
+						<img id="{!i}" src="{!data.path}" width="125" height="70"
+							onclick="{!c.openModal}" />
+					</aura:if>
+					<aura:if isTrue="{!data.type == 'ANIMATION'}">
+						<img id="{!i}" src="{!data.path}" width="125" height="70"
+							onclick="{!c.openModal}" />
+					</aura:if>
+					<aura:if isTrue="{!data.type == 'YOUTUBE'}">
+						<iframe id="{!i}" src="{!data.path}" width="125" height="70" />
+					</aura:if>
+					<aura:if isTrue="{!data.type == 'FILE'}">
+						<a href="{!data.path}" download="true">Download</a>
+					</aura:if>
+
+				</aura:iteration>
+			</div>
+			<div class="slds-float--left messageData">
+                <ui:outputText value="{!v.message.messageText}" />
+            </div>
+		</div>
+		<div class="slds-clearfix msg-detail">
+			<div class="slds-float--left msgrName">
+				<aura:If isTrue="{!v.message.direction == 'Outbound'}">
+                    {!v.message.ownerName} <span class="{! (v.message.messageSource == '' ? 'slds-hide' : 'slds-show automated')}"></span>{!v.message.messageSource}
+                    <aura:set attribute="else">
+                        {!v.message.recordName}
+                    </aura:set>
+				</aura:If>
+			</div>
+			<div class="slds-float--right msgTime">{!v.timeString}</div>
+		</div>
+		<aura:if isTrue="{!v.message.sentStatus == 'Failed'}">
+			<div class="failedMsg">
+				<p>{!v.message.sentStatus}</p>
+				<a href="" id="{!v.message.messageId}"
+					onclick="{!c.resendFailedSMS}"> resend </a>
+			</div>
+		</aura:if>
+	</div>
+
+</aura:component>

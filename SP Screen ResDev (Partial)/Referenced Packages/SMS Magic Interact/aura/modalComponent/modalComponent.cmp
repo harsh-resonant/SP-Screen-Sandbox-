@@ -1,0 +1,106 @@
+<aura:component >
+	<aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+	<aura:registerEvent name="ModalComponent" type="smagicinteract:ModalComponentEvent"
+		description="This event will be fired if we are using Dismiss/cancelButtonLabel." />
+	<aura:attribute name="header" type="String"
+		description="String to be displayed as header." />
+	<aura:attribute name="headerComp" type="Aura.Component[]"
+		description="component to be displayed as Header of modal." />
+	<aura:attribute name="headerText" type="String"
+		description="String to be displayed under header as a tagline." />
+	<aura:attribute name="bodyComp" type="Aura.Component[]"
+		description="component to be displayed as body of modal." />
+	<aura:attribute name="footerComp" type="Aura.Component[]"
+		description="component to be displayed as footer of Modal" />
+	<aura:attribute name="modalSize" type="String"
+		description="You can make modal size large by specifying attribute value large." />
+	<aura:attribute name="dismissButtonLabel" type="String"
+		description="Will be used if no footerComp is not present. This Label will be used for Dismiss button." />
+	<aura:attribute name="closeButtonLabel" type="String"
+		description="Will be used if no footerComp is not present. This Label will be used for Close button." />
+	<aura:attribute name="modalType" type="String" default="modal"
+		description="Modal type can be prompt or modal." />
+	<aura:attribute name="headerTheme" type="String"
+		description="Theme of header could of error,warning,info or default." />
+	<aura:attribute name="exitString" type="String" default="escape" />
+	<aura:attribute name="pressedString" type="map"
+		default="{ a: false, b: false}" />
+    <aura:attribute name="class" type="String"/>
+    
+    <aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+    
+	<aura:method name="openModal" action="{!c.showModal}" />
+	<aura:method name="openModalParams" action="{!c.showModalParams}">
+		<aura:attribute name="header" type="String" />
+		<aura:attribute name="headerText" type="String" />
+		<aura:attribute name="bodyComp" type="Aura.Component[]" />
+		<aura:attribute name="footerComp" type="Aura.Component[]" />
+		<aura:attribute name="modalSize" type="String" />
+		<aura:attribute name="dismissButtonLabel" type="String" />
+		<aura:attribute name="closeButtonLabel" type="String" />
+		<aura:attribute name="modalType" type="String" default="modal" />
+		<aura:attribute name="headerTheme" type="String" />
+	</aura:method>
+	<aura:method name="closeModal" action="{!c.closeModal}">
+		<aura:attribute name="data" type="Object" />
+	</aura:method>
+	<aura:method name="dismissModal" action="{!c.dismissModal}">
+		<aura:attribute name="dismissReason" type="String" />
+	</aura:method>
+	<div aura:id="modalDiv" class="slds-hide"
+		onkeydown="{!c.closeClickModal}" onkeyup="{!c.closeClickModal}">;
+		<div role="dialog" tabindex="-1" class="{!join (' ','slds-modal slds-fade-in-open',(v.context.isHomeSection ? 'for-lightning-homepage' : '' )) }"
+			aura:id="dialogDiv">
+			<div class="{! 'slds-modal__container ' + v.class}">
+				<div class="slds-modal__header " aura:id="headerDiv">
+					{!v.headerComp}
+					<div
+						class="slds-button slds-modal__close slds-button--icon-inverse"
+						title="Close">
+						<div class="slds-form-element__icon slds-align-middle">
+							<lightning:buttonIcon class="whiteIcon" size="large"
+								iconName="utility:close" variant="bare"
+								alternativeText="Close window." onclick="{!c.dismissModal}" />
+						</div>
+						<span class="slds-assistive-text">Close</span>
+					</div>
+					<h2 id="header43" class="slds-text-heading--medium">{!v.header}</h2>
+					<p aura:id="headerText" class="slds-m-top--x-small">{!v.headerText}</p>
+				</div>
+				<div class="slds-modal__content overflow"
+					id="bodyId">
+					<div>
+						<p>{!v.bodyComp}</p>
+					</div>
+				</div>
+				<div class="slds-modal__footer " aura:id="footerDiv" id="footerId">
+					<div aura:id="footerButtonDiv" class="buttonArea">
+						<div aura:id="dismissButton">
+							<lightning:button class="footerButton" variant="neutral"
+								label="{!v.dismissButtonLabel}" onclick="{!c.dismissModal}" />
+						</div>
+						<div aura:id="closeButton">
+							<lightning:button class="footerButton" variant="brand"
+								label="{!v.closeButtonLabel}" onclick="{!c.closeModal}" />
+						</div>
+
+					</div>
+				</div>
+                <div>
+					<div aura:id="footerCompDiv">{!v.footerComp}</div>
+				</div>
+			</div>
+		</div>
+		<div class="{!join (' ','slds-backdrop slds-backdrop--open',(v.context.isHomeSection ? 'for-lightning-homepage' : '' ))}"></div>
+        
+	</div>
+</aura:component>

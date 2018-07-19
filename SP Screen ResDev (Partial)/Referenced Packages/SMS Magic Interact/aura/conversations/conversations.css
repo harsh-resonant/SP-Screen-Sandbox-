@@ -1,0 +1,78 @@
+.THIS .show-filter .filter-class{
+    width: 40%;
+    display: inline-block;
+    float: left;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS .filter-class {
+    display: none;
+}
+.THIS .show-filter .conversation-class{
+    width: 60%;
+    display: inline-block;
+    float: left;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS .conversation-class{
+    width: 100%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS .show-filter .display-none {
+    display : none;
+}
+.THIS.embeded-context--activitySection  {
+    height: 75vh;
+}
+.THIS .activitySection .conversation-class,
+.THIS .activitySection .filter-class{
+    width:100%;
+}
+.THIS .activitySection .composerHead .senderNumberId .senderId .dropdown {
+    width: 45%;
+}
+.THIS .show-filter .conversation-class .messageBox.MMSMessage .messageData {
+    width: 67%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS .activitySection .listWrapper .messageBox {
+    width: 80%;
+}
+.THIS.ui-context--lightning.embeded-context--customTab .conversationWrapper, 
+.THIS.ui-context--lightning.embeded-context--customTab .hidddenBoxWrapper {
+    height: 97vh;
+}
+.THIS.ui-context--lightning.embeded-context--activitySection .conversationWrapper,
+.THIS.ui-context--lightning.embeded-context--activitySection .hidddenBoxWrapper,
+.THIS.ui-context--lightning.embeded-context--detail .conversationWrapper,
+.THIS.ui-context--lightning.embeded-context--detail .hidddenBoxWrapper{
+    height: 75vh;
+}
+.THIS.ui-context--lightning.embeded-context--detail .hidddenBoxWrapper{
+    background: #fff;
+}
+.THIS.ui-context--classic.embeded-context--detail .conversationWrapper,
+.THIS.ui-context--classic.embeded-context--detail .hidddenBoxWrapper {
+    height: 100vh;
+}
+
+.THIS.ui-context--classic .error-notify .slds-notify_container {
+    top: -45px;
+}
+.THIS.ui-context--lightning .error-notify .slds-notify_container {
+    top: -50px;
+}
+.THIS.ui-context--sf1 .error-notify .slds-notify_container {
+    top: -45px;
+}
+.THIS.ui-context--sf1 .error-notify .slds-notify_container .closeToastBtn {
+    top: 12px;
+}
+@media only screen and (max-width: 767px) { 
+    .THIS .show-filter .conversation-class{
+        width: 100%;
+    }
+}

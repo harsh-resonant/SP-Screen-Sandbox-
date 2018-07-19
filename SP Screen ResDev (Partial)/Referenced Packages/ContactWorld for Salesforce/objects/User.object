@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>MostRecentCallEventTimestamp__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The timestamp of the most recent call event (deliver, transfer...) that this user has handled</description>
+        <externalId>false</externalId>
+        <label>Most Recent Call Event Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MostRecentCallIsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Most Recent Call Is Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MostRecentCall__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Most Recent Call</label>
+        <length>128</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVM_Agent_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>NVM Agent Id for Contact World for Salesforce</description>
+        <externalId>true</externalId>
+        <inlineHelpText>NVM Agent Id for Contact World for Salesforce. This should be set to the correct NVM Agent Id to make sure that call tasks are assigned to the correct Salesforce user.</inlineHelpText>
+        <label>NVM Agent Id</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NotesCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if notes andd additional fields should be collapsed in Log A Call quick action</description>
+        <externalId>false</externalId>
+        <label>Notes Collapsed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

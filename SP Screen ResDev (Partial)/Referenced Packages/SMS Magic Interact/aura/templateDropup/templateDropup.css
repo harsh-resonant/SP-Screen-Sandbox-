@@ -1,0 +1,61 @@
+.THIS .templateList:hover{
+    background-color: rgb(244, 246, 249);
+    color: rgb(22, 50, 92);
+}
+.THIS .templateList{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.THIS .templateWrapper .tooltiptext {
+    width: 115px;
+    height: 33px;
+}
+.THIS .templateWrapper .tooltiptext .slds-popover__body  {
+	line-height: 17px;
+    padding: 7px 5px 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+.THIS .templateWrapper.selectedTemp .tooltiptext {
+    width: 230px;
+}
+.THIS .noTemplates {
+    margin-top: 35px;
+    font-size: 14px;
+    text-align: center;
+    padding: 1px 3px;
+    color: #a7a7a7;
+    font-weight: 700;
+}
+.THIS.error-notify {
+    display: inline-block;
+}
+.THIS.error-notify .slds-notify_container {
+    position: absolute;
+    top: -50px;
+}
+.THIS.error-notify .slds-notify_container .slds-notify--toast {
+    width: 98%;
+    padding: 10px 15px;
+    margin: 0 auto;
+    line-height: 13px;
+    font-size: 13px;
+}
+.THIS.error-notify .slds-notify_container .closeToastBtn {
+    margin: 0;
+    height: 16px;
+}
+.THIS.error-notify .slds-notify_container .closeToastBtn span {
+    line-height: 1px;
+}
+.THIS.error-notify .slds-notify_container .closeToastBtn span svg {
+    fill: #fff;
+    height: 16px;
+}    
+.THIS.error-notify .slds-notify_container .closeToastBtn:hover span svg  {
+    fill:rgba(255, 255, 255, 0.75);
+}

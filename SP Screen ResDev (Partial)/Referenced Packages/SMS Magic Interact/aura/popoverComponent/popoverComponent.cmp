@@ -1,0 +1,51 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.position}" action="{!c.onPositionChange}" />
+    <aura:attribute name="onTrigger" type="Aura.Action" />
+    
+    <aura:attribute name="value" type="String" />
+    <aura:attribute name="items" type="List" />
+    <aura:attribute name="onChange" type="Aura.Action" />
+    <aura:attribute name="trigger" type="Aura.Component[]"
+                    description="popover trigger" />
+    <aura:attribute name="height" type="String"
+                    description="height of popover"/>
+    <aura:attribute name="width" type="String"
+                    description="width of popover" />
+    <aura:attribute name="position" type="String" description="" />
+    <aura:attribute name="nubbinPos" type="String" description="" />
+    <aura:attribute name="isBodyPassed" type="boolean"/>
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:method name="openPopover" action="{!c.openPopover}" description="" />
+    
+    <div class="popover" style="position:relative; display:inline-block;">
+        <div aura:id="popoverBody" 
+        	 class="{! join(' ',
+                        'slds-popover popover-body size',
+                        (v.isOpen ? '' : 'slds-hide'),
+                        'slds-nubbin--' + v.nubbinPos
+                    )}" role="dialog">
+            <div class="slds-popover__body contentPadding slds-scrollable--y" style="">
+                <aura:If isTrue="{!!v.isBodyPassed}">
+            		<aura:iteration items="{!v.items}" var="item" >
+                		<div id="{!item.value}" onclick="{!c.selectItem}" title="{!item.label}">
+                			{!item.label}
+                		</div>
+            		</aura:iteration>	
+                	<aura:set attribute="else">
+                    	{!v.body}
+                	</aura:set>
+            	</aura:If>
+            </div>
+        </div>
+        <div aura:id="triggerBody" class="slds-form-element">
+            <button class="slds-button slds-button--icon"  onclick="{!c.togglePopOver}">
+                <div class="slds-form-element__icon slds-align-middle">
+                    {!v.trigger}      
+                </div>
+            </button>
+        </div>
+        <div aura:id="backgroundDiv" class="backgroundDiv slds-hide" onclick="{!c.togglePopOver}">
+    	</div>
+    </div>
+</aura:component>

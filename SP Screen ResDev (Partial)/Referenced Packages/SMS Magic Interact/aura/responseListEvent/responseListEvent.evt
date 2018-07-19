@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="source" type="String" description="" />
+    <aura:attribute name="responseList" type="List" description="" />
+</aura:event>

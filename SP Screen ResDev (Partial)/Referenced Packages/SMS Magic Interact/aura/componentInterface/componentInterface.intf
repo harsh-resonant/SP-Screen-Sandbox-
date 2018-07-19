@@ -1,0 +1,19 @@
+<aura:interface description="Interface template">
+	<aura:attribute name="uiContext" type="String" access="global"
+		description="Eg. - lightning, classic, sf1" />
+	<aura:attribute name="embedContext" type="String" access="global"
+		description="Eg. - detail, tab, activity" />
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+	<aura:attribute name="phoneFieldCSV" type="String" access="global"
+		description="CSV of provided phone field api names" />
+
+</aura:interface>

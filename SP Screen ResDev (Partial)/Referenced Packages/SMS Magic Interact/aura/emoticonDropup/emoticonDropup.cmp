@@ -1,0 +1,34 @@
+<aura:component >
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+	<aura:attribute name="emoticons" type="String[]"
+		description="list unicode string for emoticons" />
+	<aura:attribute name="trigger" type="Aura.Component[]"
+		description="It opens emoticon popover on click" />
+
+	<aura:registerEvent name="onEmoticonSelection"
+		type="smagicinteract:selectionEvent"
+		description="event fired on when a emoticon is selected" />
+		
+	<smagicinteract:dropDownComponent aura:id="dropdownCmp" position="up">
+		<aura:set attribute="trigger">
+            <smagicinteract:toolTip width="115px" description="{!$Label.smagicinteract.INSERT_EMOTICON}"
+				tooltipPosition="bottom-right" >
+            	<aura:set attribute="trigger">
+					<lightning:buttonIcon iconName="utility:emoji" variant="bare"
+					size="large" alternativeText="emoji" />
+                </aura:set>
+            </smagicinteract:toolTip>
+		</aura:set>
+		<aura:set attribute="body">
+			<div class="slds-grid slds-wrap slds-text-align--center">
+				<aura:iteration var="emoji" items="{!v.emoticons}">
+					<div class="slds-size--1-of-3">
+						<div id="{!emoji}" class="slds-button emoji-Icons"
+							onclick="{!c.onEmoticonSelection}"
+							style="color: #fdca47; font-size: 24px">{!emoji}</div>
+					</div>
+				</aura:iteration>
+			</div>
+		</aura:set>
+	</smagicinteract:dropDownComponent>
+</aura:component>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Classification__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Classification</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lock</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView Hinged Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed Hinged Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView Sliding Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed Sliding Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diamond Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retractable Screen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fire Escape</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flyscreen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diamond Window</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Completion_Date_ETA__c</fullName>
+        <externalId>false</externalId>
+        <label>Completion Date ETA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Project Issues</relationshipLabel>
+        <relationshipName>Project_Issues</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Identified__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Identified</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Resolved__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Resolved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Installer__c</fullName>
+        <externalId>false</externalId>
+        <label>Installer</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adam Covey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Adam Williams</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brent Birch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carlol Botha</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>John Bateman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Justin Griffiths</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Installed: Factory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scott Turner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shaun Hutchings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steve Lawrence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tony Eddie</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Russell Thorn</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Issue_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Type</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incorrect CM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrect Install</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incomplete Accessories given to Installer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrect details on Sales Quote from Sales Rep</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Damaged in Transit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrectly Ordered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrectly Built ROCKFORD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrect Built IN-HOUSE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incorrectly Built CWS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lock CommandeX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lock: Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Repair: warranty issue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Repair: Customer at fault</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>New_Install_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Install Project</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>New Install</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Project Issues</relationshipLabel>
+        <relationshipName>Project_Issues</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Project/Action Plan Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rework__c</fullName>
+        <externalId>false</externalId>
+        <label>Rework Owner</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Rockford</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CommandeX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SP Screens inhouse</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CW Systems</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ACE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting on someone else</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Rework</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Warranty</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incomplete Install</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Value_of_Cost_of_Rework__c</fullName>
+        <description>Include all costs; labour, customer discount, product cost.</description>
+        <externalId>false</externalId>
+        <label>$ Value of Cost of Rework</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Project Issue</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Project_Issues</fullName>
+        <columns>NAME</columns>
+        <columns>Installer__c</columns>
+        <columns>Date_Identified__c</columns>
+        <columns>Date_Resolved__c</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Classification__c</columns>
+        <columns>Issue_Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Project Issues</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PI-{0000}</displayFormat>
+        <label>Project Issue Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Project Issues</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

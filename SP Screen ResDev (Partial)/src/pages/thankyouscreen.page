@@ -1,0 +1,93 @@
+<apex:page sidebar="false" showHeader="false" controller="thankyouscreenctrl">
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrapmin, '/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.select2min, '/select2.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.select2bootstrapcss, '/select2-bootstrap.css')}" />
+    <!-- Style Sheets Ends -->
+    <!-- Style Sheets -->
+    <style>
+        tr.group,
+        tr.group:hover {
+            background-color: #ddd !important;
+        }
+        
+        .newpanelfooter {
+            padding: 10px 15px;
+        }
+        
+        label {
+            font-weight: initial !important;
+        }
+    </style>
+    <!-- Jquery -->
+
+    <apex:includeScript value="{!URLFOR($Resource.jquery, '/jquery.min.js')}" />
+    <!--<apex:includeScript value="{!URLFOR($Resource.jquerydatatablejs, '/jquery.dataTables.min.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.select2, '/select2.full.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.bootstrapminjs, '/bootstrap.min.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.bootstrapbundle, '/bootstrap.bundle.min.js')}"/>  -->
+    <apex:form >
+        <apex:actionFunction name="checkResrcName" action="{!assignResource}" reRender="mainPanel"></apex:actionFunction>
+        <apex:outputPanel id="mainPanel">
+            <div class="panel">
+                <div class="panel-heading panel-title">
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}" />
+                                    </div>
+                                    <div class="col-md-10 text-center">
+                                        <!-- <h2 style="font-family:Calluna Sans Light;"><em>Schedule a Free Appointment</em></h2>  -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <apex:outputPanel id="finalMessage" rendered="{!showFlag}">
+
+                        <center>
+                            <h3>
+                                  Thank you for booking a Free Consultation, {!firstName}.
+                                    <br />
+                                    {!displayName} will see you on <apex:outputText value="{0,date, EEEE dd MMM}"> <apex:param value="{!strtTime}" /> </apex:outputText> between 
+                                <apex:outputText value="{0,time, hh:mm a}"> <apex:param value="{!strtTime}" /> </apex:outputText> and <apex:outputText value="{0,time, hh:mm a}"> <apex:param value="{!endTime}" /> </apex:outputText>
+                                    <br />
+                                    We will send you an SMS 3 days before to confirm the time.
+
+                              </h3>
+                        </center>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel id="waitMessage" rendered="{!NOT(showFlag)}">
+                        <center>
+                            <apex:image value="{!URLFOR($Resource.loading)}" height="50px" width="50px" />
+                            <h3>
+                                  Please wait ...... we are making your booking.  
+                              </h3>
+                        </center>
+                    </apex:outputPanel>
+                </div>
+                <div class="newpanelfooter">
+                </div>
+            </div>
+        </apex:outputPanel>
+    </apex:form>
+    <script>
+        var count = 0;
+
+        function checkFlag() {
+            //console.log('Function called ' + count);
+            checkResrcName();
+            count++;
+            if (count > 9) {
+                window.clearTimeout(temp);
+            }
+            return false;
+        }
+
+        var temp = setInterval(checkFlag, 2000);
+    </script>
+</apex:page>

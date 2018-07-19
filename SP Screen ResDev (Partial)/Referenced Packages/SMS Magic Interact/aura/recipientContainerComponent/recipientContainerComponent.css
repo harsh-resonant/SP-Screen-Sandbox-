@@ -1,0 +1,19 @@
+.THIS.conversationRecipient {
+    border: 1px solid #D8DDE6;
+    border-radius: 3px 0 0 3px;
+    width: 100%;
+    float: left;
+    height: 80vh;
+    position: relative;
+    background: #fff;
+}
+.THIS.conversationRecipient.ui-context--lightning.embeded-context--customTab {
+    height: 97vh;
+}
+
+@media only screen and (max-width: 767px) { 
+    .THIS.conversationRecipient,
+	.THIS.conversationRecipient.ui-context--lightning.embeded-context--customTab {
+        height: 100vh;
+    }
+}

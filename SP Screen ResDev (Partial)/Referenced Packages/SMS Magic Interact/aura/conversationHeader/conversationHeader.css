@@ -1,0 +1,134 @@
+.THIS.wrapper.hover-show {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS.wrapper {
+    position: relative;
+    background:#FFF;
+    padding: 13px 10px 13px 20px;
+    height: 59px;
+    border: 1px solid #d8dde6;
+}
+.THIS.wrapper .headerContentWrap h3,
+.THIS.wrapper .headerContentWrap .slds-picklist,
+.THIS.wrapper .headerContentWrap .leadIcon,
+.THIS.wrapper .headerContentWrap p{
+    display: inline-block;
+}
+.THIS.wrapper .headerContentWrap {
+    width: 88%;
+}
+.THIS.wrapper .headerContentWrap .slds-picklist {
+    width: 55%;
+    max-width: 225px;
+}
+.THIS.wrapper .headerContentWrap .backBtn {
+    color: #fff;
+    margin-right: 10px;
+}
+.THIS.wrapper .headerContentWrap .backBtn svg {
+    height: 17px;
+    width: 17px;
+    fill: #733749;
+}
+.THIS.wrapper .headerContentWrap .leadIcon {
+    margin-right: 5px;
+    height: 26px;
+    width: 26px;
+}
+.THIS.wrapper .headerContentWrap .leadIcon svg {
+    height: 100%;
+    width: 100%;
+}
+.THIS.wrapper .headerContentWrap h3 {
+    margin: 0 10px 0 5px;
+    color: #636161;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    vertical-align: middle;
+    max-width: 50%;
+    text-decoration: underline;
+}
+.THIS.wrapper .headerContentWrap  p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #C23934;
+    vertical-align: middle;
+}
+.THIS.wrapper .headerContentWrap .slds-picklist select {
+    padding-left: 0;
+}
+.THIS.wrapper .headerContentWrap .slds-picklist select,
+.THIS.wrapper .headerContentWrap .slds-picklist select option{
+    border: 0;
+    background: transparent;
+    color: #fff;
+    margin-right: -10px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    box-shadow: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+.THIS.wrapper .headerContentWrap .slds-picklist select:focus,
+.THIS.wrapper .headerContentWrap .slds-picklist select:active,
+.THIS.wrapper .headerContentWrap .slds-picklist select:hover {
+    outline:0;
+}
+.THIS.wrapper .headerContentWrap .slds-picklist select option {
+    color: #16325C;
+    background: #fff;
+    cursor: pointer;
+}
+
+.THIS.wrapper .buttonWrap {
+    padding-top:5px;
+}
+.THIS.wrapper .buttonWrap button {
+    color: #733749;
+    margin-left: 15px;
+}
+.THIS.wrapper .buttonWrap button:last-child {
+    margin-left: 8px;
+}
+.THIS.wrapper .buttonWrap button.filter-btn {
+    margin-left: 0;
+}
+.THIS.wrapper .buttonWrap button svg {
+    height: 16px;
+    width: 16px;
+}
+.THIS.wrapper .buttonWrap .slds-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.THIS .applied-filter {
+    position: relative;
+}
+.THIS .applied-filter:after {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    background: red;
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+    content: '';
+}
+.THIS.wrapper .buttonWrap .filter-Open {
+    color: #fff;
+}

@@ -1,0 +1,35 @@
+<aura:component controller="smagicinteract.ConversationsServerController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:handler name="changedConversationType" event="smagicinteract:requestRecipientList" action="{!c.loadRecipientListwithType}"/>
+    <aura:handler name="applyRecipientFilter" event="smagicinteract:requestRecipientList" action="{!c.applyRecipientFilter}"/>
+    <aura:handler event="smagicinteract:getConversationCountEvent" action="{!c.updateUnreadCound}"/>
+    <aura:handler action="{!c.toggleSpinner}" name="toggleSpinner" event="smagicinteract:toggleSpinner" />
+    
+    <!--aura:attribute name="searchText" type="String" /-->
+    <aura:attribute name="selectedRecipientListType" type="String" />
+    <aura:attribute name="unreadCount" type="Integer"/>
+    
+    <aura:attribute name="uiContextClass" type="String" access="private" />
+    <aura:attribute name="embededContextClass" type="String" access="private" />
+    
+    <aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+    
+    <aura:handler name="change" value="{!v.context}" action="{!c.changeContextClasses}"/>
+    
+    <div aura:id="recipientContainer" class="{! join(' ','conversationRecipient',v.uiContextClass,v.embededContextClass)}">
+        <smagicinteract:recipientHeaderComponent aura:id="headerComponent" unreadCount="{!v.unreadCount}" context="{!v.context}" />
+        <smagicinteract:recipientListComponent aura:id="recipientsList" selectedRecipientListType="{!v.selectedRecipientListType}" context="{!v.context}"/>
+        <lightning:spinner aura:id="mySpinner" variant="bare" size="medium" class=""/>
+    </div>
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+</aura:component>

@@ -1,0 +1,55 @@
+.THIS .display-block {
+    display: block;
+}
+.THIS.viewport.homeSection {
+    position:relative;
+}
+.THIS.homeSection.viewPort.activitySection {
+    height: 80vh;
+    background: #fff;
+}
+.THIS.homeSection.viewPort .recipient-container,
+.THIS.homeSection.viewPort .conversationAndFilterWrap,
+.THIS.homeSection.viewPort.widthAdjust .conversationAndFilterWrap {
+    width: 100%;
+}
+.THIS.viewPort .recipient-container {
+    width: 45%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    display: inline-block;
+    float: left;
+}
+.THIS.viewPort .conversationAndFilterWrap {
+    width: 55%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    display: inline-block;
+    float: left;
+}
+.THIS.viewPort.widthAdjust .recipient-container  {
+    width: 35%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS.viewPort.widthAdjust .conversationAndFilterWrap {
+    width: 65%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+.THIS.viewPort .display-none {
+        display: none;
+}
+@media only screen and (max-width: 767px) { 
+    .THIS.viewPort .recipient-container,
+    .THIS.viewPort .conversationAndFilterWrap  {
+        width: 100%;
+    }
+    .THIS.viewPort.widthAdjust .conversationAndFilterWrap {
+        width: 100%;
+        
+    }
+    .THIS.viewPort .display-none {
+        display: none;
+    }
+}

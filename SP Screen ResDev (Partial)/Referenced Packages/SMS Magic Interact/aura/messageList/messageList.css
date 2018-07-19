@@ -1,0 +1,61 @@
+.THIS.listWrapper.header-show {
+   height: calc(100% - 125px);
+	border-top: 1px solid #E0E5EE;
+}
+.THIS.listWrapper {
+    padding: 15px 20px;
+    border: 1px solid #E0E5EE;
+    border-bottom:0;
+    border-top:0;
+    overflow: auto;
+    height: calc(100% - 177px);
+    position: relative;
+    background: #f8f8f8;
+}
+.THIS.listWrapper::-webkit-scrollbar {
+    width: 5px; 
+}
+.THIS.listWrapper::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+.THIS.listWrapper::-webkit-scrollbar-thumb {
+    background-color: #ccd5e4;
+    border-radius: 5px; 
+}
+.THIS.listWrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #aaaaaa; 
+}
+.THIS.listWrapper .noMessagesError {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    width: 95%;
+    margin: 0 auto;
+    color:#a7a7a7;
+    font-weight: 300;
+}
+.THIS.listWrapper .noMessagesError h1 {
+    font-size: 22px;
+}
+.THIS.listWrapper .noMessagesError p {
+    font-size: 12px;
+    width: 65%;
+    margin: 0 auto;  
+}
+.THIS.listWrapper .noMessagesError p a {
+    text-decoration: underline;
+}
+.THIS.listWrapper .loaderAnnimate .slds-spinner.slds-spinner--small{
+    width: 14px;
+}
+.THIS.listWrapper .loaderAnnimate .slds-spinner_container {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 8px;
+}
+.THIS.listWrapper .loaderAnnimate  p {
+    display: inline-block;
+    color:#aab3bd;
+}

@@ -1,0 +1,10 @@
+.THIS.slds-notify_container {
+	position: absolute;
+}
+.THIS.slds-notify_container .slds-notify--toast {
+    min-width: auto;
+    padding: .75rem .8rem .75rem .8rem;
+}
+.THIS.slds-notify_container .slds-notify--toast .slds-show a {
+    margin-left: 5px;
+}

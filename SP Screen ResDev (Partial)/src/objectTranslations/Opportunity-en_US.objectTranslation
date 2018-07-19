@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity Referral Source</value>
+        </caseValues>
+        <name>opportunity_lead_source</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Account Referral Source --></label>
+        <name>Account_Referral_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Date --></label>
+        <name>Appointment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area --></label>
+        <name>Area__c</name>
+        <picklistValues>
+            <masterLabel>BNE - Inner Suburbs</masterLabel>
+            <translation><!-- BNE - Inner Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Ipswich Urban</masterLabel>
+            <translation><!-- BNE - Ipswich Urban --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Logan City</masterLabel>
+            <translation><!-- BNE - Logan City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Northern Suburbs</masterLabel>
+            <translation><!-- BNE - Northern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Redland City</masterLabel>
+            <translation><!-- BNE - Redland City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Southern Suburbs</masterLabel>
+            <translation><!-- BNE - Southern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE - Western Suburbs</masterLabel>
+            <translation><!-- BNE - Western Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE- Eastern Suburbs</masterLabel>
+            <translation><!-- BNE- Eastern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE-Moreton Bay - Rural Region</masterLabel>
+            <translation><!-- BNE-Moreton Bay - Rural Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE-Moreton Bay - Urban Region</masterLabel>
+            <translation><!-- BNE-Moreton Bay - Urban Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN-Central Coast</masterLabel>
+            <translation><!-- CCN-Central Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN-Hunter Region</masterLabel>
+            <translation><!-- CCN-Hunter Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN-Lake Macquarie</masterLabel>
+            <translation><!-- CCN-Lake Macquarie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN-Newcastle Region</masterLabel>
+            <translation><!-- CCN-Newcastle Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN-Port Stephens</masterLabel>
+            <translation><!-- CCN-Port Stephens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffs_Central</masterLabel>
+            <translation><!-- Coffs_Central --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffs_North</masterLabel>
+            <translation><!-- Coffs_North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffs_NorthWest</masterLabel>
+            <translation><!-- Coffs_NorthWest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffs_South</masterLabel>
+            <translation><!-- Coffs_South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffs_SouthWest</masterLabel>
+            <translation><!-- Coffs_SouthWest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD - North Shore Upper &amp; Lower &amp; North West (Epping, Ryde, Chatswood, Mosman, Hornsby)</masterLabel>
+            <translation><!-- SYD - North Shore Upper &amp; Lower &amp; North West (Epping, Ryde, Chatswood, Mosman, Hornsby) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD -Eastern Suburbs (Bondi)</masterLabel>
+            <translation><!-- SYD -Eastern Suburbs (Bondi) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD -Hills District (Baulkham Hills)</masterLabel>
+            <translation><!-- SYD -Hills District (Baulkham Hills) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD -Illawarra (Wollongong)</masterLabel>
+            <translation><!-- SYD -Illawarra (Wollongong) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD Canterbury/Bankstown Area</masterLabel>
+            <translation><!-- SYD Canterbury/Bankstown Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Illawarra Shoalhaven (Nowra)</masterLabel>
+            <translation><!-- SYD-Illawarra Shoalhaven (Nowra) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Inner City (CBD)</masterLabel>
+            <translation><!-- SYD-Inner City (CBD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Inner West (Newtown/Marrickville)</masterLabel>
+            <translation><!-- SYD-Inner West (Newtown/Marrickville) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Northern Beaches (Manly)</masterLabel>
+            <translation><!-- SYD-Northern Beaches (Manly) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Parramatta Area</masterLabel>
+            <translation><!-- SYD-Parramatta Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-South West (Liverpool/Campbelltown)</masterLabel>
+            <translation><!-- SYD-South West (Liverpool/Campbelltown) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-St George Area (Kogarah)</masterLabel>
+            <translation><!-- SYD-St George Area (Kogarah) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD-Sutherland Shire (Cronulla)</masterLabel>
+            <translation><!-- SYD-Sutherland Shire (Cronulla) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD: Outer West &amp; Greater Western (Penrith, Blacktown, Richmond)</masterLabel>
+            <translation><!-- SYD: Outer West &amp; Greater Western (Penrith, Blacktown, Richmond) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Balance Outstanding at Install $ --></label>
+        <name>Balance_Outstanding_at_Install__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Copy in Office --></label>
+        <name>Copy_in_Office__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Deposit Paid --></label>
+        <name>Date_Deposit_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Final Payment --></label>
+        <name>Date_of_Final_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Quote Variation --></label>
+        <name>Date_of_Quote_Variation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Paid Amount $ (50%) --></label>
+        <name>Deposit_Paid_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Paid (MUST email receipt) --></label>
+        <name>Deposit_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Diamond Grille --></label>
+        <name>Diamond_Grille__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Balance Paid --></label>
+        <name>Final_Balance_Paid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flyscreen Retractable --></label>
+        <name>Flyscreen_Retractable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flyscreen Window or Door --></label>
+        <name>Flyscreen_Window_or_Door__c</name>
+    </fields>
+    <fields>
+        <label><!-- GE Interest Free --></label>
+        <name>GE_Interest_Free_Customer__c</name>
+        <picklistValues>
+            <masterLabel>12 Month Interest Free Customer</masterLabel>
+            <translation><!-- 12 Month Interest Free Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Month Interest Free Customer</masterLabel>
+            <translation><!-- 6 Month Interest Free Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Finance Customer</masterLabel>
+            <translation><!-- Non-Finance Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- On Site Acknowledged --></label>
+        <name>On_Site_Acknowledged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Products Ordered --></label>
+        <name>Products_Ordered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promo code --></label>
+        <name>Promo_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Installation Date --></label>
+        <name>Proposed_Installation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Variation Amount (different month) --></label>
+        <name>Quote_Variation_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Lost --></label>
+        <name>Reason_Lost__c</name>
+        <picklistValues>
+            <masterLabel>Preferred Competitor Product</masterLabel>
+            <translation><!-- Preferred Competitor Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price: More expensive than Competitor</masterLabel>
+            <translation><!-- Price: More expensive than Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price: More than was willing to spend (no competitor)</masterLabel>
+            <translation><!-- Price: More than was willing to spend (no competitor) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timing: Lead times too long</masterLabel>
+            <translation><!-- Timing: Lead times too long --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timing: Not ready to purchase</masterLabel>
+            <translation><!-- Timing: Not ready to purchase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reminder call --></label>
+        <name>Reminder_call__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Text Message reminder --></label>
+        <name>SMS_Text_Message_reminder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Doors --></label>
+        <name>Security_Doors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Screens --></label>
+        <name>Security_Screens__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Comments --></label>
+        <name>Site_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Requests and Notes --></label>
+        <name>Specific_Requests_and_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Steel Door Windows --></label>
+        <name>Steel_Door_Windows__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Order Information --></label>
+            <section>Order Information</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- Reason Lost is mandatory when stage is closed lost. --></errorMessage>
+        <name>Reason_Lost_is_Mandatory</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>MassManager__Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit_Standard_Fields --></label>
+        <name>MassManager__Mass_Edit_Standard_Fields</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>MassManager__Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_CM_Work_Order --></label>
+        <name>New_CM_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Install_Work_Order --></label>
+        <name>New_Install_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Quote_WO --></label>
+        <name>New_Quote_WO</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Work_Order --></label>
+        <name>New_Work_Order</name>
+    </webLinks>
+</CustomObjectTranslation>

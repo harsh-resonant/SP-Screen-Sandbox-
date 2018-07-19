@@ -1,0 +1,50 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="value" type="String" />
+    <aura:attribute name="items" type="List" />
+    <aura:attribute name="onChange" type="Aura.Action" />
+    <aura:attribute name="trigger" type="Aura.Component[]"
+                    description="popover trigger" />
+    <aura:attribute name="height" type="String"
+                    description="height of popover" default="150px"/>
+    <aura:attribute name="width" type="String"
+                    description="width of popover" default="150px"/>
+    <aura:attribute name="left" type="String"
+                    description="width of popover"/>
+    <aura:attribute name="position" type="String" default="up"
+                    description="position of nubbin" />
+    <aura:attribute name="defaultValue" type="String"
+                    description="To set default value in dropDown" />
+    <aura:attribute name="isBodyPassed" type="boolean" default="false"/>
+    <aura:attribute name="isOpen" type="boolean" access="private" default="false"/>
+    
+    <aura:registerEvent name="openCloseEvent" type="smagicinteract:toggleEvent" description="" />
+    
+    <aura:method name="closeDropdown" action="{!c.closeDropdown}" description="" />
+    
+    <div class="dropdown" style="position:relative; display:inline-block;">
+        <div aura:id="popoverBody" class="slds-popover popover-body slds-hide openUp size" role="dialog">
+            <div class="contentPadding slds-popover__body slds-scrollable--y" style="">
+            	<aura:If isTrue="{!!v.isBodyPassed}">
+                	<aura:iteration items="{!v.items}" var="item" >
+                        <a href="" class="{!item.value == v.value ? 'active' : ''}" id="{!item.value}" onclick="{!c.selectItem}">
+                            <ui:outputText title="{!item.label}" value="{!item.label}" />
+                    	</a>
+            		</aura:iteration>
+                	<aura:set attribute="else">
+                    	{!v.body}
+                	</aura:set>
+                </aura:If>
+            </div>
+        </div>
+        <div aura:id="triggerBody" class="slds-form-element">
+            <div class="slds-button slds-button--icon"  onclick="{!c.togglePopOver}">
+                <div class="slds-form-element__icon slds-align-middle">
+                    {!v.trigger}      
+                </div>
+            </div>
+        </div>
+        <div aura:id="backgroundDiv" class="backgroundDiv slds-hide" onclick="{!c.togglePopOver}">
+    	</div>
+    </div>
+</aura:component>

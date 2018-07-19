@@ -1,0 +1,18 @@
+<aura:component description="Component will expose a method showNotification to show notifications.">
+    <aura:attribute name="notifierDataList" type="List" />
+    <aura:method name="showNotification" action="{!c.showNotifier}" >
+        <aura:attribute name="iconName"	type="String" />
+        <aura:attribute name="variant"	type="String" />
+        <aura:attribute name="state"	type="String" />
+        <aura:attribute name="text"		type="String" />
+        <aura:attribute name="duration"	type="Integer" />
+        <aura:attribute name="bodyComp"	type="Aura.Component" />
+    </aura:method>
+    <div class="slds-notify_container">
+        <aura:iteration items="{!v.notifierDataList}" var="data">
+            <span> <smagicinteract:NotificationComponent bodyComp="{!data.bodyComp}" iconName="{!data.iconName}" variant="{!data.variant}" state="{!data.state}" text="{!data.text}" duration="{!data.duration}" > 
+                </smagicinteract:NotificationComponent>
+            </span>
+        </aura:iteration>
+    </div>
+</aura:component>

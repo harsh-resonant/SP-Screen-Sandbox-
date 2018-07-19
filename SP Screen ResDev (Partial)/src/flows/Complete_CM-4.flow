@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>If_WOLI_1_is_complete</name>
+        <label>If WOLI 1 is complete</label>
+        <locationX>146</locationX>
+        <locationY>207</locationY>
+        <defaultConnector>
+            <targetReference>If_WOLI_2_is_complete</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>WOLI1_is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Collected_paperwork</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WOLI_to_complete</targetReference>
+            </connector>
+            <label>WOLI1 is true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_WOLI_2_is_complete</name>
+        <label>If WOLI 2 is complete</label>
+        <locationX>303</locationX>
+        <locationY>216</locationY>
+        <defaultConnector>
+            <targetReference>If_WOLI_3_is_complete</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>WOLI2_is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Confirmed_all_measurements_specs_are_finalised</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WOLI2_to_complete</targetReference>
+            </connector>
+            <label>WOLI2 is true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_WOLI_3_is_complete</name>
+        <label>If WOLI 3 is complete</label>
+        <locationX>462</locationX>
+        <locationY>216</locationY>
+        <defaultConnector>
+            <targetReference>If_WOLI_4_is_complete</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>WOLI3_is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Take_photo_and_upload_CM_sheet</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WOLI3_to_complete</targetReference>
+            </connector>
+            <label>WOLI3 is true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_WOLI_4_is_complete</name>
+        <label>If WOLI 4 is complete</label>
+        <locationX>612</locationX>
+        <locationY>217</locationY>
+        <defaultConnector>
+            <targetReference>If_WOLI_5_is_complete</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>WOLI4_is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Return_Paperwork_to_factory</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WOLI4_to_complete</targetReference>
+            </connector>
+            <label>WOLI4 is true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_WOLI_5_is_complete</name>
+        <label>If WOLI 5 is complete</label>
+        <locationX>770</locationX>
+        <locationY>218</locationY>
+        <defaultConnector>
+            <targetReference>CM_Work_Order_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>WOLI5_is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_Measure_Completed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WOLI5_to_complete</targetReference>
+            </connector>
+            <label>WOLI5 is true</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Complete CM {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Complete CM</label>
+    <processType>FieldServiceMobile</processType>
+    <recordUpdates>
+        <name>Update_WOLI2_to_complete</name>
+        <label>Update WOLI2 to complete</label>
+        <locationX>300</locationX>
+        <locationY>331</locationY>
+        <connector>
+            <targetReference>If_WOLI_3_is_complete</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_2</targetReference>
+        </faultConnector>
+        <filters>
+            <field>LineItemNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00000002</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrderLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_WOLI3_to_complete</name>
+        <label>Update WOLI3 to complete</label>
+        <locationX>465</locationX>
+        <locationY>335</locationY>
+        <connector>
+            <targetReference>If_WOLI_4_is_complete</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_0_0</targetReference>
+        </faultConnector>
+        <filters>
+            <field>LineItemNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00000003</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrderLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_WOLI4_to_complete</name>
+        <label>Update WOLI4 to complete</label>
+        <locationX>616</locationX>
+        <locationY>344</locationY>
+        <connector>
+            <targetReference>If_WOLI_5_is_complete</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault</targetReference>
+        </faultConnector>
+        <filters>
+            <field>LineItemNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00000004</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrderLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_WOLI5_to_complete</name>
+        <label>Update WOLI5 to complete</label>
+        <locationX>771</locationX>
+        <locationY>344</locationY>
+        <connector>
+            <targetReference>CM_Work_Order_updated</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_0</targetReference>
+        </faultConnector>
+        <filters>
+            <field>LineItemNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00000005</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrderLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_WOLI_to_complete</name>
+        <label>Update WOLI to complete</label>
+        <locationX>144</locationX>
+        <locationY>332</locationY>
+        <connector>
+            <targetReference>If_WOLI_2_is_complete</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_1</targetReference>
+        </faultConnector>
+        <filters>
+            <field>LineItemNumber</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00000001</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrderLineItem</object>
+    </recordUpdates>
+    <screens>
+        <name>Checklist</name>
+        <label>CM Checklist</label>
+        <locationX>145</locationX>
+        <locationY>100</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>If_WOLI_1_is_complete</targetReference>
+        </connector>
+        <fields>
+            <name>Collected_paperwork</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Collected paperwork</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Confirmed_all_measurements_specs_are_finalised</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Confirmed all measurements &amp; specs are finalised</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Take_photo_and_upload_CM_sheet</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Take photo and upload CM sheet</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Return_Paperwork_to_factory</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Return Paperwork to factory</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Check_Measure_Completed</name>
+            <dataType>Boolean</dataType>
+            <fieldText>CM Completed</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+    </screens>
+    <screens>
+        <name>CM_Work_Order_updated</name>
+        <label>CM Work Order updated</label>
+        <locationX>983</locationX>
+        <locationY>299</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Completion</name>
+            <fieldText>Thank you. The Check Measure Work Order has been updated.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Fault</name>
+        <label>Fault 4</label>
+        <locationX>624</locationX>
+        <locationY>496</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Line4</name>
+            <fieldText>Line 4</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>msg</name>
+            <fieldText>{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Fault_0</name>
+        <label>Fault 5</label>
+        <locationX>786</locationX>
+        <locationY>473</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Line5</name>
+            <fieldText>Line5</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>msg_0</name>
+            <fieldText>{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Fault_0_0</name>
+        <label>Fault 3</label>
+        <locationX>466</locationX>
+        <locationY>477</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>l3</name>
+            <fieldText>Line 3</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>msg_0_0</name>
+            <fieldText>{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Fault_1</name>
+        <label>Fault 1</label>
+        <locationX>128</locationX>
+        <locationY>460</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>l1</name>
+            <fieldText>Line 1</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>msg_0_0_0_0</name>
+            <fieldText>{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Fault_2</name>
+        <label>Fault 2</label>
+        <locationX>290</locationX>
+        <locationY>451</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>l2_0</name>
+            <fieldText>Line 2</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>msg_0_0_0</name>
+            <fieldText>{!$Flow.FaultMessage}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <startElementReference>Checklist</startElementReference>
+</Flow>

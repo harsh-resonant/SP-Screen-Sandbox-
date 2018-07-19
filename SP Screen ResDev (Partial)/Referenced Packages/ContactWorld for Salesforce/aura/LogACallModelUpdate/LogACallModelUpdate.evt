@@ -1,0 +1,2 @@
+<aura:event type="APPLICATION" description="Fired to indicate that the Log a call model has updated" >
+</aura:event>

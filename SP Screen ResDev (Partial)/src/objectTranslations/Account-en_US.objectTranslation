@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Referral Source</value>
+        </caseValues>
+        <name>account_source</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Account Branch --></label>
+        <name>Account_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Date --></label>
+        <name>Appointment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Area --></label>
+        <name>Area__c</name>
+        <picklistValues>
+            <masterLabel>BNE:Eastern Suburbs</masterLabel>
+            <translation><!-- BNE:Eastern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Inner Suburbs</masterLabel>
+            <translation><!-- BNE:Inner Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Ipswich Rural</masterLabel>
+            <translation><!-- BNE:Ipswich Rural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Logan City</masterLabel>
+            <translation><!-- BNE:Logan City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Moreton Bay - Urban Region</masterLabel>
+            <translation><!-- BNE:Moreton Bay - Urban Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Northern Suburbs</masterLabel>
+            <translation><!-- BNE:Northern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Redland City</masterLabel>
+            <translation><!-- BNE:Redland City --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Rural Region</masterLabel>
+            <translation><!-- BNE:Rural Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Southern Suburbs</masterLabel>
+            <translation><!-- BNE:Southern Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BNE:Western Suburbs</masterLabel>
+            <translation><!-- BNE:Western Suburbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN:Central Coast</masterLabel>
+            <translation><!-- CCN:Central Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN:Hunter Region</masterLabel>
+            <translation><!-- CCN:Hunter Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN:Lake Macquarie</masterLabel>
+            <translation><!-- CCN:Lake Macquarie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN:Newcastle Region</masterLabel>
+            <translation><!-- CCN:Newcastle Region --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCN:Port Stephens</masterLabel>
+            <translation><!-- CCN:Port Stephens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COFFS:Harbour Central</masterLabel>
+            <translation><!-- COFFS:Harbour Central --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COFFS:North</masterLabel>
+            <translation><!-- COFFS:North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COFFS:North West</masterLabel>
+            <translation><!-- COFFS:North West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COFFS:South</masterLabel>
+            <translation><!-- COFFS:South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COFFS:South West</masterLabel>
+            <translation><!-- COFFS:South West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Canterbury/Bankstown Area</masterLabel>
+            <translation><!-- SYD:Canterbury/Bankstown Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Eastern Suburbs (Bondi)</masterLabel>
+            <translation><!-- SYD:Eastern Suburbs (Bondi) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:GWS (Penrith/Blacktown)</masterLabel>
+            <translation><!-- SYD:GWS (Penrith/Blacktown) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Hills District (Baulkham Hills)</masterLabel>
+            <translation><!-- SYD:Hills District (Baulkham Hills) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Illawarra (Wollongong)</masterLabel>
+            <translation><!-- SYD:Illawarra (Wollongong) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Inner City (CBD)</masterLabel>
+            <translation><!-- SYD:Inner City (CBD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Inner West (Newtown/Marrickville)</masterLabel>
+            <translation><!-- SYD:Inner West (Newtown/Marrickville) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:North Shore, Upper North Shore, Lower North Shore, North West</masterLabel>
+            <translation><!-- SYD:North Shore, Upper North Shore, Lower North Shore, North West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:North West (Richmond)</masterLabel>
+            <translation><!-- SYD:North West (Richmond) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Northern Beaches (Manly)</masterLabel>
+            <translation><!-- SYD:Northern Beaches (Manly) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Parramatta Area</masterLabel>
+            <translation><!-- SYD:Parramatta Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Shoalhaven (Nowra)</masterLabel>
+            <translation><!-- SYD:Shoalhaven (Nowra) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:South West (Liverpool/Campbelltown)</masterLabel>
+            <translation><!-- SYD:South West (Liverpool/Campbelltown) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:St George Area (Kogarah)</masterLabel>
+            <translation><!-- SYD:St George Area (Kogarah) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYD:Sutherland Shire (Cronulla)</masterLabel>
+            <translation><!-- SYD:Sutherland Shire (Cronulla) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Ready For Delete --></label>
+        <name>Is_Ready_For_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referred By --></label>
+        <name>Referred_By__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- D_B_ASIC_Search --></label>
+        <name>D_B_ASIC_Search</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MailChimp_Subscriptions --></label>
+        <name>MC4SF__MailChimp_Subscriptions</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>MassManager__Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit_Standard_Fields --></label>
+        <name>MassManager__Mass_Edit_Standard_Fields</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>MassManager__Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_Prospect_Insight --></label>
+        <name>pi__Send_To_Prospect_Insight</name>
+    </webLinks>
+</CustomObjectTranslation>

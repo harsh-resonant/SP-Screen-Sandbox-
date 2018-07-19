@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" >
+    <aura:attribute name="eventType" 		type="String"/>
+    <aura:attribute name="dismissReason" 	type="String"/>
+    <aura:attribute name="data" 			type="Object"/>
+</aura:event>

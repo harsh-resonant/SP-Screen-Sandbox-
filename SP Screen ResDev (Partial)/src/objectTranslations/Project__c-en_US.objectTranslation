@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Check Measure Date --></label>
+        <name>Check_Measure_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Measurer --></label>
+        <name>Check_Measurer__c</name>
+        <picklistValues>
+            <masterLabel>ACE METALWORKS</masterLabel>
+            <translation><!-- ACE METALWORKS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adam Williams</masterLabel>
+            <translation><!-- Adam Williams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brent Birch</masterLabel>
+            <translation><!-- Brent Birch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlo Botha</masterLabel>
+            <translation><!-- Carlo Botha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Craig Howe</masterLabel>
+            <translation><!-- Craig Howe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Corner</masterLabel>
+            <translation><!-- David Corner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Spencer</masterLabel>
+            <translation><!-- David Spencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Bateman</masterLabel>
+            <translation><!-- John Bateman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Hemming</masterLabel>
+            <translation><!-- John Hemming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justen Radich</masterLabel>
+            <translation><!-- Justen Radich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keith Kelman</masterLabel>
+            <translation><!-- Keith Kelman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ross McCreath</masterLabel>
+            <translation><!-- Ross McCreath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russell Thorn</masterLabel>
+            <translation><!-- Russell Thorn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scott Turner</masterLabel>
+            <translation><!-- Scott Turner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steve Lawrence</masterLabel>
+            <translation><!-- Steve Lawrence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tony Eddy</masterLabel>
+            <translation><!-- Tony Eddy --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Id --></label>
+        <name>ContactId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dry --></label>
+        <name>Dry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Important Notes --></label>
+        <name>Important_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inhouse manufactured --></label>
+        <name>Inhouse_manufactured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install time (hours) --></label>
+        <name>Install_time_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Date --></label>
+        <name>Installation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installer --></label>
+        <name>Installer__c</name>
+        <picklistValues>
+            <masterLabel>ACE METAL WORKS</masterLabel>
+            <translation><!-- ACE METAL WORKS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adam Williams</masterLabel>
+            <translation><!-- Adam Williams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brent Birch</masterLabel>
+            <translation><!-- Brent Birch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlo Botha</masterLabel>
+            <translation><!-- Carlo Botha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Corner</masterLabel>
+            <translation><!-- David Corner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Bateman</masterLabel>
+            <translation><!-- John Bateman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justen Radich</masterLabel>
+            <translation><!-- Justen Radich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justin G</masterLabel>
+            <translation><!-- Justin G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ross McCreath</masterLabel>
+            <translation><!-- Ross McCreath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russell Thorn</masterLabel>
+            <translation><!-- Russell Thorn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scott Turner</masterLabel>
+            <translation><!-- Scott Turner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steve Lawrence</masterLabel>
+            <translation><!-- Steve Lawrence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tony Eddy</masterLabel>
+            <translation><!-- Tony Eddy --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- #  Installers --></label>
+        <name>Installers__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Job at Kirrawee notes --></label>
+        <name>Job_at_Kirrawee_notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ladder --></label>
+        <name>Ladder__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Invoice Received (Factory Use Only) --></label>
+        <name>New_Invoice_Received_Factory_Use_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Amount --></label>
+        <name>Opportunity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Powdercoating Sent Date --></label>
+        <name>Powdercoating_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Powdercoating --></label>
+        <name>Powdercoating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products Ordered --></label>
+        <name>Products_Ordered__c</name>
+        <picklistValues>
+            <masterLabel>Aluminium Fence</masterLabel>
+            <translation><!-- Aluminium Fence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aluminium Gate</masterLabel>
+            <translation><!-- Aluminium Gate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aluminium Panel</masterLabel>
+            <translation><!-- Aluminium Panel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colonial Castings</masterLabel>
+            <translation><!-- Colonial Castings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diamond Grille Door</masterLabel>
+            <translation><!-- Diamond Grille Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diamond Grille Window</masterLabel>
+            <translation><!-- Diamond Grille Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Escape</masterLabel>
+            <translation><!-- Fire Escape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flyscreen Door</masterLabel>
+            <translation><!-- Flyscreen Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flyscreen Window</masterLabel>
+            <translation><!-- Flyscreen Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pet Door</masterLabel>
+            <translation><!-- Pet Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pleated Retractable Screen</masterLabel>
+            <translation><!-- Pleated Retractable Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retractable Roll-Away Screen</masterLabel>
+            <translation><!-- Retractable Roll-Away Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView Sliding door</masterLabel>
+            <translation><!-- SecureView Sliding door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView hinged door</masterLabel>
+            <translation><!-- SecureView hinged door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView window</masterLabel>
+            <translation><!-- SecureView window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steel Door</masterLabel>
+            <translation><!-- Steel Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steel Window</masterLabel>
+            <translation><!-- Steel Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed Sliding door</masterLabel>
+            <translation><!-- Xceed Sliding door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed Window</masterLabel>
+            <translation><!-- Xceed Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed hinged door</masterLabel>
+            <translation><!-- Xceed hinged door --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Issue --></label>
+        <name>Project_Issue__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- REWORK Installation Date --></label>
+        <name>REWORK_Installation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- REWORK time (Hours) --></label>
+        <name>REWORK_time_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROCKFORD Notes --></label>
+        <name>ROCKFORD_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- STEEL Check Measurer --></label>
+        <name>STEEL_Check_Measurer__c</name>
+        <picklistValues>
+            <masterLabel>Peter Ace Metal Works</masterLabel>
+            <translation><!-- Peter Ace Metal Works --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SUPPLY ONLY (edit APlan as required) --></label>
+        <name>SUPPLY_ONLY_edit_ActionPlan_as_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Side rack required --></label>
+        <name>Side_rack_required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suburb --></label>
+        <name>Suburb__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Order Number (RF/CWS/ACE) --></label>
+        <name>Supplier_Order_Number_RF_CWS_ACE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>New Install</masterLabel>
+            <translation><!-- New Install --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rework</masterLabel>
+            <translation><!-- Rework --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- key in-factory --></label>
+        <name>key_in_factory__c</name>
+    </fields>
+    <fields>
+        <label><!-- key on-site --></label>
+        <name>key_on_site__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Rework Project</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- New Install --></label>
+        <name>New_Install</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Rework Project --></label>
+        <name>Rework_Project</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Project_Action_Plans --></label>
+        <name>Create_Project_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_SMS --></label>
+        <name>Send_SMS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Survey --></label>
+        <name>Send_Survey</name>
+    </webLinks>
+</CustomObjectTranslation>

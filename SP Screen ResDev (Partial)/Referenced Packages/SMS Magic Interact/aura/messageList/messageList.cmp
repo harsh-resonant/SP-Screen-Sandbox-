@@ -1,0 +1,98 @@
+<aura:component controller="smagicinteract.MessageListComponentServerController"
+	implements="force:hasRecordId,force:hasSObjectName" access="public">
+
+	<ltng:require styles=""
+		scripts="/resource/smagicinteract__SMS_Insight_Reload/cometd.js,/resource/smagicinteract__SMS_Insight_Reload/jquery_1_5_1.js,/resource/smagicinteract__SMS_Insight_Reload/json2.js,/resource/smagicinteract__SMS_Insight_Reload/jquery_cometd.js"
+		afterScriptsLoaded="{!c.setupCometd}" />
+
+	<aura:attribute name="sessionId" type="String" access="private" />
+	<aura:attribute name="messageList" type="List" />
+	<aura:attribute name="filtercriteria" type="Object" access="public" />
+	<aura:attribute name="pageNumber" type="Integer" access="private"
+		default="-1" />
+	<aura:attribute name="scrolledHeight" type="Integer" access="private"
+		description="" />
+	<aura:attribute name="lastMessageLoaded" type="boolean" default="false"
+		access="private" description="" />
+	<aura:attribute name="iscometdSetup" type="Boolean" default="false" />
+	<aura:attribute name="iscometdFileloaded" type="Boolean"
+		default="false" />
+	<aura:attribute name="lastDateInIteration" type="String" />
+	<aura:attribute name="isFilterApplied" type="Boolean" />
+	<aura:attribute name="class" type="String" description="" />
+	<aura:attribute name="clientHeight" type="Integer" access="private" description="" />
+	<aura:attribute name="scrollTop" type="Integer" access="private" description=""/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler name="change" value="{!v.messageList}"
+		action="{!c.scrollControl}" />
+	<aura:handler name="change" value="{!v.filtercriteria}"
+		action="{!c.reloadMessage}" />
+	<aura:handler name="change" value="{!v.recordId}"
+		action="{!c.onRecordIdChange}" />
+	<aura:handler event="smagicinteract:paginationCriteriaEvent"
+		action="{!c.getPaginationCriteria}" />
+
+	<aura:handler action="{!c.reloadMessage}" event="smagicinteract:reloadConversation" />
+
+	<aura:handler name="multimediaPreviewEvent"
+		event="smagicinteract:multiMediaPreviewEvent" action="{!c.handleMultimediaRequest}" />
+	<aura:handler name="responseReceived" event="smagicinteract:apiResponseReceived"
+		action="{!c.unreadMessage}" />
+
+	<aura:registerEvent name="responseReceived"
+		type="smagicinteract:apiResponseReceived" />
+	<aura:registerEvent name="getConversationCountEvent"
+		type="smagicinteract:getConversationCountEvent" />
+	<aura:registerEvent name="recipientRecordChanged"
+		type="smagicinteract:recipientRecordChangedEvent" />
+	<aura:registerEvent name="refreshEvent" type="smagicinteract:refreshEvent" />
+
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+
+	<smagicinteract:NotificationManager aura:id="NotificationManager" />
+	<div class="{! join(' ', 'listWrapper slds-clearfix', v.class)}"
+		aura:id="messageList" onscroll="{!c.scroll}">
+		<aura:if isTrue="{! v.messageList.length == 0}">
+			<div class="noMessagesError slds-text-align_center">
+				<h1>{!$Label.smagicinteract.NO_MESSAGES}</h1>
+				<aura:if isTrue="{! if(v.isFilterApplied, true, false)}">
+					<p>
+						{!$Label.smagicinteract.NO_FILTERED_MESSAGES1 + ' '} <a
+							onclick="{!c.resetFilter}"> {!$Label.smagicinteract.Click_here} </a> {!'
+						'+$Label.smagicinteract.NO_FILTERED_MESSAGES2}
+					</p>
+					<aura:set attribute="else">
+						<p>{!$Label.smagicinteract.NO_RECIPIENT_MESSAGE_FOR_MESSAGE_LIST}</p>
+					</aura:set>
+				</aura:if>
+			</div>
+		</aura:if>
+		<div aura:id="loadText"
+			class="slds-hide slds-text-align--center loaderAnnimate">
+			<lightning:spinner variant="bare" size="small" />
+			<p>{!$Label.smagicinteract.Loading_Older_Messages}</p>
+		</div>
+		<aura:iteration items="{!v.messageList}" var="msg" >
+
+			<smagicinteract:message scrollTop="{!v.scrollTop}"
+					   containerHeight="{!v.clientHeight}"
+					   lastDateInIteration="{!v.lastDateInIteration}"
+					   message="{!msg}" recordId="{!v.recordId}"
+					   sObjectName="{!v.sObjectName}" context="{!v.context}" />
+
+		</aura:iteration>
+	</div>
+	<smagicinteract:multiMediaPreview aura:id="multimediaPreview" context="{!v.context}" />
+	<lightning:spinner aura:id="mySpinner" variant="bare" size="medium"
+		class="slds-hide" />
+</aura:component>

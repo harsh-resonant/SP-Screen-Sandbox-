@@ -1,0 +1,7 @@
+You have an overdue Task
+
+https://ap2.salesforce.com/{!Task.Id}
+
+Subject: {!Task.Subject}
+Due Date: {!Task.ActivityDate}
+Start Date: {!Task.Status}

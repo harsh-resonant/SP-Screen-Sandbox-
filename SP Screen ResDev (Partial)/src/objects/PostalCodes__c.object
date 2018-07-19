@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Postal Codes</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Code__c</fullName>
+        <description>Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Code</inlineHelpText>
+        <label>Code</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_And_Code__c</fullName>
+        <description>Name And Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name And Code</inlineHelpText>
+        <label>Name And Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Postal Codes</label>
+    <visibility>Public</visibility>
+</CustomObject>

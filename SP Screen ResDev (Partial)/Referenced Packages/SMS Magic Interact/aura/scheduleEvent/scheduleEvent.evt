@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event for Scheduling" >
+    <aura:attribute name="scheduleObject" 			type="Object"/>
+    <aura:attribute name="scheduleMessage" 			type="String"/>
+    <aura:attribute name="scheduledMessage" 			type="String"/>
+</aura:event>

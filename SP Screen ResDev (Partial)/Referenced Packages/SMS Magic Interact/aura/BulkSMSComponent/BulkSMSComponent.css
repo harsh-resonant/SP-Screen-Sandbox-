@@ -1,0 +1,171 @@
+.THIS .textTransform{
+   text-transform: capitalize;
+}
+.THIS .removeButton {
+    line-height : 15px;
+    left : 20px;
+}
+.THIS .inputFile {    
+}
+.THIS.auraMessageTitle h4{
+    display:inline-block;
+    margin-right: 10px;
+}
+.THIS .addPadding {
+    padding-bottom:18px;
+}
+.THIS .addInstructions {
+    width : 20px;
+    height : 20px;
+    border-radius : 20px;
+    background : bisque;
+    text-indent : 2px;
+    font-size : larger;
+    border-style : double;
+}
+.THIS .addWordBreak {
+}
+.THIS .addMargin {
+    margin-top:10px;
+}
+.THIS .unrelatedTable {
+    border : solid;
+    border-width : thin;
+    border-color : lavender;
+}
+.THIS .addBorder {
+    border : solid;
+    border-width : thin;
+    border-color : lavender;
+    border-radius: 4px;
+}
+.THIS .textSearch{
+    padding: .2rem .65rem;
+}
+.THIS .unrelatedTableButton {
+    line-height: 1.875;
+}
+.THIS .tableHeading {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.THIS .closeIconButton {
+    
+}
+.THIS .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.THIS .tooltiptext {
+    visibility: hidden;
+    background-color: #16325c;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -200px;
+    width:255px;
+}
+.THIS .tooltiptext p::before {
+    content: '-';
+    margin-right: 5px;
+}
+.THIS .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.THIS .scheduleMessage {
+    border-radius: 4px;
+    background-color: #ffb75d;
+    color: #16325c;
+    border: solid 1px #d8dde6;
+    padding: 5px 10px;
+    position: relative;
+    width: 95%;
+    margin: 0 auto 5px;
+}
+.THIS .scheduleMessage .clock-icon svg,
+.THIS .scheduleMessage .close-msg-btn svg{
+    fill: #16325c;
+    height: 18px;
+    width: 18px;
+}
+.THIS .scheduleMessage .clock-icon,
+.THIS .scheduleMessage .txt-msg-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+}
+.THIS .scheduleMessage .clock-icon:hover {
+    background-color: transparent;
+    color: #16325c;
+}
+.THIS .scheduleMessage .txt-msg-wrapper {
+    color: #16325c;
+    font-size: 12px;
+    margin-left: 7px;
+    width: 90%;
+    display: inline-block;
+}
+.THIS .scheduleMessage .close-msg-btn {
+    float: right;
+    border: 0;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 25%;
+    right: 10px;
+}
+.THIS .scheduleMessage .close-msg-btn:hover {
+    background: transparent;
+    color: #16325c;
+}
+.THIS .scheduleMessage a {
+    text-decoration: underline;
+    margin-left : 4px;
+}
+.THIS .btn-group-wrapper .scedule-btn {
+    margin-right: 10px;
+}
+.THIS .for-optout-checkbox {
+    vertical-align: middle;
+}
+
+.THIS.success-msg-wrap {
+    margin : 50px auto;
+    padding: 60px 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    /*-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);*/
+    text-align: center;
+    max-width: 600px;
+}
+.THIS.success-msg-wrap .slds-icon-action-approval {
+    background-color: #2a8bc3;
+    margin-bottom: 15px;
+}
+.THIS.success-msg-wrap .msg-text {
+    font-size: 18px;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #54698d;
+    line-height: 1.3;
+}
+.THIS.success-msg-wrap .check-msg-status {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    color: #9b9b9b;
+    margin-bottom: 35px;
+}
+.THIS.success-msg-wrap .check-msg-status a {
+    display: inline-block;
+    color: #9b9b9b;
+    text-decoration: underline;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Case_Status_to_set_on_Agent_release__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This Case Status will be set when an Agent releases a Case.</inlineHelpText>
+        <label>Case Status to set on Agent release</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Status_to_set_on_assign_to_Agent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This Case Status will be set when a Case is assigned to an Agent.</inlineHelpText>
+        <label>Case Status to set on assign to Agent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Statuses_to_Release__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter one Case Status per line for Statuses that should cause a Case to be released.</inlineHelpText>
+        <label>Case Statuses to Release</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Case_Statuses_to_Route__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter one Case Status per line for Statuses that should cause a Case to be routed to an agent.</inlineHelpText>
+        <label>Case Statuses to Route</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Case_owner_routing_timeout_Logged_in__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time in seconds that we will attempt to route a case to the case owner when they are logged in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time in seconds that we will attempt to route a case to the case owner when they are logged in.</inlineHelpText>
+        <label>Case owner routing timeout (Logged in)</label>
+        <precision>9</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_owner_routing_timeout_Logged_out__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time in seconds that we will attempt to route a case to the case owner when they are logged out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time in seconds that we will attempt to route a case to the case owner when they are logged out.</inlineHelpText>
+        <label>Case owner routing timeout (Logged out)</label>
+        <precision>9</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TryRouteNewCaseToCaseOwner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When set, NewVoiceMedia will attempt to route new Cases to the Case owner. This does not affect updating cases, where NewVoiceMedia will always attempt to route to the Case owner.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When set, NewVoiceMedia will attempt to route new Cases to the Case owner. This does not affect updating cases, where NewVoiceMedia will always attempt to route to the Case owner.</inlineHelpText>
+        <label>TryRouteNewCaseToCaseOwner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>NvmRouting</label>
+    <visibility>Public</visibility>
+</CustomObject>

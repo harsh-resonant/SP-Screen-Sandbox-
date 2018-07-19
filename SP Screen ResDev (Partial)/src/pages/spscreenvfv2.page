@@ -1,0 +1,869 @@
+<apex:page sidebar="false" docType="html-5.0" standardStylesheets="false" showHeader="false" controller="spscreenv2" id="spscreenpage" cache="false">
+    <!-- Style Sheets -->
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrapmin, '/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.select2min, '/select2.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.select2bootstrapcss, '/select2-bootstrap.css')}" />
+    <!-- Style Sheets Ends -->
+    <!-- Style Sheets -->
+    <style>
+        tr.group,
+        tr.group:hover {
+            background-color: #ddd !important;
+        }
+        
+        .newpanelfooter {
+            padding: 10px 15px;
+        }
+        
+        label {
+            font-weight: initial !important;
+        }
+        
+        .input-width {
+            width: 30% !important;
+        }
+    </style>
+    <!-- Jquery -->
+
+    <apex:includeScript value="{!URLFOR($Resource.jquery, '/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jquerydatatablejs, '/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.select2, '/select2.full.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.bootstrapminjs, '/bootstrap.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.bootstrapbundle, '/bootstrap.bundle.min.js')}" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBjiGC1FSUgh6l8Mw0bkw9nqfhOlZDCjAo&v=3.31"></script>
+    <!-- Jquery Ends -->
+
+    <head>
+    </head>
+    <apex:pageMessages id="showmsg"></apex:pageMessages>
+    <apex:form id="spscreenform">
+        <!-- Action Functions -->
+        <!-- <apex:actionFunction name="movebackwardtostep1" action="{!movebackwardtostep1}" ></apex:actionFunction>
+      <apex:actionFunction name="movebackwardtostep2" action="{!movebackwardtostep2}"></apex:actionFunction>
+      <apex:actionFunction name="moveforwardtostep2" action="{!moveforwardtostep2}"></apex:actionFunction>
+      <apex:actionFunction name="movebackwardtostep3" action="{!movebackwardtostep3}"></apex:actionFunction>
+      <apex:actionFunction name="moveforwardtostep3" action="{!moveforwardtostep3}"></apex:actionFunction> -->
+        <apex:actionFunction name="moveforwardtostep4" action="{!moveToStep4}" reRender="">
+        </apex:actionFunction>
+        <apex:actionFunction name="bookappointmentjs" action="{!bookappointment}" reRender=" ">
+            <apex:param name="index" assignTo="{!index}" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction name="rediretocncle" action="{!cancelAppointment}" reRender="" />
+
+        <!-- Action Functions Ends-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <apex:outputPanel id="opnl_full">
+                        <apex:outputPanel id="opnl_step1" rendered="{!OR($CurrentPage.parameters.pageNum=null,$CurrentPage.parameters.pageNum='1')}">
+                            <div class="panel">
+                                <div class="panel-heading panel-title">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step1_top_nextlink">
+                                                <ul class="pagination pull-right">
+                                                    <li class="page-item" style="list-style-type: none;">
+                                                        <apex:commandButton styleClass="btn btn-default page-link" value="Next" onclick="return moveforwardtostep2js();" action="{!getContactfromEmail}"></apex:commandButton>
+                                                        <!--<button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep2js();">Next</button> -->
+                                                    </li>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-md-2">
+                                                        <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}" />
+                                                    </div>
+                                                    <div class="col-md-10 text-center">
+                                                        <h2 style="font-family:Calluna Sans Light;padding-right:200px;"><em>Schedule a Free Consultation</em></h2>
+                                                    </div>
+                                                    <apex:outputPanel id="showErrMsg" rendered="{!$CurrentPage.parameters.showErr='Yes'}">
+                                                        <span style="color:red;" class="col-md-12 text-center">Please enter correct address.</span>
+                                                    </apex:outputPanel>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row col-md-12">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-md-12 text-justify">
+                                                    <label class="control-label col-md-3">
+                                                        <h4 style="font-family:Interval Sans Pro;">Enter your contact information</h4>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="fname"><span style="color:red;">*</span> First Name</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="fname" value="{!obj_ScheduleAppointment_wrapper.FirstName}" styleClass="form-control" type="text" tabIndex="1" />
+                                                        <span class="help-block" id="fnameerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="lname"><span style="color:red;">*</span> Last Name</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="lname" value="{!obj_ScheduleAppointment_wrapper.LastName}" styleClass="form-control" type="text" tabIndex="2" />
+                                                        <span class="help-block" id="lnameerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="homephone"> Home Phone</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="homephone" html-minlength="10" html-maxlength="10" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.HomePhone}" styleClass="form-control" type="text" tabIndex="3" />
+                                                        <span class="help-block" id="homephoneerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="mobilephone"><span style="color:red;">*</span> Mobile Phone</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="mobilephone" html-minlength="10" html-maxlength="10" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.MobilePhone}" styleClass="form-control" type="text" tabIndex="4" />
+                                                        <span class="help-block" id="mobilephoneerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="email"><span style="color:red;">*</span> Email</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="email" value="{!obj_ScheduleAppointment_wrapper.Email}" styleClass="form-control" type="text" tabIndex="5" />
+                                                        <span class="help-block" id="emailerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="street"><span style="color:red;">*</span> Street Address</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="street" value="{!obj_ScheduleAppointment_wrapper.StreetAddress}" styleClass="form-control" type="text" tabIndex="6" />
+                                                        <span class="help-block" id="streeterror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="suburb"><span style="color:red;">*</span> Suburb</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="suburb" value="{!obj_ScheduleAppointment_wrapper.Suburb}" styleClass="form-control" type="text" tabIndex="7" />
+                                                        <span class="help-block" id="suburberror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="postal"><span style="color:red;">*</span> Postal Code</label>
+                                                    <div class="col-md-6">
+                                                        <apex:input id="postal" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.PostalCode}" styleClass="form-control" type="text" tabIndex="8" />
+                                                        <span class="help-block" id="postalerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3" for="state"><span style="color:red;">*</span> State</label>
+                                                    <div class="col-md-6">
+                                                        <apex:selectList id="state" Styleclass="form-control" value="{!obj_ScheduleAppointment_wrapper.State}" multiselect="false" size="1" onchange="return showRSLChckBox();">
+                                                            <apex:selectOptions value="{!states}" />
+                                                        </apex:selectList>
+                                                        <!-- <apex:input id="state" value="{!obj_ScheduleAppointment_wrapper.State}" styleClass="form-control" type="text" tabIndex="9"/> -->
+                                                        <span class="help-block" id="stateerror" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="newpanelfooter">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step1_bottom_nextlink">
+                                                <ul class="pagination pull-right">
+                                                    <li class="page-item" style="list-style-type: none;">
+                                                        <apex:commandButton styleClass="btn btn-default page-link" value="Next" onclick="return moveforwardtostep2js();" action="{!getContactfromEmail}"></apex:commandButton>
+                                                        <!--<button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep2js();">Next</button> -->
+                                                    </li>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="opnl_step2" rendered="{!$CurrentPage.parameters.pageNum='2'}">
+                            <div class="panel">
+                                <div class="panel-heading panel-title">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step2_top_nextlink">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <!-- <button type="button" onclick="return movebackwardtostep1js();"  class="btn btn-default page-link">Previous</button>  -->
+                                                        <apex:commandButton styleclass="btn btn-default page-link" action="{!moveToStep1FromStep2}" value="Previous" />
+                                                    </li>
+                                                </ul>
+                                                <ul class="pagination pull-right">
+                                                    <apex:outputPanel >
+                                                        <li class="page-item" style="list-style-type: none;">
+                                                            <apex:commandButton styleClass="btn btn-default page-link" value="Next" onclick="return moveforwardtostep3js();" action="{!moveToStep3}"></apex:commandButton>
+                                                            <!--<button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep3js();">Next</button> -->
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-md-2">
+                                                        <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}" />
+                                                    </div>
+                                                    <div class="col-md-10 text-center">
+                                                        <h2 style="font-family:Calluna Sans Light;padding-right:200px;"><em>Schedule a Free Consultation</em></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-horizontal">
+
+                                            <!--  <div class="form-group">
+                                    <div class="col-md-12">
+                                       <apex:inputCheckbox id="smsremainder" title="sms"/> I Would like an sms Text Message remainder.
+                                    </div>                                                                                                
+                                    </div>
+                                    <div class="form-group">
+                                    <div class="col-md-12">
+                                       <apex:inputCheckbox id="callremainder" title="call"/> I Would like a reminder call shortly before the Appointment.
+                                    </div>                                                                                              
+                                    </div>-->
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    Please estimate how many items you want quoted : <span id="errStep2" style="display:none;color:red;">Please fill the value in at least one of below fields.</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    Security Door
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="secdoor" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.SecurityDoors}" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    Security Screens
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="secscrn" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.SecurityScreens}" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    Flyscreen Window or Door
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="flyWinDoor" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.FlyscreenWindoworDoor}" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    Flyscreen (Rectractable)
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="flyRect" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.FlyscreenRetractable}" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    Steel Door/Windows
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="stlDoor" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.SteelDoorWindows}" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    Diamond Grille
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText maxlength="2" id="dmdGrille" styleClass="form-control input-width" onkeypress="return isNumber(event);" value="{!obj_ScheduleAppointment_wrapper.DiamondGrille}" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    Promo Code
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <apex:inputText styleClass="form-control" value="{!obj_ScheduleAppointment_wrapper.PromoCode}" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <apex:inputCheckbox id="smsremainder" value="{!obj_ScheduleAppointment_wrapper.confirm}" title="sms" /> I confirm someone will be onsite for consultation
+                                                </div>
+                                                <span id='validerror' style="display:none;color:red;padding-left: 30px;">
+                                        Required checkbox
+                                    </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    Specific Requests and Notes :
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <apex:inputTextarea styleClass="form-control" value="{!obj_ScheduleAppointment_wrapper.ImportantNotes}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="newpanelfooter">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step2_bottom_nextlink">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <!-- <button type="button" onclick="return movebackwardtostep1js();"  class="btn btn-default page-link">Previous</button>  -->
+                                                        <apex:commandButton styleclass="btn btn-default page-link" action="{!moveToStep1FromStep2}" value="Previous" />
+                                                    </li>
+                                                </ul>
+                                                <ul class="pagination pull-right">
+                                                    <apex:outputPanel >
+                                                        <li class="page-item" style="list-style-type: none;">
+                                                            <apex:commandButton styleClass="btn btn-default page-link" value="Next" onclick="return moveforwardtostep3js();" action="{!moveToStep3}"></apex:commandButton>
+                                                            <!--<button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep3js();">Next</button> -->
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="opnl_step3" rendered="{!$CurrentPage.parameters.pageNum='3'}">
+                            <div class="panel">
+                                <div class="panel-heading panel-title">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step3_top_nextlink">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <apex:commandButton styleClass="btn btn-default page-link" action="{!moveToStep2FromStep3}" value="Previous" />
+                                                        <!-- <button type="button" onclick="return movebackwardtostep2js();"  class="btn btn-default page-link">Previous</button> -->
+                                                    </li>
+                                                </ul>
+                                                <!--<ul class="pagination pull-right">
+                                       <apex:outputPanel >
+                                          <li class="page-item" style="list-style-type: none;">
+                                             <button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep4js();">Next</button>
+                                          </li>
+                                       </apex:outputPanel>
+                                       </ul>-->
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-md-2">
+                                                        <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}" />
+                                                    </div>
+                                                    <div class="col-md-10 text-center">
+                                                        <h2 style="font-family:Calluna Sans Light;padding-right: 200px;"><em>Schedule a Free Consultation</em></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <div class="col-md-12 text-justify">
+                                                        <label class="control-label">
+                                                            <h4 style="font-family:Interval Sans Pro;">
+                                                               <apex:outputPanel rendered="{!IF(AND(obj_list_slot != null,obj_list_slot.size > 0),True,False)}">
+                                                                    Our consultant will be in your area on these days. Please select a suitable time or <apex:commandLink action="{!cancelAppointment}" style="color: blue;"> click here</apex:commandLink> and a representative will call you.
+                                                               </apex:outputPanel>
+                                                               <apex:outputPanel rendered="{!IF(OR(obj_list_slot == null,obj_list_slot.size == 0),True,False)}">
+                                                                    Due to high demand we can’t find you a time right now. Please give us a call or <apex:commandLink action="{!cancelAppointment}" style="color: blue;"> click here</apex:commandLink> and we will get back to you.
+                                                               </apex:outputPanel>
+                                                               </h4>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <apex:outputPanel rendered="{!IF(AND(obj_list_slot != null,obj_list_slot.size > 0),True,False)}">
+                                                <table id="example1" class="display table" style="width:100%;height:400px;display: inline-grid;overflow-y: scroll;">
+                                                    <tbody>
+                                                        <apex:variable var="tempLastSlotDate" value="{!obj_list_slot[0].SlotDate}" />
+                                                        <apex:variable var="count" value="{!0}" />
+                                                        <apex:repeat value="{!obj_list_slot}" var="var_slot">
+
+                                                            <!-- <pre>Last Date: {!tempLastSlotDate}</pre>
+                                                               <pre>Current Date : {!var_slot.SlotDate}</pre> -->
+                                                            <apex:outputPanel rendered="{!IF(OR(tempLastSlotDate <> var_slot.SlotDate, count == 0) , true, false)}">
+
+                                                                <tr class="group">
+                                                                    <td class="firstchile" style="WIDTH: 500PX;" colspan="3" data-toggle="toggle">
+                                                                        <apex:outputText value="{0, date,EEE MMMM d 'AEST' yyyy}">
+                                                                            <apex:param value="{!var_slot.SlotDate}" />
+
+                                                                        </apex:outputText>
+                                                                    </td>
+                                                                </tr>
+                                                            </apex:outputPanel>
+                                                            <tr>
+                                                                <td>
+
+                                                                    <apex:outputText value="{0, date,EEE MMMM d 'AEST' yyyy}">
+                                                                        <apex:param value="{!var_slot.SlotDate}" />
+
+                                                                    </apex:outputText>
+
+                                                                </td>
+                                                                <td>{!var_slot.Starttime} - {!var_slot.Endtime}</td>
+                                                                <td>
+
+                                                                    <div class="pull-right">
+                                                                        <apex:commandButton styleClass="btn btn-primary" onclick="return bookappointmentjs1('{!var_slot.Slotid}');" reRender="opnl_step3,opnl_step4" value="Book" />
+                                                                        <!-- <button class="btn btn-primary" onclick="bookappointmentjs('{!var_slot.Slotid}');">Ideal</button> -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <apex:variable var="tempLastSlotDate" value="{!var_slot.SlotDate}" />
+                                                            <apex:variable var="count" value="{!count + 1}" />
+                                                        </apex:repeat>
+                                                    </tbody>
+                                                </table>
+                                            </apex:outputPanel>
+                                            <!--<apex:outputPanel rendered="{!IF(OR(obj_list_slot == null,obj_list_slot.size == 0),True,False)}">
+                                                <label class="control-label">
+                                                    <h4 style="font-family:Interval Sans Pro;">
+                                                        Due to high demand we can’t find you a time right now. Please give us a call or <apex:commandLink action="{!cancelAppointment}" style="color: blue;"> click here</apex:commandLink> and we will get back to you
+                                                  </h4>
+                                                </label>
+                                            </apex:outputPanel> -->
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>
+                                                {!obj_ScheduleAppointment_wrapper.StreetAddress}
+                                                <br /> {!obj_ScheduleAppointment_wrapper.Suburb} {!obj_ScheduleAppointment_wrapper.State}
+                                                <br /> {!obj_ScheduleAppointment_wrapper.PostalCode}
+                                                <br /> {!obj_ScheduleAppointment_wrapper.MobilePhone}
+                                                <br /> {!obj_ScheduleAppointment_wrapper.Email}
+                                                <br />
+                                            </p>
+                                            <div class="col-md-12" style="padding-left: 0px;">
+                                                <p>
+                                                    <div id="map_canvas" style="width:300px;height:300px;"></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="newpanelfooter">
+                                    <div class="prev-next-btn">
+                                        <nav aria-label="Page navigation example">
+                                            <apex:outputPanel id="opnl_step3_bottom_nextlink">
+                                                <ul class="pagination">
+                                                    <li class="page-item">
+                                                        <apex:commandButton styleClass="btn btn-default page-link" action="{!moveToStep2FromStep3}" value="Previous" />
+                                                        <!-- <button type="button" onclick="return movebackwardtostep2js();"  class="btn btn-default page-link">Previous</button> -->
+                                                    </li>
+                                                </ul>
+                                                <!-- <ul class="pagination pull-right">
+                                       <apex:outputPanel >
+                                          <li class="page-item" style="list-style-type: none;">
+                                             <button type="button" class="btn btn-default page-link" onclick="return moveforwardtostep4js();">Next</button>
+                                          </li>
+                                       </apex:outputPanel>
+                                       </ul> -->
+                                            </apex:outputPanel>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </apex:outputPanel>
+
+                        <apex:outputPanel id="opnl_step4" rendered="{!$CurrentPage.parameters.pageNum='4'}">
+                            <div class="panel-heading panel-title">
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-md-2">
+                                                    <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}" />
+                                                </div>
+                                                <div class="col-md-10 text-center">
+                                                    <!-- <h2 style="font-family:Calluna Sans Light;padding-right: 200px;"><em>Schedule a Free Consultation</em></h2>  -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <center>
+                                    <h3>
+                                  <p>Thank you for booking a Free Consultation, {!obj_ScheduleAppointment_wrapper.FirstName}.
+                                    <br />
+                                    {!displayRsrcName} will see you on {!slotDate}
+                                    <br />
+                                    We will send you an SMS 3 days before to confirm the time.
+                                 </p>  
+                              </h3>
+                                </center>
+                                <div class="newpanelfooter">
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </div>
+    </apex:form>
+    <script>
+        function redirecttocancle() {
+            rediretocncle();
+        }
+
+        function bookappointmentjs1(idofslot) {
+            var r = confirm("Would you like to confirm?");
+            if (r == true) {
+                bookappointmentjs(idofslot);
+                moveforwardtostep4js();
+            }
+            return false;
+        }
+
+        function movebackwardtostep1js() {
+            movebackwardtostep1();
+            return false;
+        }
+
+        function movebackwardtostep2js() {
+            movebackwardtostep2();
+            return false;
+        }
+
+        function moveforwardtostep2js() {
+            var flag = checkvalidation();
+            if (flag == true) {
+                moveforwardtostep2();
+            }
+            return flag;
+        }
+
+        function moveforwardtostep3js() {
+            var flag = checkValidationStep2();
+            if (flag == true) {
+                moveforwardtostep3();
+            }
+            return flag;
+        }
+
+        function movebackwardtostep3js() {
+            movebackwardtostep3();
+            return false;
+        }
+
+        function moveforwardtostep4js() {
+            moveforwardtostep4();
+
+        }
+
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": true,
+                    "targets": 2
+                }],
+
+                "paging": false,
+                "searching": false,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+
+                    api.column(0, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+
+                            $(rows).eq(i).before(
+                                '<tr class="group"><td class ="firstchile" style="WIDTH: 434PX;" colspan="3" data-toggle="toggle"><i class="arrow down"></i><label for=' + group + ' class ="expand" data-toggle="toggle">' + group + '</label><input type="checkbox" name=' + group + ' id=' + group + ' style="visibility:hidden;"/><span class="sign"></span></td></tr>'
+                            );
+
+                            last = group;
+                        }
+                    });
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        var geocoder = new google.maps.Geocoder();
+        var address = "Dublin";
+        if (('{!obj_ScheduleAppointment_wrapper.StreetAddress}' == '') && ('{!obj_ScheduleAppointment_wrapper.Suburb}' == '') && ('{!obj_ScheduleAppointment_wrapper.State}' == '')) {
+            // first time load set default to dublin
+            address = "Dublin";
+
+        } else {
+            address = '{!obj_ScheduleAppointment_wrapper.StreetAddress}' + ' , ' + '{!obj_ScheduleAppointment_wrapper.Suburb}' + ' , ' + '{!obj_ScheduleAppointment_wrapper.State}' + ' , Australia';
+        }
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                initialize(latitude, longitude);
+            }
+        });
+
+        function initialize(latitude, longitude) {
+            var latlng = new google.maps.LatLng(latitude, longitude);
+
+            var myOptions = {
+                zoom: 14,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "location : " + address
+            });
+        }
+    </script>
+    <script>
+        var placeholder = "Select an Area";
+
+        $(".select2-single").select2({
+            placeholder: placeholder,
+            width: null,
+            containerCssClass: ':all:'
+        });
+
+        $(".select2-single").on("select2:open", function() {
+            if ($(this).parents("[class*='has-']").length) {
+                var classNames = $(this).parents("[class*='has-']")[0].className.split(/\s+/);
+
+                for (var i = 0; i < classNames.length; ++i) {
+                    if (classNames[i].match("has-")) {
+                        $("body > .select2-container").addClass(classNames[i]);
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function checkvalidation() {
+            var flag = true;
+            var phoneno = /^\d{1,10}$/;
+            var emailvalidator = /\S+@\S+\.\S+/;
+            var frstname = document.getElementById('spscreenpage:spscreenform:fname').value;
+            var lastname = document.getElementById('spscreenpage:spscreenform:lname').value;
+            var street = document.getElementById('spscreenpage:spscreenform:street').value;
+            var suburb = document.getElementById('spscreenpage:spscreenform:suburb').value;
+            //var state= document.getElementById('spscreenpage:spscreenform:state').value;
+            var state = document.getElementById('spscreenpage:spscreenform:state').value;
+            var postal = document.getElementById('spscreenpage:spscreenform:postal').value;
+            var homephone = document.getElementById('spscreenpage:spscreenform:homephone').value;
+            var mobilephone = document.getElementById('spscreenpage:spscreenform:mobilephone').value;
+            var emailaddress = document.getElementById('spscreenpage:spscreenform:email').value;
+            if ((frstname == null) || (frstname == '') || (frstname == undefined) || (frstname == ' ')) {
+                $('#fnameerror').text('This is a required field');
+                $('[id$="fname"]').css('border-color', 'red');
+                flag = false;
+
+            } else {
+                $('#fnameerror').text('');
+                $('[id$="fname"]').css('border-color', '#ccc');
+            }
+
+            if ((lastname == null) || (lastname == '') || (lastname == undefined) || (lastname == ' ')) {
+                $('#lnameerror').text('This is a required field');
+                $('[id$="lname"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                $('#lnameerror').text('');
+                $('[id$="lname"]').css('border-color', '#ccc');
+            }
+            if ((street == null) || (street == '') || (street == undefined) || (street == ' ')) {
+                $('#streeterror').text('This is a required field');
+                $('[id$="street"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                $('#streeterror').text('');
+                $('[id$="street"]').css('border-color', '#ccc');
+            }
+            if ((suburb == null) || (suburb == '') || (suburb == undefined) || (suburb == ' ')) {
+                $('#suburberror').text('This is a required field');
+                $('[id$="suburb"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                $('#suburberror').text('');
+                $('[id$="suburb"]').css('border-color', '#ccc');
+            }
+
+            if ((state == '0') || (state == null) || (state == '') || (state == undefined) || (state == ' ')) {
+                $('#stateerror').text('This is a required field');
+                $('[id$="state"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                $('#stateerror').text('');
+                $('[id$="state"]').css('border-color', '#ccc');
+            }
+
+            /*   if(state == 'undefined' || state == '' ){
+                   alert('here'+state);
+                   $('#stateerror').text('This is a required field');
+                     $('[id$="state"]').css('border-color','red');            
+                     flag = false;
+               }
+                 else {
+                     $('#stateerror').text('');
+                      $('[id$="state"]').css('border-color','#ccc');  
+                 }  */
+
+            if ((postal == null) || (postal == '') || (postal == undefined) || (postal == ' ')) {
+                $('#postalerror').text('This is a required field');
+                $('[id$="postal"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                if (postal.length < 5) {
+                    $('#postalerror').text('');
+                    $('[id$="postal"]').css('border-color', '#ccc');
+                } else {
+                    $('#postalerror').text('Please Enter upto 4 characters');
+                    $('[id$="postal"]').css('border-color', 'red');
+                    flag = false;
+                }
+            }
+            if (homephone != '' && ((homephone.length < 10) || ((!((homephone).match(phoneno)))))) {
+                $('#homephoneerror').text('Please Enter Valid Phone no');
+                $('[id$="homephone"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                $('#homephoneerror').text('');
+                $('[id$="homephone"]').css('border-color', '#ccc');
+            }
+
+            if (((mobilephone == null) || (mobilephone == '') || (mobilephone == undefined) || (mobilephone == ' '))) {
+                $('#mobilephoneerror').text('This is a required field');
+                $('[id$="mobilephone"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                if (((!((mobilephone).match(phoneno)) || (mobilephone.length < 10)))) {
+                    $('#mobilephoneerror').text('Please Enter Valid Mobile no');
+                    $('[id$="mobilephone"]').css('border-color', 'red');
+                    flag = false;
+                } else {
+                    $('#mobilephoneerror').text('');
+                    $('[id$="mobilephone"]').css('border-color', '#ccc');
+                }
+
+            }
+            if (((emailaddress == null) || (emailaddress == '') || (emailaddress == undefined) || (emailaddress == ' '))) {
+                $('#emailerror').text('This is a required field');
+                $('[id$="email"]').css('border-color', 'red');
+                flag = false;
+            } else {
+                if (((!(emailvalidator.test(emailaddress))))) {
+                    $('#emailerror').text('Please Enter Valid Email Address');
+                    $('[id$="email"]').css('border-color', 'red');
+                    flag = false;
+                } else {
+                    $('#emailerror').text('');
+                    $('[id$="email"]').css('border-color', '#ccc');
+                }
+
+            }
+            return flag;
+        }
+
+        function checkValidationStep2() {
+            var flag = true;
+            $('[id*=errStep2]').css('display', 'none');
+            var secrtyDoor = $('[id*=secdoor]').val();
+            var secrtyScreen = $('[id*=secscrn]').val();
+            var flyWindwDoor = $('[id*=flyWinDoor]').val();
+            var flyRect = $('[id*=flyRect]').val();
+            var stlDoor = $('[id*=stlDoor]').val();
+            var dmdGrille = $('[id*=dmdGrille]').val();
+            var checkvalid = document.getElementById("spscreenpage:spscreenform:smsremainder").checked;
+
+            if (secrtyDoor.trim() == '' && secrtyScreen.trim() == '' && flyWindwDoor.trim() == '' && flyRect.trim() == '' && stlDoor.trim() == '' && dmdGrille.trim() == '') {
+                flag = false;
+                $('[id*=errStep2]').css('display', 'block');
+            }
+            if (checkvalid == false) {
+                flag = false;
+                $('[id*=validerror]').css('display', 'block');
+            } else if (checkvalid == true) {
+                $('[id*=validerror]').css('display', 'none');
+            }
+            return flag;
+        }
+
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    //  autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', function() {
+            var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+            google.maps.event.addListener(places, 'place_changed', function() {
+                var place = places.getPlace();
+                var address = place.formatted_address;
+                var latitude = place.geometry.location.lat();
+                var longitude = place.geometry.location.lng();
+                var mesg = "Address: " + address;
+                mesg += "\nLatitude: " + latitude;
+                mesg += "\nLongitude: " + longitude;
+                alert(mesg);
+            });
+        });
+    </script>
+</apex:page>

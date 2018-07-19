@@ -1,0 +1,44 @@
+<aura:component >
+	<aura:attribute name="multimedia" type="Object"
+		description="A JavaScript Object which represent multimedia attachment" />
+	
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+		
+	<aura:handler name="change" value="{!v.multimedia}"
+		action="{!c.openPreview}" />
+	<aura:handler action="{!c.onPreviewClose}" name="ModalComponent"
+		event="smagicinteract:ModalComponentEvent" />
+   <div class="multimediaWrapper">
+	<smagicinteract:modalComponent aura:id="multimediaModal" context="{!v.context}">
+		<aura:set attribute="bodyComp">
+			<div class="multimedia-container">
+				<aura:if isTrue="{!v.multimedia.type == 'VIDEO'}">
+                    <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{!'/apex/smagicinteract__videoPreview?videoSrc=' + v.multimedia.path}"></iframe>
+					<!--video controls="true">
+						<source class="centerImage" src="{!v.multimedia.path}"
+							type="video/mp4" />
+						Your browser does not support HTML5 video.
+					</video-->
+                    </div>
+				</aura:if>
+				<aura:if isTrue="{!v.multimedia.type == 'IMAGE'}">
+					<img class="centerImage" src="{!v.multimedia.path}" />
+				</aura:if>
+				<aura:if isTrue="{!v.multimedia.type == 'ANIMATION'}">
+					<img class="centerImage" src="{!v.multimedia.path}" />
+				</aura:if>
+			</div>
+		</aura:set>
+	</smagicinteract:modalComponent>
+   </div>
+</aura:component>

@@ -1,0 +1,46 @@
+.THIS.multimediaWrapper .slds-modal__header {
+    height: 0;
+}
+.THIS.multimediaWrapper .slds-modal__content {
+    border-radius: 4px;
+}
+.THIS.multimediaWrapper .slds-modal__content img {
+    height: 350px;
+    margin: 0 auto;
+    display: block;
+}
+.THIS.multimediaWrapper .for-lightning-homepage .slds-modal__content img{
+	height: 220px;
+}
+.THIS.multimediaWrapper .slds-modal__content video {
+    max-height: 350px;
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+}
+.THIS .embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.THIS .embed-responsive .embed-responsive-item,
+.THIS .embed-responsive iframe,
+.THIS .embed-responsive embed,
+.THIS .embed-responsive object,
+.THIS .embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.THIS .embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.THIS .embed-responsive-4by3 {
+  padding-bottom: 75%;
+}

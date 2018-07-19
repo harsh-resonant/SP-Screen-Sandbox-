@@ -1,0 +1,69 @@
+<aura:component controller="smagicinteract.ConversationsServerController">
+    
+    <!--aura:handler name="init" value="{!this}" action="{!c.doInit}"/-->
+    <aura:handler action="{!c.refreshRecipientList}" event="smagicinteract:refreshEvent" />
+    
+    <aura:registerEvent name="recipientRecordChanged" type="smagicinteract:recipientRecordChangedEvent"/>
+    <aura:registerEvent name="toggleSpinner" type="smagicinteract:toggleSpinner" />
+    
+    <aura:attribute name="searchUnreadOnly" type="Boolean" access="public" default="false"/>
+    <aura:attribute name="searchText" type="String" access="public"/>
+    <aura:attribute name="selectedRecipientListType" type="String" />
+    <aura:attribute name="recipientList" type="List" />
+    <aura:attribute name="tempRecipientList" type="List" />
+    <aura:attribute name="isCampaignMemberDisplayed" type="boolean"	default="false"	/>
+    <aura:attribute name="selectedCampaignId" type="String"/>
+    <aura:attribute name="selectedRecipientId" type="String"/>
+    <aura:attribute name="recipientUnreadCount" type="Integer"/>
+    <aura:attribute name="loadedRecords" type="List"/>
+    <aura:attribute name="pageNumber" 	    type="Integer" 				access="private" 	default="-1"	/>
+    <aura:attribute name="scrolledHeight"   type="Integer" 				access="private"			description=""	/>
+    <aura:attribute name="isNewPageBeingLoaded"   type="boolean" 				access="private"			description=""	/>
+    <aura:attribute name="pageSize" type="Integer" default="50"/>
+    <aura:attribute name="allRecipientLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="notifications" type="Aura.Component[]" />
+    <aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+    
+    <aura:handler name="change" value="{!v.selectedRecipientId}" action="{!c.fireRecipientRecordChanged}"/>
+    <aura:handler name="change" value="{!v.searchUnreadOnly}" action="{!c.loadRecipientList}"/>
+    <aura:handler name="change" value="{!v.searchText}" action="{!c.loadRecipientList}"/>
+    <aura:handler name="change" value="{!v.selectedRecipientListType}" action="{!c.loadRecipientList}"/>
+    
+    <div aura:id="recipientList" class="recipientList" onscroll="{!c.scroll}">
+        <aura:if isTrue="{! v.recipientList.length == 0}">
+            <div class="noMessagesError slds-text-align_center">
+            <h1> {! $Label.smagicinteract.No_recipient_to_display } </h1>
+            <aura:if isTrue="{! if(v.searchText, true, false)}">
+                    <p> {! $Label.smagicinteract.recipient_not_found_for_searched_text } </p>
+                <aura:set attribute="else">
+                        <p> {! $Label.smagicinteract.recipient_not_found_for_selected_object } </p>
+                </aura:set>
+            </aura:if>
+            </div>
+        </aura:if>
+        <aura:iteration items="{!v.recipientList}" var="recipient">
+            <a href="" class="{! join ( ' ','msgBox',(recipient.unreadMessageCount == 0) ? 'allread' : 'unread', (v.selectedRecipientId == recipient.recordId) ? 'conversation-list-record-body-selected' : '')}">
+                <div onclick="{!c.selectRecord}" id="{!recipient.recordId}" >
+                    <smagicinteract:recipientListItemComponent recipientItem="{!recipient}" context="{!v.context}" isCampaignMemberDisplayed="{!v.isCampaignMemberDisplayed}" />
+                </div>
+            </a>
+        </aura:iteration>
+        <div aura:id="loadText" class=" slds-hide slds-text-align--center loaderAnnimate">
+            <lightning:spinner variant="bare" size="small"/>
+            <p>{!$Label.smagicinteract.Loading_RecipientList}</p>
+    	</div>
+    </div>
+    <div class="slds-notify_container">
+        {!v.notifications}
+    </div>
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+</aura:component>

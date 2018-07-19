@@ -1,0 +1,46 @@
+<aura:component controller="smagicinteract.MessageComposerServerController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+	<aura:attribute name="recordId" type="String" description="" />
+	<aura:attribute name="templateText" type="String" description="" />
+    <aura:attribute name="toolTipHoverText" type="String" description="" />
+    <aura:attribute name="selectedTemplate" type="String" description="" />
+	<aura:attribute name="templateList" type="List"
+		description="Template List" />
+    
+    <aura:method name="resetTemplateIconHoverText" action="{!c.resetTemplateIconHoverText}" />
+    <aura:method name="setTemplateIconHoverText" action="{!c.setTemplateIconHoverText}" />
+    
+	<aura:registerEvent name="templateSelectionEvent"
+		type="smagicinteract:selectionEvent"
+		description="Event fired on template selection" />
+		
+	<smagicinteract:dropDownComponent aura:id="dropdownCmp" position="up">
+		<aura:set attribute="trigger">
+            <div aura:id="toolTip" class="templateWrapper">
+                <smagicinteract:toolTip description="{!v.toolTipHoverText}"
+					tooltipPosition="bottom-right" >
+					<aura:set attribute="trigger">
+						<lightning:buttonIcon iconName="utility:insert_template"
+						variant="bare" size="large" alternativeText="template" />
+					</aura:set>
+				</smagicinteract:toolTip>
+			</div>
+		</aura:set>
+		<aura:set attribute="body">
+            <aura:if isTrue="{!v.templateList.length}">
+			<ul onclick="{!c.onSelection}">
+				<aura:iteration items="{!v.templateList}" var="template">
+					<li class="templateList" id="{!template.Id}" title="{!template.smagicinteract__Name__c}">{!template.smagicinteract__Name__c}</li>
+				</aura:iteration>
+			</ul>
+            	<aura:set attribute="else">
+                    <div class="noTemplates" >{!$Label.smagicinteract.NO_TEMPLATES_AVAILABLE}</div>
+                </aura:set>
+            </aura:if>
+		</aura:set>
+	</smagicinteract:dropDownComponent>
+    <div class="error-notify">
+        <smagicinteract:NotificationManager aura:id="NotificationManager" />
+    </div>
+</aura:component>

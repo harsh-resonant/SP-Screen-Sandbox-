@@ -1,0 +1,23 @@
+.THIS .page-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.THIS .opt-out-block-item {
+    display: inline-block;
+    margin-right: 10px;
+    width: 32%;
+    vertical-align: top;
+}
+.THIS .half-width {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    width: 48%;
+    vertical-align: top;
+}
+.THIS .required-star {
+    margin-left: -10px;
+    color: red;
+}
+.THIS .save-button {
+    margin-top: 15px;
+}

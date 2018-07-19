@@ -1,0 +1,46 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="NVMContactWorld.LightningCallNotesViewerController" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="callNotes" type="NVMContactWorld.NoteDisplay[]"/>
+    <div class="slds-panel slds-grid slds-grid--vertical slds-nowrap">
+        <div class="slds-page-header" role="banner">
+            <div class="slds-grid slds-grid--align-spread">
+                <p class="slds-page-header__title slds-truncate slds-align-middle" title="Call Notes">Call Notes</p>
+                <ui:button aura:id="refreshButton" press="{!c.doInit}">
+                    <NVMContactWorld:svg svgPath="/resource/Assets/assets/lightning-utility-icons.svg#refresh" class="slds-button--icon slds-icon-text-default" size="x-small" category="util" name="refresh" />
+                </ui:button>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid--vertical" aura:id="noteDetail">
+            <aura:iteration items="{!v.callNotes}" var="note">
+                <div class="slds-grid slds-has-divider--bottom">
+                    <div class="slds-size--1-of-12 slds-p-around--small  slds-grid slds-grid--align-center slds-grid--vertical-align-center">
+                        <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
+                            <img src="{!note.AgentAvatarUrl}" alt="{!'Profile photo for ' + note.AgentName }" />
+                        </span>
+                    </div>
+                    <div class="slds-size--11-of-12 slds-p-around--small">
+                        <div class="slds-has-divider--bottom note-header">
+                            <p>{!note.EventType} to <a href="{!'/one/one.app#/sObject/' + note.AgentId +'/view'}" target="_top">{!note.AgentName}</a> at {!note.Timestamp}</p>
+                        </div>
+                        <aura:if isTrue="{!note.NoNote==false}">
+                            <div>
+                                <p>{!note.Note}</p>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="noteEmpty">
+                                    <p>This agent saved no notes.</p>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </div>
+            </aura:iteration>
+        </div>
+        <div class="slds-panel__section  hidden" aura:id="noNotes">
+            <div class ="slds-panel slds-panel__section no-notes">
+            	<p>Notes are not available</p>
+            </div>
+        </div>
+    </div>
+</aura:component>

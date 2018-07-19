@@ -1,0 +1,202 @@
+.THIS .hidddenBoxWrapper {
+    padding: 0;
+    position: relative;
+    border: 1px solid #D8DDE6;
+    height: 80vh;
+    width: 100%;
+    display: inline-block;
+    float: left;
+    background: #fff;
+}
+.THIS .filterBox {
+    position: relative;
+    overflow: auto;
+    padding: 10px;
+    height: calc(100% - 98px);
+}
+.THIS .filterBox::-webkit-scrollbar {
+    width: 5px; 
+}
+.THIS .filterBox::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+.THIS .filterBox::-webkit-scrollbar-thumb {
+    background-color: #ccd5e4;
+    border-radius: 5px; 
+}
+.THIS .filterBox::-webkit-scrollbar-thumb:hover {
+    background-color: #aaaaaa; 
+}
+.THIS .filterHead {
+    position: relative;
+    padding: 20px 10px;
+    border-bottom: 1px solid #e0e5ee;
+}
+.THIS .filterHead  h3 {
+    color: #636161;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    font: 500 15px/17px "Salesforce Sans", sans-serif;
+}
+.THIS .filterHead .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background: 0;
+    border: 0;
+    color: #733749;
+    height: 16px;
+    width: 16px;
+}
+.THIS .closeButton svg {
+    height: 100%;
+    width: 100%;
+}
+.THIS .filterBox .detail-card {
+    position:relative;
+    padding: 0 12px 15px 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E0E5EE;
+}
+.THIS .filterBox .detail-card:last-child {
+    margin-bottom: 0;
+}
+.THIS .filterBox .detail-card input {
+    border-radius: .25rem;
+}
+.THIS .filterBox .detail-card input[type="search"] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(22, 50, 92);
+    border: 1px solid rgb(216, 221, 230);
+    width: 100%;
+    -webkit-transition: border .1s linear,background-color .1s linear;
+    transition: border .1s linear,background-color .1s linear;
+    display: inline-block;
+    padding: 0 1rem 0 .75rem;
+    line-height: 1.875rem;
+    min-height: calc(1.875rem + (1px * 2));
+}
+.THIS .filterBox .detail-card .input-query .slds-form-element__label {
+    display: none;
+}
+.THIS .filterBox .detail-card.noBorder {
+    border-bottom: 0;
+}
+.THIS .filterBox .detail-card h3 {
+    color: #16325C;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font: 500 13px/17px "Salesforce Sans", sans-serif;
+}
+.THIS .filterBox .detail-card h3 sup{
+    font-size: 21px;
+    top: 0;
+}
+.THIS .filterBox .star-check {
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.THIS .filterBox .star-check input[type="checkbox"]{
+    height: 17px;
+    width: 17px;
+    vertical-align: middle;
+    margin-right: 7px;
+    display: inline-block;
+    -moz-appearance: checkbox;
+}
+.THIS .filterBox .star-check input[type="checkbox"]:checked:after {
+    display: block;
+    height: 5px;
+    width: 10px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    -webkit-transform: translate(3px, 4px) rotate(-45deg);
+    -ms-transform: translate(3px, 4px) rotate(-45deg);
+    transform: translate(3px, 4px) rotate(-45deg);
+}
+.THIS .filterBox .star-check label {
+    font-size: 12px;
+    color: #54698D;
+    text-transform: capitalize;
+}
+.THIS .filterBox .user-list li {
+    display: inline-block;
+    margin-right:5px;
+    margin-bottom:5px;
+}
+.THIS .filterBox .user-list li:last-child {
+    margin-right: 0;
+}
+.THIS .filterBox .user-list .user-tag {
+    font-size: 10px;
+    color: #54698d;
+    border: 1px solid #D8DDE6;
+    border-radius: 10px;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+.THIS .filterBox .user-list .user-tag.selected {
+    background: #E0E5EE;
+}
+.THIS.display-block {
+    display: block;
+}
+.THIS.display-none {
+    display: none;
+}
+.THIS .filterBox .buttonWrapper button{
+    font-size: 13px;
+    padding: 0 30px;
+}
+.THIS .filterBox .buttonWrapper {
+    padding: 0 12px; 
+}
+.THIS .filterBox .buttonWrapper button.resetBtn  {
+    background: #fff;
+    color: #1589EE;
+    border: 0
+}
+.THIS .filterBox .buttonWrapper button.applyBtn {
+    background: #1589EE;
+    color: #fff;
+}
+.THIS .disabled{
+    position: absolute;
+    background: grey;
+    height: 100%;
+    width: 94%;
+    opacity: 0.3;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.THIS .filterFooter {
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -3px 7px rgba(0, 0, 0, 0.15);
+    padding: 6px 10px 0 10px;
+}
+.THIS .filterFooter button {
+    margin: 0 auto;
+    display: block;
+    color: rgb(0, 112, 210);
+    border: 1px solid rgb(0, 112, 210);
+    font-size: 12px;
+    padding: 6px 10px;
+    vertical-align: middle;
+    line-height: 14px;
+}
+
+.THIS .filterFooter button.disableButton{
+    border: 1px solid rgb(197, 222, 245);
+    color: rgb(216, 221, 230);
+}
+@media only screen and (max-width: 767px) {
+    .THIS .hidddenBoxWrapper {
+        width: 100%; 
+        height: 94vh;
+    }
+    .THIS .filterFooter {
+        padding: 9px 10px 0 10px;
+    }
+}

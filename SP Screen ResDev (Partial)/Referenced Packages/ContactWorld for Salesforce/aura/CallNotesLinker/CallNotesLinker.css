@@ -1,0 +1,18 @@
+.THIS {
+}
+
+.THIS .objectTypeIcon {
+    margin: 0 .75rem 0 0;
+}
+
+.THIS .objectType {
+    text-transform: capitalize;
+}
+
+.THIS .locked-in {
+    background-color: #EEEEEE;
+}
+
+.THIS .objectTypePanel {
+	position: absolute;
+}

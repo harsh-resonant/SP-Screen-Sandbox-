@@ -1,0 +1,12 @@
+<aura:component controller="smagicinteract.FilterComponentServerController" implements="force:hasRecordId,force:hasSObjectName" access="public">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.init}" />
+
+    <aura:handler event="smagicinteract:resetDataEvent" action="{!c.resetData}" />
+    
+    <aura:registerEvent name="getMessageStatusList" type="smagicinteract:responseListEvent" />
+    <aura:attribute name="items" type="List" access="public" />
+
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+    <smagicinteract:comboBox aura:id="comboBox" isMultiSelect="true" dropdownLength="5" options="{!v.items}" onChange="{!c.getValues}"/>
+</aura:component>

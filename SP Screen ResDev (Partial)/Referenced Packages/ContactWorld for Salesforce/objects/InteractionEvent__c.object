@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>AdditionalFieldValues__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Additional Field Values</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Interaction_Events</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CallObjectIdentifier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CallObjectIdentifier</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomObjectId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Custom Object Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IndexedCallObjectIdentifier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>IndexedCallObjectIdentifier</label>
+        <length>128</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InitialSearchResults__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Initial Search Results</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IsPreCallEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If ticked, this event was created before the call actually started, and it indicates that the call should be related to the object indicated in the &quot;relatedTo&quot; field</description>
+        <externalId>false</externalId>
+        <label>Is Pre Call Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RelatedTask__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related task</description>
+        <externalId>true</externalId>
+        <label>Related Task</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelatedTo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related To</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TimeStamp__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Time Stamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deliver</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transfer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Consult</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>What__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Other object types</description>
+        <externalId>true</externalId>
+        <label>What</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contacts or Leads</description>
+        <externalId>true</externalId>
+        <label>Who</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Interaction Event</label>
+    <nameField>
+        <label>Description</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Interaction Events</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Call_Object_Identifier_Deprecated</fullName>
+        <active>true</active>
+        <errorConditionFormula>!ISBLANK(CallObjectIdentifier__c)</errorConditionFormula>
+        <errorMessage>CallObjectIdentifier field is no longer used. Use IndexedCallObjectIdentifier.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Event_Type_Validation</fullName>
+        <active>true</active>
+        <description>Event Type must be one of 3 valid Types</description>
+        <errorConditionFormula>!ISPICKVAL(Type__c, &apos;Deliver&apos;) &amp;&amp; !ISPICKVAL(Type__c, &apos;Transfer&apos;) &amp;&amp; !ISPICKVAL(Type__c, &apos;Consult&apos;)</errorConditionFormula>
+        <errorMessage>Event type must be either &apos;Deliver&apos;, &apos;Transfer&apos; or &apos;Consult&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>In_Call_Events_Must_Have_a_Timestamp</fullName>
+        <active>true</active>
+        <description>Only pre call events are allowed to have null timestamps</description>
+        <errorConditionFormula>IsPreCallEvent__c = false &amp;&amp; ISNULL(TimeStamp__c)</errorConditionFormula>
+        <errorMessage>Event must have a timestamp, unless it&apos;s a pre-call event</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Pre_Call_Events_Must_Have_a_RelatedTo</fullName>
+        <active>true</active>
+        <description>Pre call events must have a &quot;RelatedTo&quot; field or they are useless</description>
+        <errorConditionFormula>IsPreCallEvent__c = true &amp;&amp; ((ISNULL(What__c) || What__c = &apos;&apos;) &amp;&amp; (ISNULL(Who__c) || Who__c = &apos;&apos;) &amp;&amp; (ISNULL(RelatedTask__c) || RelatedTask__c = &apos;&apos;))</errorConditionFormula>
+        <errorMessage>A pre-call event must have a related object</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RelatedTo_Field_Is_Deprecated</fullName>
+        <active>true</active>
+        <description>The RelatedTo field has been replaced by the Who and What fields.</description>
+        <errorConditionFormula>!ISBLANK(RelatedTo__c)</errorConditionFormula>
+        <errorMessage>The RelatedTo field is deprecated and has been replaced by the Who and What.</errorMessage>
+    </validationRules>
+</CustomObject>

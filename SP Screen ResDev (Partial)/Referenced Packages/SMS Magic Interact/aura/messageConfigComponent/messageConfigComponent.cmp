@@ -1,0 +1,57 @@
+<aura:component controller="smagicinteract.MessageObjectConfigController">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.getObjects}"/>
+    
+    <aura:attribute name="allObjects" type="List"  access="private" />
+    <aura:attribute name="allNameFields" type="List"  access="private" />
+    <aura:attribute name="allOptOutFields" type="List"  access="private" />
+    <aura:attribute name="allOptOutOperators" type="List"  access="private" />
+    <aura:attribute name="allOptOutFieldValues" type="List"  access="private" />
+    <aura:attribute name="allMobileFields" type="List"  access="public" />
+    
+    <aura:attribute name="messageConfigId" type="String" access="private" />
+    <aura:attribute name="configName" type="String" access="private" />
+    <aura:attribute name="objectName" type="String" access="private" />
+    
+    <div>
+        <smagicinteract:NotificationManager aura:id="NotificationManager" />
+        <div class="page-title"> {! $Label.smagicinteract.message_object_configuration } </div>
+        <div class="slds-form-element">
+            <div class="half-width">
+                <label class="slds-form-element__label">{! $Label.smagicinteract.CONFIG_NAME }</label><span class="required-star">*</span>
+                <ui:inputText required="true" value="{!v.configName}" updateOn="keyup" class="slds-input" placeholder="{! $Label.smagicinteract.enter_configuration_name }"/>
+            </div>
+            <div class="half-width">
+                <label class="slds-form-element__label">{! $Label.smagicinteract.SELECT_OBJECT }</label><span class="required-star">*</span>
+                <smagicinteract:comboBox aura:id="allObjects" required="true" isMultiSelect="false" dropdownLength="5" options="{!v.allObjects}" onChange="{!c.selectObjectName}" />
+            </div>
+        </div>
+        
+        <div class="slds-form-element">
+            <div class="half-width">
+                <label class="slds-form-element__label">{! $Label.smagicinteract.SELECT_NAME_FIELD }</label><span class="required-star">*</span>
+                <smagicinteract:comboBox aura:id="allNameFields" required="true" isMultiSelect="false" dropdownLength="5" options="{!v.allNameFields}" />
+            </div>
+            <div class="half-width">
+                <smagicinteract:comboBox aura:id="allMobileFields" label="{! $Label.smagicinteract.SELECT_MOBILE_FIELDS }" isMultiSelect="true" dropdownLength="5" options="{!v.allMobileFields}" />
+            </div>
+        </div>
+        
+        <div class="slds-form-element">
+            <div class="opt-out-block-item">
+                <smagicinteract:comboBox aura:id="allOptOutFields" label="{! $Label.smagicinteract.LST_VIEW_OPT_OUT_FLD }" isMultiSelect="false" dropdownLength="5" options="{!v.allOptOutFields}" />
+            </div>
+            
+            <div class="opt-out-block-item">
+                <smagicinteract:comboBox aura:id="allOptOutOperators" label="{! $Label.smagicinteract.OPERATOR }" isMultiSelect="false" dropdownLength="5" options="{!v.allOptOutOperators}" />
+            </div>
+            
+            <div class="opt-out-block-item">
+                <smagicinteract:comboBox aura:id="allOptOutFieldValues" label="{! $Label.smagicinteract.PKG_VALUE }" isMultiSelect="false" dropdownLength="5" options="{!v.allOptOutFieldValues}" />
+            </div>
+        </div>
+        
+        <lightning:button class="save-button" variant="brand" label="{! $Label.smagicinteract.CONFG_SAVE_CONFG }" onclick="{! c.saveConfiguration }" />
+        <lightning:button class="save-button" variant="neutral" label="{! $Label.smagicinteract.CANCEL }" onclick="{! c.cancel }" />
+    </div>
+</aura:component>

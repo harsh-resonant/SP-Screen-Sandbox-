@@ -1,0 +1,87 @@
+<aura:component access="public">
+    
+    <aura:method name="resetDataList" action="{!c.resetSelectedOptionData}" access="public" description="" />
+    
+    <aura:attribute name="defaultOptions" type="List" access="public" description="" />
+    <aura:attribute name="timer" type="Object" access="private" description="" />
+    <aura:attribute name="onChange" type="Aura.Action" access="public" />
+    <aura:attribute name="values" type="List" access="public" />
+    <aura:attribute name="label" type="String" default="" />
+    
+    <aura:attribute name="isMultiSelect" type="Boolean" access="public" default="false" description="" />
+    <aura:attribute name="required" type="Boolean" access="public" default="false" description="" />
+    <aura:attribute name="disabled" type="Boolean" access="public" default="false" description="" />
+    <aura:attribute name="isInputTextSelected" type="Boolean" access="public" default="true" description="" />
+    
+    <aura:attribute name="query" type="String" access="private" description="" />
+    <aura:attribute name="source" type="String" access="public" description="" />
+    <aura:attribute name="placeholder" type="String" access="public" default="{!$Label.smagicinteract.zero_options_selected}" description="" />
+    
+    <aura:attribute name="dropdownLength" type="Integer" access="public" default="5" description="" />
+    
+    <aura:attribute name="options" type="List" access="public"/>
+    <aura:attribute name="dataOptions" type="List" access="private"/>
+    <aura:attribute name="selectedDataList" type="List" access="private" description="" />
+    
+    <aura:handler name="change" value="{!v.options}" action="{!c.doInit}"/>
+    <div aura:id="dropdownTrigger" class="input-query">
+        <aura:if isTrue="{!v.isInputTextSelected}">
+            <label class="slds-form-element__label">{!v.label}</label>
+            <div class="status-box">
+                <div class="input-text" onclick="{!c.showDropDown}">
+                    <ui:inputText aura:id="inputTextId"
+                                  placeholder="{!v.placeholder}"
+                                  disabled="{!v.disabled}"
+                                  required="{!v.required}"
+                                  class="query-inputText"
+                                  value="{!v.query}"
+                                  updateOn="keyup"
+                                  keyup="{!c.onQueryChange}" />
+                    <lightning:buttonIcon variant="bare" iconName="utility:down" size="small" alternativeText="Selected" class="dropdown-icon" onclick="{!c.hideDropDown}" />
+                </div>
+                <div aura:id="comboBoxDropDown" class="slds-dropdown slds-dropdown--left dropdown--max-width hide">
+                    <ul class="slds-dropdown__list">
+                        <aura:iteration items="{!v.dataOptions}" var="option" indexVar="ind">
+                            <span>
+                                <li onclick="{!c.selectOption}" id="{!ind}" class="slds-is-selected">
+                                    <span class="slds-lookup__item-action slds-lookup__item-action--label">
+                                        <lightning:icon iconName="utility:check" size="x-small" alternativeText="Selected" class="{!join(' ', 'slds-icon--selected', (option.defaultSelected ? 'opacity-1' : 'opacity-0'))}" />
+                                        <span class="slds-truncate">
+                                            <span>{!option.label}</span>
+                                        </span>
+                                    </span>
+                                </li>
+                            </span>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click full-width">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label">{!v.label}</label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right" onclick="{!c.showDropDown}">
+                            <input type="search" value="{!v.placeholder}" class="slds-lookup__search-input slds-input select-option" aria-activedescendant="" aria-expanded="true" readonly="true" />
+                            <lightning:buttonIcon variant="bare" iconName="utility:down" size="small" alternativeText="Selected" class="dropdown-icon" />
+                        </div>
+                    </div>
+                    <aura:if isTrue="{! if(v.isMultiSelect, true, false)}">
+                            <div class="slds-pill_container slds-pill_container--bare">
+                                <aura:iteration items="{!v.selectedDataList}" var="item">
+                                    <span class="slds-pill">
+                                        <span class="slds-pill__label pill-width" title="{!item.label}">
+                                            <span>{!item.label}</span>
+                                        </span>
+                                        <div id="{!item.name}" onclick="{!c.removeDataItem}">
+                                            <lightning:buttonIcon variant="bare" iconName="utility:close" size="small" alternativeText="Selected" />
+                                        </div>
+                                    </span>
+                                </aura:iteration>
+                            </div>
+                    </aura:if>
+                </div>
+            </aura:set>
+        </aura:if>
+        <div aura:id="closeComboBoxDropDown" class="hide-dropdown hide" onclick="{!c.hideDropDown}" />
+    </div>
+</aura:component>

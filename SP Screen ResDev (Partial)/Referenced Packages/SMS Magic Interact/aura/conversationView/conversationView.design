@@ -1,0 +1,12 @@
+<design:component label="Conversations View">
+	<design:attribute name="uiContext" label="UI Context"
+		datasource="Lightning,Classic,SF1"
+		default="Lightning"
+		description="Eg. - Lightning, Classic or SF1" />
+	<design:attribute name="embedContext" label="Embed Context"
+		datasource="Detail,Activity,Home"
+		default="Home"
+		description="Eg. - Detail, Activity or Home" />
+	<design:attribute name="phoneFieldCSV" label="Phone Field Semicolon Separated Value"
+		description="Semicolon separated value of provided phone field api names." />
+</design:component>

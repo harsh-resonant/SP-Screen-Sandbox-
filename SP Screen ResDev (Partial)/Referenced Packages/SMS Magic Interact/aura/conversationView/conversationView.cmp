@@ -1,0 +1,56 @@
+<aura:component controller="smagicinteract.MessageComposerServerController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,smagicinteract:componentInterface"
+	access="global" description="List of conversations you had with all your records in one place">
+
+	<aura:attribute name="uiContext" type="String" access="global"
+		description="Eg. - lightning, classic, sf1" />
+	<aura:attribute name="embedContext" type="String" access="global"
+		description="Eg. - detail, tab, activity, home" />
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean        
+		}" />
+	<aura:attribute name="phoneFieldCSV" type="String" access="global"
+		description="Semicolon separated value of provided phone field api names." />
+
+	<aura:attribute name="recordId" type="String" access="private"
+		description="" />
+	<aura:attribute name="sObjectName" type="String" access="private"
+		description="" />
+    <aura:attribute name="hideRecipientInSF1" type="Boolean" access="private" default="false"
+		description="" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler name="openConversationDetail" event="smagicinteract:openDetailPanel"
+		action="{!c.openPanel}" description="Obsolete."/>
+	<aura:handler name="openConversationFilter" event="smagicinteract:openDetailPanel"
+		action="{!c.openPanel}" description="A component event which is fired to open filter panel."/>
+	<aura:handler name="openConversationTimeline" event="smagicinteract:openDetailPanel"
+		action="{!c.openPanel}" description="Obsolete."/>
+	<aura:handler name="closeThirdSection" event="smagicinteract:openDetailPanel"
+		action="{!c.closePanel}" description="A component event which is fired to close filter panel."/>
+    <aura:handler action="{!c.showRecipientSection}" event="smagicinteract:refreshEvent" description="A application event used to refresh recipient section."/>
+
+	<aura:handler name="recipientRecordChanged"
+		event="smagicinteract:recipientRecordChangedEvent" action="{!c.updateRecordId}" description="A component event fired on change of selected recipient record."/>
+	<aura:handler name="changedConversationType"
+		event="smagicinteract:requestRecipientList" action="{!c.updateSObjectName}" description="A component event fired when recipient type is changed from the dropdown."/>
+
+	<smagicinteract:contextDataComponent aura:id="contextDataCmp" context="{!v.context}" onContextChange="{!c.onContextChange}"
+		uiContext="{!v.uiContext}" embedContext="{!v.embedContext}" />
+
+	<div aura:id="containerDiv" class="slds-clearfix viewport viewPort ">
+        <div class="{! 'recipient-container ' + (v.hideRecipientInSF1 ? 'display-none' : '') }" >
+			<smagicinteract:recipientContainerComponent context="{!v.context}" />
+		</div>
+        <div class="{! 'conversationAndFilterWrap ' + (v.context.isSf1 ? (v.hideRecipientInSF1 ? '' : 'display-none') : (v.context.isHomeSection ? (v.hideRecipientInSF1 ? '' : 'display-none') : '')) }">
+			<smagicinteract:conversations aura:id="conversations" recordId="{!v.recordId}"
+				sObjectName="{!v.sObjectName}" context="{!v.context}" />
+		</div>
+	</div>
+</aura:component>

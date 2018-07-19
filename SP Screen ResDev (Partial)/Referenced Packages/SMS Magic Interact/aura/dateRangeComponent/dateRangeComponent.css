@@ -1,0 +1,54 @@
+.THIS.pickDate input {
+    border-radius: .25rem;
+    border:1px solid #d8dde6;
+    padding: 5px;
+    width: 98%;
+    height: 33px;
+}
+.THIS.pickDate.errorDate input{
+    border-color: #C23934; 
+}
+.THIS.pickDate.errorDate input:focus,
+.THIS.pickDate.errorDate input:active,
+.THIS.pickDate.errorDate input:hover,
+.THIS.pickDate.errorDate input{
+    outline: 0;
+    box-shadow: none;
+}
+.THIS.pickDate.errorDate .dateError {
+    color: #C23934; 
+}
+.THIS.pickDate .toDateBox input {
+    float: right;
+}
+.THIS.pickDate .toDateBox,
+.THIS.pickDate .fromDateBox {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.THIS.pickDate .toDateBox label,
+.THIS.pickDate .fromDateBox label {
+    display: block;
+}
+
+.THIS.pickDate .toDateBox .uiInput--datetime .datePicker-openIcon,
+.THIS.pickDate .fromDateBox .uiInput--datetime .datePicker-openIcon {
+    position: absolute;
+    left: inherit;
+    margin-top: 8px;
+    right: 15px;
+    bottom: inherit;
+}
+.THIS.pickDate .toDateBox .uiInput--datetime .datePicker-openIcon {
+    right: 10px;
+}
+
+@media screen and (max-width: 767px) { 
+    .THIS.pickDate input {
+        background: #fff;
+    }
+    .THIS.pickDate .toDateBox input {
+        float: left;
+    }
+}

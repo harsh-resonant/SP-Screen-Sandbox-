@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>Run_SMS_Campaign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Run SMS Campaign</masterLabel>
+        <openType>replace</openType>
+        <page>CampaignSendSMSPage</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

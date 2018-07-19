@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="time" type="String"/>
+    <aura:attribute name="timeList" type="List"/>
+    <aura:attribute name="defaultTime" type="String"/>
+    
+    <aura:handler name="change" value="{!v.time}" action="{!c.editedTiming}"/>
+    <div >
+        <smagicinteract:dropDownComponent aura:id="timeDropdown" position="down" value="{!v.time}" items="{!v.timeList}" height="100px" defaultValue="{!v.defaultTime}">
+            <aura:set attribute="trigger">
+                <label class="time-label">{!$Label.smagicinteract.SC_TIME}</label>
+                <input aura:id="timeDiv"  type="text" value="{!v.time}" onkeyup="{!c.validateTime}" onchange="{!c.editedTiming}">
+                </input>
+                <div class="clockIcon">
+                    <lightning:buttonIcon iconName="utility:clock" variant="bare" alternativeText="clock" />
+                </div> 
+            </aura:set>
+        </smagicinteract:dropDownComponent>
+    </div>
+</aura:component>

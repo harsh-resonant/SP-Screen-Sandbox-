@@ -1,0 +1,29 @@
+.THIS .inline {
+    display : inline;
+    padding: 0px 10px 0px 0px;
+}
+.THIS .whiteIcon {
+    color : white;
+}
+.THIS .whiteIcon:hover  {
+    color : #dce0e8;
+}
+.THIS .displayNone {
+    display : none;
+}
+.THIS .footerButton {
+    min-width: 70px;
+}
+.THIS .notClickable {
+    pointer-events: none;
+}
+.THIS .buttonArea {
+    width:100%;
+}
+.THIS .overflow {
+    overflow-y: visible !important;
+    overflow-x: inherit !important;
+}
+.THIS .for-lightning-homepage {
+    position: absolute;
+}

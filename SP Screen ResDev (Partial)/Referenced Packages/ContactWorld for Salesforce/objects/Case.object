@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>EmailSentTo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>EmailSentTo</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMAccountOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>NVMAccountOverride</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMCaseOrigin__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The content of this field is presented on the contact pad when a case is assigned to an agent. For example: Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The content of this field is presented on the contact pad when a case is assigned to an agent. For example: Email</inlineHelpText>
+        <label>NVM Case Origin</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMNodeOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to override the NewVoiceMedia node a case routing request is sent to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to override the NewVoiceMedia node a case routing request is sent to</inlineHelpText>
+        <label>NVMNodeOverride</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMOverrideCaseOwnerTimeoutLoggedIn__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Override: how long to try to route replies to the case owner, when they are logged in</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Override: how long to try to route replies to the case owner, when they are logged in</inlineHelpText>
+        <label>NVMOverrideCaseOwnerTimeoutLoggedIn</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMOverrideCaseOwnerTimeoutLoggedOut__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Override: how long to try to route replies to the case owner, when they are logged out</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Override: how long to try to route replies to the case owner, when they are logged out</inlineHelpText>
+        <label>NVMOverrideCaseOwnerTimeoutLoggedOut</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMRoutable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to determine whether a case should be routed to an agent via NVM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to determine whether a case should be routed to an agent via NVM</inlineHelpText>
+        <label>NVMRoutable</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RoutePlanIdentifier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>RoutePlanIdentifier</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Skills__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Skills</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

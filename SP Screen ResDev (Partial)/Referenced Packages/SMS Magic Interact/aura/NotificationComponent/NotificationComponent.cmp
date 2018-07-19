@@ -1,0 +1,22 @@
+<aura:component access="public" description="This component shows notification as alert or toast">
+    <aura:handler name="init" 	value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute access="public" name="iconName"	type="String" 	default=""		description="Attribute will provide iconName to be used and its optional."/>
+    <aura:attribute access="public" name="variant"	type="String" 	default="toast"	description="Attribute will provide variant to be used, possible values are alert or toast, and this value defaults to toast."/>
+    <aura:attribute access="public" name="state"	type="String" 	default=""		description="Attribute will provide state for notification to be used, possible values are default, error, warning, success, offline, and this field is optional."/>
+    <aura:attribute access="public" name="text"		type="String" 	default=""		description="Attribute will provide message to be displayed on notification."/>
+    <aura:attribute access="public" name="duration"	type="Integer" 	default="2000"	description="Attribute will provide duration for notification to be displayed, default display time is 2 sec."/>
+    <aura:attribute access="public" name="bodyComp"		type="Aura.component" 		description="Attribute to pass body of Notification"/>
+    
+    <div class="slds">
+        <div class="slds-notify slds-hide" aura:id="Notifier" role="alert">
+            <lightning:buttonIcon variant="bare-inverse" iconName="utility:close" alternativeText="Close" onclick="{! c.hideNotifier }" class="slds-float--right closeToastBtn"/>
+            <div aura:id="defaultDiv" class="slds-notify__content slds-grid">
+                <lightning:icon size="small" variant="bare" iconName="{!v.iconName}" alternativeText="" class="status-icon"/>
+                <div class="slds-col slds-align-middle">{!v.text}</div>
+            </div>
+            <div aura:id="bodyDiv" >
+                {!v.bodyComp}
+            </div>
+        </div>
+    </div>
+</aura:component>

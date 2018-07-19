@@ -1,0 +1,10 @@
+<apex:page controller="NVMContactWorld.MC_NVMMultichannelSetupController">
+    <apex:form >
+        <apex:pageBlock title="NewVoiceMedia Multichannel Setup">
+            <p>Use the button below to schedule the Apex Jobs needed for NewVoiceMedia multichannel routing.</p>
+            <p>Clicking <b>Schedule Jobs</b> more than once will not cause a problem.</p>
+            <p><apex:commandButton action="{!ScheduleJobs}" value="Schedule Jobs"/></p>
+            <p><b><apex:outputText value="{!Result}" escape="false"></apex:outputText></b></p>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

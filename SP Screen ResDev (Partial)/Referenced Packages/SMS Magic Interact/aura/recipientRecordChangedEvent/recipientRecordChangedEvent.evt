@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT" >
+    <aura:attribute name="objectName" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="unreadCount" type="Integer"/>
+    <aura:attribute name="isClickedInSF1" type="Boolean" default="false" />
+</aura:event>

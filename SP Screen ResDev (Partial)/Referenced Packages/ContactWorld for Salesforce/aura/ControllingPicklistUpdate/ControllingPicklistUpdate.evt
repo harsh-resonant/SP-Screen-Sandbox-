@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Fired to indicate that a picklist has been updated" >
+	<aura:attribute name="picklistFieldName" type="String"/>
+	<aura:attribute name="picklistValue" type="String"/>
+</aura:event>

@@ -1,0 +1,175 @@
+<aura:component controller="smagicinteract.MessageComposerServerController"
+	implements="force:hasRecordId,force:hasSObjectName,force:lightningQuickAction,smagicinteract:componentInterface"
+	access="global" description="Message composer to send SMS">
+
+	<aura:attribute name="defaultSelectedPhoneNumber" type="String"
+		access="global" description="Default value of Phone number"/>
+	<aura:attribute name="defaultSelectedSenderId" type="string"
+		access="global" description="Default value of Sender Id"/>
+    <aura:attribute name="positionDropDown" type="String" default="up" access="public" description="position of nubbin" />
+
+	<aura:attribute name="uiContext" type="String" access="global"
+		description="Eg. - lightning, classic, sf1" />
+	<aura:attribute name="embedContext" type="String" access="global"
+		description="Eg. - detail, tab, activity, action" />
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+	<aura:attribute name="phoneFieldCSV" type="String" access="global"
+		description="Semicolon separated value of provided phone field api names." />
+
+	<aura:attribute name="file" type="Object" access="private" />
+	<aura:attribute name="messageText" type="String" default=""
+		access="private" />
+	<aura:attribute name="messageType" type="String" default=" SMS"
+		access="private" />
+	<aura:attribute name="senderId" type="String" default=""
+		access="private" />
+	<aura:attribute name="placeholder" type="String"
+		default="{!$Label.smagicinteract.type_a_message_here}" access="private" />
+	<aura:attribute name="canSendMessage" type="Boolean" access="private"
+		default="false" description="" />
+	<aura:attribute name="composerPermissions" type="Object"
+		description="A Map of permission for composer" access="private" />
+	<aura:attribute name="longSmsCharLimit" type="Integer" access="private" />
+	<aura:attribute name="numberOfSms" type="Integer" default="0"
+		access="private" />
+	<aura:attribute name="encoding" type="Integer" default="1"
+		access="private" />
+	<aura:attribute name="mmsSupportedFormats" type="String"
+		description="Comma separated List of Supported MMS formats"
+		access="private" />
+	<aura:attribute name="mmsMaxSizeKB" type="Integer"
+		description="Max file size(in KB) supported per file" access="private" />
+	<aura:attribute name="areMultipleFilesSupported" type="Boolean"
+		description="Are multiple files upload on MMS" access="private" />
+	<aura:attribute name="isMMSEnabled" type="Boolean" access="private"
+		default="false" description="" />
+	<aura:attribute name="selectedTemplateId" type="String" description=""
+		access="private" />
+	<aura:attribute name="phoneField" type="String" description=""
+		access="private" />
+	<aura:attribute name="isCustomTemplate" type="Boolean" description=""
+		access="private" />
+	<aura:attribute name="cursorPos" type="Integer" access="private" />
+
+	<aura:registerEvent name="messageSentEvent" type="smagicinteract:reloadConversation"
+		description="A application event fired while sending outgoing message to refresh message list." />
+
+	<aura:handler action="{!c.doInit}" name="init" value="{!this}" />
+	<aura:handler action="{!c.onRecordIdChange}" name="change"
+		value="{!v.recordId}" />
+	<aura:handler name="phoneFieldSelectionEvent" event="smagicinteract:selectionEvent"
+		action="{!c.onPhoneFieldSelection}" description="A component event is fired on selection of phone field."/>
+
+	<aura:handler action="{!c.onTemplateSelection}"
+		name="templateSelectionEvent" event="smagicinteract:selectionEvent" description="A component event is fired on selection of template."/>
+	<aura:handler name="senderidSelection" event="smagicinteract:selectionEvent"
+		action="{!c.onSenderIdSelection}"  description="A component event is fired on selection of Sender Id"/>
+	<aura:handler action="{!c.onEmoticonSelection}"
+		name="onEmoticonSelection" event="smagicinteract:selectionEvent" description="A component event is fired on selection of emoticon."/>
+
+	<smagicinteract:contextDataComponent aura:id="contextDataCmp" context="{!v.context}"
+		onContextChange="{!c.onContextChange}" uiContext="{!v.uiContext}"
+		embedContext="{!v.embedContext}" />
+
+	<div aura:id="composerDiv" class="{!v.recordId ? 'slds-show dragComposer' : 'slds-hide'}">
+		<div class="splitter" onmousedown="{!c.startDrag}"></div>
+		<div class="composerHead slds-clearfix">
+			<div class="slds-float--left phoneNumberId">
+				<smagicinteract:phoneDropdown recordId="{!v.recordId}"
+                                 position="{!v.positionDropDown}"
+					phoneFieldCSV="{!v.phoneFieldCSV}"
+					defaultSelectedPhoneNumber="{!v.defaultSelectedPhoneNumber}" />
+			</div>
+			<div class="slds-float--right senderNumberId">
+				<smagicinteract:senderIdDropDown aura:id="senderIdDropdown"
+                                    position="{!v.positionDropDown}"
+					defaultSelectedSenderId="{!v.defaultSelectedSenderId}" />
+			</div>
+		</div>
+
+		<div aura:id="composerWrap" class="composeWrap">
+			<div class="{!v.positionDropDown == 'down' ? '' : 'textareaWrap' }">
+				<textarea aura:id="messageBody"
+                          placeholder="{!v.placeholder}"
+                          readonly="{! !v.composerPermissions.canCreateCustomMessage}"
+                          disabled="{! !v.canSendMessage}" 
+                          class="{!v.positionDropDown == 'down' ? 'positionTextarea' : 'textarea'}"
+						  onclick="{!c.onComposerClick}"
+                          onkeyup="{!c.onKeyUpEvent}"
+                          onpaste="{!c.onKeyUpEvent}" />
+			</div>
+			<div class="mediaBtnWrap slds-clearfix">
+				<aura:if isTrue="{! if(v.encoding == 2, true, false)}">
+					<smagicinteract:toolTip width="200px"
+						description="{!$Label.smagicinteract.unicode_character_title}"
+						tooltipPosition="bottom-left">
+						<aura:set attribute="trigger">
+							<div class="unicodeIcon"></div>
+						</aura:set>
+					</smagicinteract:toolTip>
+				</aura:if>
+				<span> {!v.messageText.length}/{!v.longSmsCharLimit} :
+					{!v.numberOfSms} {!v.messageType}</span>
+				<div aura:id="mediaDetails" class="mediaDetails">
+					<div class="fileDetail slds--clearfix">
+						<div class="slds--clearfix">
+							<div class="fileName">
+								<lightning:icon iconName="utility:image" size="x-small"
+									alternativeText="File" />
+								<a target="_blank" href="{!v.file.url}" title="{!v.file.name}"
+									class="">
+									<div class="fileBox">{!v.file.name}</div>
+								</a>
+							</div>
+							<div class="fileSize">
+								({!v.file.size}Kb)
+								<lightning:buttonIcon iconName="utility:close" variant="bare"
+									size="small" onclick="{! c.removeFile }"
+									alternativeText="Close" />
+							</div>
+							<input type="file" aura:id="fileinput"
+								class="slds-assistive-text" onchange="{! c.inputButtonClick }"
+								multiple="false" />
+						</div>
+					</div>
+					<div aura:id="progressBar" class="progressBar" />
+				</div>
+				<div class="composeIconWrap">
+					<smagicinteract:templateDropup aura:id="templateDropup" recordId="{!v.recordId}" />
+					<smagicinteract:emoticonDropup aura:id="emoticonDropup" />
+					<smagicinteract:toolTip tooltipPosition="bottom-right" width="290px">
+						<aura:set attribute="trigger">
+							<lightning:buttonIcon iconName="utility:image" variant="bare"
+								disabled="{! !(v.composerPermissions.canSendMMSMessage ? v.isMMSEnabled : false) }"
+								size="large" onclick="{!c.openFileUploadPanel}"
+								alternativeText="image" />
+						</aura:set>
+						<aura:set attribute="body">
+							<div class="toolTip">
+								{!$Label.smagicinteract.INSERT_MEDIA_FILE}
+
+								<p>{!$Label.smagicinteract.SPRTD_FILE_SIZE + v.mmsMaxSizeKB}</p>
+								<p>{!$Label.smagicinteract.SPRTD_FILE_FRMTS + v.mmsSupportedFormats}</p>
+							</div>
+						</aura:set>
+					</smagicinteract:toolTip>
+                    <div class="buttonSpinner">
+                        <lightning:spinner aura:id="sendSpinner" variant="bare" size="small" class="slds-hide"/>
+					<lightning:button variant="brand" onclick="{!c.sendMsg}"
+						disabled="{! !v.canSendMessage}" label="Send" />
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<smagicinteract:NotificationManager aura:id="NotificationManager" />
+</aura:component>

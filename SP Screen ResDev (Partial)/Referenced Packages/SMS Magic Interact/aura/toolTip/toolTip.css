@@ -1,0 +1,56 @@
+.THIS.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.THIS .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    word-wrap: break-word;
+    text-align: left;
+    width : 320px;
+    font-size: 12px;
+}
+.THIS.tooltip:hover .tooltiptext.show-tooltip {
+    visibility: visible;
+}
+.THIS.tooltip .tooltiptext.show-tooltip .slds-popover__body {
+    font-size: 12px;
+}
+.THIS .tooltiptext--bottom-left {
+    bottom : 150%;
+    left: -15px;
+}
+.THIS .tooltiptext--bottom-right {
+    bottom : 150%;
+    right: -8px;
+}
+.THIS .tooltiptext--bottom {
+    bottom : 150%;
+    right: -151px;
+}
+.THIS .tooltiptext--left-top {
+    top : -85%;
+    left: 25px;
+}
+.THIS .tooltiptext--right-top {
+    top : -85%;
+    right: 25px;
+}
+.THIS .tooltiptext--top-right {
+    top : 150%;
+    right: -15px;
+}
+.THIS .tooltiptext--top-left {
+    top : 150%;
+    left: -15px;
+}
+.THIS .tooltiptext--top {
+    top : 150%;
+    right: -151px;
+}
+.THIS .tooltiptext--left {
+    left: 30px;
+}
+.THIS .tooltiptext--right {
+    right: 30px;
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help>Anzahl aller Ereignisse</help>
+        <label><!-- Count of Events --></label>
+        <name>FSL__Count_of_Events__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Tasks --></label>
+        <name>FSL__Count_of_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Type --></label>
+        <name>FSL__Event_Type__c</name>
+        <picklistValues>
+            <masterLabel>Resource Absence</masterLabel>
+            <translation>Ressourcenabwesenheit</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Appointment</masterLabel>
+            <translation>Servicetermin</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ACD --></label>
+        <name>NVMContactWorld__ACD__c</name>
+    </fields>
+    <fields>
+        <label><!-- CW Call End Time --></label>
+        <name>NVMContactWorld__CW_Call_End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- CW Call Start Time --></label>
+        <name>NVMContactWorld__CW_Call_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Inbound, this is the time between the agent&apos;s phone ringing and the agent answering the call. For Outbound, this is the time between the customer&apos;s phone ringing and the customer answering the call. This value is rounded to the nearest second. --></help>
+        <label><!-- Call Ring Time (s) --></label>
+        <name>NVMContactWorld__CallRingTimeInSeconds__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Inbound, this is the time the customer spent connected to an agent. For Outbound, this is the time between the customer answering their phone and the call ending. This value is rounded to the nearest second. --></help>
+        <label><!-- Call Talk Time (s) --></label>
+        <name>NVMContactWorld__CallTalkTimeInSeconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContactWorld Number --></label>
+        <name>NVMContactWorld__ContactWorld_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>NVMContactWorld__Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interaction Quality --></label>
+        <name>NVMContactWorld__InteractionQuality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>NVMContactWorld__Service_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Was Recorded --></label>
+        <name>NVMContactWorld__Was_Call_Recorded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Template Id --></label>
+        <name>TaskTemplateId__c</name>
+    </fields>
+</CustomObjectTranslation>

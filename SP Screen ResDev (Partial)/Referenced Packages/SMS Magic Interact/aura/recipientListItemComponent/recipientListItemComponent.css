@@ -1,0 +1,81 @@
+.THIS.objectMessage {
+    width: 100%;
+    padding-left: 40px;
+}
+.THIS.homeSection.objectMessage {
+    width: 100%;
+}
+.THIS.sObjectIcon,
+.THIS.objectMessage {
+    display:inline-block;
+    color: #4f4f4f;
+}
+.THIS.sObjectIcon {
+    vertical-align: text-bottom;
+    margin-right: 8px;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+}
+.THIS .recordMessageWrap .arrowIcon svg{
+    fill: #4f4f4f;
+    height: 14px;
+    width: 14px;
+}
+.THIS .senderName {
+    width: 140px;
+    display: inline-block; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.THIS .sendTime {
+    color: #949494;
+    font-size: 12px;
+    position: absolute;
+    right: 5px;
+}
+.THIS .recordMessageWrap .textMsg {
+    display: inline-block;
+    margin-left: 5px;
+    width: 70%;
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    font-size: 12px;
+}
+.THIS .recordMessageWrap .textMsg br {
+    display: none;
+}
+.THIS .recordMessageWrap .campignMember {
+    font-size: 11px;
+    color: #1797c0;
+    float: right;
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+@media only screen and (max-width: 767px) { 
+    .THIS .senderName {
+        width: 115px;
+    }
+    .THIS.objectMessage {
+        width: 100%;
+    }
+    .THIS .recordMessageWrap .textMsg {
+        max-width: 260px;
+    }
+}
+@media only screen and (max-width: 360px) { 
+    .THIS .recordMessageWrap .textMsg {
+    	max-width: 210px;
+    }
+}

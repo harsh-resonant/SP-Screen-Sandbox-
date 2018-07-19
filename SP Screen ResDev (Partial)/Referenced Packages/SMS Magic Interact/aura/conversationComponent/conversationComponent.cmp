@@ -1,0 +1,34 @@
+<aura:component implements="force:hasRecordId,force:hasSObjectName"
+	access="public">
+	<aura:handler name="init" value="{!this}" action="{!c.changeHeaderState}" />
+
+	<aura:attribute name="isFilterOpen" type="Boolean" access="public" />
+	<!--aura:attribute name="isDetailPage" type="Boolean" access="private" /-->
+	<aura:attribute name="isHeaderVisible" type="Boolean" access="private" />
+
+    <aura:handler name="change" action="{!c.changeHeaderState}" value="{!v.context}" />
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+	<aura:attribute name="phoneFieldCSV" type="String" access="public"
+		description="Semicolon separated value of provided phone field api names." />
+
+	<div class="conversationWrapper" onmouseenter="{!c.showHeader}"
+		onmouseleave="{!c.hideHeader}">
+		<smagicinteract:conversationHeader class="{! (v.context.isDetailPage || v.context.isActivitySection) ? v.isHeaderVisible ? 'slds-show hover-show' : 'slds-hide' : ''}"
+			isFilterOpen="{!v.isFilterOpen}" recordId="{!v.recordId}"
+			sObjectName="{!v.sObjectName}" context="{!v.context}" />
+		<smagicinteract:messageList class="{! (v.context.isDetailPage || v.context.isActivitySection) ? 'header-show': ''}"
+			recordId="{!v.recordId}" sObjectName="{!v.sObjectName}"
+			context="{!v.context}" />
+		<smagicinteract:composerComponent aura:id="composer" recordId="{!v.recordId}"
+			context="{!v.context}" phoneFieldCSV="{!v.phoneFieldCSV}" />
+	</div>
+</aura:component>

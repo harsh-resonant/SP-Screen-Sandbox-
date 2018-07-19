@@ -1,0 +1,4 @@
+<apex:page standardController="WorkOrder" >
+ <flow:interview name="Complete_CM"     >
+ <apex:param name="WOid" value="{!WorkOrder.id}" /> </flow:interview>
+</apex:page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the default email invitation template for survey: SP Screens Customer Survey (CC)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Send using Timba Surveys] SP Screens Customer Survey (CC)</name>
+    <style>none</style>
+    <subject>Please complete this survey: SP Screens Customer Survey (CC)</subject>
+    <textOnly>Dear Valued Customer, Thank you for recently purchasing an SP Screens product. We value your thoughts and opinions about our company and ask for your honest feedback in order to better serve you in the future. This short survey is only 6 questions long and should only take a few minutes to complete. Please click here to complete the survey:: http://spscreensportal.force.com/timbasurveys__survey?cId={!Contact.Id}&amp;id=a0z28000002KeUcAAK
+
+Kind regards
+SP Screens Customer Service Team
+
+_____________________________________________________________________
+
+Surveys Made Easy by Timba Surveys
+ http://sfproducts.altimetrik.com/forums</textOnly>
+    <type>custom</type>
+</EmailTemplate>

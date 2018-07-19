@@ -1,0 +1,477 @@
+.THIS .headerDiv {
+    text-align: left;
+}
+.THIS .marginBottom {
+    margin-bottom: 7px;
+}
+.THIS .recurring-tab .slds-button:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.THIS .ButtonSelected,
+.THIS .ButtonSelected:focus,
+.THIS .ButtonSelected:hover{
+    background :#54698D;
+    color: #ffffff;
+    outline: 0;
+    box-shadow: none;
+}
+.THIS .headerDiv input {
+    border: transparent;
+    background: transparent;
+    font-size: 16px;
+    color: #54698D;
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.THIS .headerDiv .dropdown-icon svg {
+    fill: #54698d;
+}
+.THIS .slds-modal__close {
+    top: -30px;
+}
+.THIS .slds-modal__close button.whiteIcon {
+    color: #fff;
+}
+.THIS .headerDiv .headerText {
+    font-size: 10px;
+    color: #54698D;
+}
+.THIS .tabMenu {
+    padding: 0px 15px; 
+}
+.THIS .tabMenu a {
+    font-size: 12px;
+}
+.THIS .garyBackground {
+    background :#F4F6F9;
+    padding: 15px 20px;
+}
+.THIS .singleDateDiv,
+.THIS .singleTime,
+.THIS .time-zone {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+}
+.THIS .singleTime .slds-popover {
+    position: absolute;
+}
+.THIS .time-zone label {
+    font-size: 12px;
+    color: #54698d;
+    margin: 0;
+}
+.THIS .time-zone p {
+    font-size: 12px;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #d8dde6;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 30px;
+    background: #ebebe4;
+}
+.THIS .singleDateDiv input[type="text"],
+.THIS .singleDateDiv input[type="date"],
+.THIS .singleTime input[type="text"]{
+    height: 30px;
+    min-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #D8DDE6;
+    padding: 0 10px;
+    width: 100%;
+}
+.THIS .singleTime .time-label {
+    display: block;
+    line-height:16px;
+    margin-bottom: 2px;
+}
+.THIS .singleTime .dropdown,
+.THIS .singleTime .dropdown .slds-button.slds-button--icon,
+.THIS .singleTime .dropdown .slds-form-element__icon.slds-align-middle{
+    width: 100%;
+}
+.THIS .singleDateDiv label,
+.THIS .singleTime label{
+    font-size: 12px;
+    color: #54698d;
+    margin: 0;
+}
+.THIS .singleDateDiv .form-element {
+    position: relative;
+}
+.THIS .singleDateDiv .form-element .datePicker-openIcon {
+    position: absolute;
+    left: auto;
+    height: auto;
+    right: .75rem;
+    bottom: 7px;
+    top: 8px;
+}
+.THIS .singleDateDiv .form-element .datePicker-openIcon:before {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+}
+
+.THIS .block-label {
+    display: block;
+}
+.THIS .footer-wrap {
+    background: #fff;
+}
+.THIS .footer-wrap  button {
+    font-size: 12px;
+}
+.THIS .clockIcon {
+    display: inline-block;
+    position: absolute;
+    top: 52%;
+    right: 5px;
+}
+.THIS .footerText  {
+    text-align: left;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+.THIS .footerText .bold-text {
+    font-weight: 600;
+}
+.THIS .footerText .error-text {
+    color: #ff0000;
+}
+.THIS .recurring-tab .garyBackground .recurStartDate,
+.THIS .recurring-tab .garyBackground .recurEndDate,
+.THIS .recurringContent .recurFrequency{
+    width: 33.33%;
+    padding: 0 5px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.THIS .recurring-tab .garyBackground .recurEndDate input[type="checkbox"] {
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.THIS .recurring-tab .garyBackground .recurStartDate input[type="text"],
+.THIS .recurring-tab .garyBackground .recurStartDate input[type="date"],
+.THIS .recurring-tab .garyBackground .recurEndDate input[type="text"],
+.THIS .recurring-tab .garyBackground .recurEndDate input[type="date"],
+.THIS .recurringContent .recurFrequency select {
+    width: 100%;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #D8DDE6;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.THIS .recurring-tab .garyBackground .recurStartDate .form-element,
+.THIS .recurring-tab .garyBackground .recurEndDate .form-element{
+    position : relative;
+}
+.THIS .recurring-tab .garyBackground .recurStartDate .uiInput--datetime .datePicker-openIcon,
+.THIS .recurring-tab .garyBackground .recurEndDate .uiInput--datetime .datePicker-openIcon {
+    left: 87%;
+    top: 7px;
+    position: absolute;
+}
+.THIS .recurring-tab .garyBackground .recurStartDate label,
+.THIS .recurring-tab .garyBackground .recurEndDate label,
+.THIS .recurringContent .recurFrequency label{
+    font-size: 12px;
+    color: #54698D;
+    margin: 0;
+}
+.THIS .recurring-tab .garyBackground {
+    padding: 15px 20px 5px 20px; 
+}
+.THIS .recurring-tab .garyBackground .recurringText {
+    font-size: 11px;
+    text-align: center;
+    font-style: italic;
+    display: block;
+    margin-top: 10px;
+}
+.THIS .recurringContent {
+    padding: 15px 25px 5px 25px;
+}
+.THIS .recurring-tab .garyBackground .recuringTime ,
+.THIS .recurringContent .time-zone,
+.THIS .recurringContent .recurringfrequencyDays {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+    width: 33.33%;
+}
+.THIS .recurring-tab .garyBackground .recuringTime .slds-popover {
+    position: absolute;
+}
+.THIS .recurring-tab .garyBackground .recuringTime .time-label  {
+    display: block;
+    line-height: 16px;
+    margin-bottom: 1px;
+}
+.THIS .recurring-tab .garyBackground .recuringTime input[type="text"],
+.THIS .recurringContent .recurringfrequencyDays select{
+    height: 30px;
+    min-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #d8dde6;
+    padding: 0 10px;
+    font-size: 12px;
+    width: 100%;
+}	
+.THIS .recurring-tab .garyBackground .recuringTime .dropdown .slds-form-element {
+    width: 100%;
+}
+.THIS .recurringContent label,
+.THIS .recurringContent .label{
+    font-size: 12px;
+    color: #54698d;
+    margin: 0;
+}
+.THIS .checkboxDays label{
+    vertical-align: middle;
+    line-height: 12px;
+    margin-left: 5px;
+}
+.THIS .checkboxDays input[type="checkbox"] {
+    float: left;
+    display: inline-block;
+}
+.THIS .recurringContent .day-text,
+.THIS .recurringContent .select-daywrapper {
+    display: inline-block;
+}
+.THIS .recurringContent .select-daywrapper {
+    width: 75px;
+    margin-right: 5px;
+}
+.THIS .monthButtonList {
+    margin-top: 10px; 
+}
+.THIS .month-select {
+    max-width: 90px;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    width: 20%;
+}
+.THIS .month-select .selectDayOfMonth {
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 12px;
+}
+.THIS .month-select .ofStyle {
+    display: inline-block;
+    font-size: 12px;
+}
+.THIS  .monthsList {
+    display: inline-block;
+    width: 79%;
+}
+.THIS .monthsList .slds-button--neutral {
+    padding: 0 12px;
+    font-size: 12px; 
+}
+.THIS .monthsList .month-checkboxWrap .half-monthList,
+.THIS  .monthsList .month-checkboxWrap .checkboxDays{
+    display:inline-block;
+}
+.THIS .monthsList .month-checkboxWrap .half-monthList {
+    margin-right:10px;
+}
+.THIS .weekButtonList,
+.THIS .yearButtonList{
+    margin-top:10px;
+}
+.THIS .weekButtonList .week-daylist,
+.THIS .weekButtonList .checkboxDays {
+    display:inline-block;
+}
+.THIS .weekButtonList .week-daylist {
+    margin-right:10px;
+}
+.THIS .weekButtonList .week-daylist button {
+    font-size: 12px;
+}
+.THIS .hidden-spaceBox {
+    height: 150px;
+    background: transparent;
+}
+.THIS .hidden-spaceBox.recurringHeight{
+    height: 40px;
+}
+.THIS .onlySingleDiv{
+    padding-top: 20px;
+    padding-bottom : 20px;
+}
+@media screen and (max-width: 767px) {
+    .THIS .hidden-spaceBox,
+    .THIS .time-zone,
+    .THIS .recurringContent .time-zone {
+        display: none;
+    }
+    .THIS .singleDateDiv input[type="text"],
+    .THIS .singleDateDiv input[type="date"],
+    .THIS .singleTime input[type="text"]{
+        width: 100%;
+        font-size: 12px;
+        display: inline-block;
+        padding: 7px 2px;
+        background:#fff;
+    }
+    .THIS .singleTime {
+        position: relative;
+    }
+    .THIS .footerText  {
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    .THIS .recurring-tab .garyBackground .recurStartDate input[type="text"],
+    .THIS .recurring-tab .garyBackground .recurStartDate input[type="date"],
+    .THIS .recurring-tab .garyBackground .recurEndDate input[type="text"],
+    .THIS .recurring-tab .garyBackground .recurEndDate input[type="date"],
+    .THIS .recurringContent .recurFrequency select {
+        padding : 0;
+        font-size:12px;
+        background-color:#ffffff;
+    }
+    .THIS .recurringContent .recurFrequency select {
+        padding-left: 5px;
+    }
+    .THIS .recurring-tab .garyBackground,
+    .THIS .garyBackground {
+        padding: 15px 5px 5px 5px; 
+    }
+    .THIS .recurring-tab .garyBackground .recurEndDate label {
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: 3px;
+    }
+    .THIS .recurring-tab .garyBackground .endDateCheckBox {
+        margin-bottom: 2px;
+    }
+    .THIS .recurring-tab .garyBackground .recurStartDate,
+    .THIS .recurring-tab .garyBackground .recurEndDate,
+    .THIS .recurring-tab .garyBackground .recuringTime {
+        width: 33%
+    }
+    .THIS .recurringContent .recurFrequency {
+        width: 40%;
+    }
+    .THIS .recurring-tab .garyBackground  .recuringTime .dropdown,
+    .THIS .recurring-tab .garyBackground  .recuringTime .slds-button.slds-button--icon,
+    .THIS .recurring-tab .garyBackground  .recuringTime .slds-form-element__icon.slds-align-middle{
+        width: 100%;
+    }
+    .THIS .recurring-tab .garyBackground  .recuringTime input[type="text"] {
+        width: 85%;
+    }
+    .THIS .recurringContent .select-daywrapper {
+        margin-right:5px;
+    }
+    .THIS .recurringContent .day-text {
+        width: 25%;
+        font-size:12px;
+    }
+    .THIS .weekButtonList .week-daylist {
+        margin-right: 0;
+    }
+    .THIS .weekButtonList .week-daylist button {
+        margin-bottom: 5px;
+        width: 40px;
+        padding: 0 6px;
+    }
+    .THIS .weekButtonList .checkboxDays,
+    .THIS .monthsList .month-checkboxWrap .checkboxDays {
+        display: none;
+    }
+    .THIS .recurringContent {
+        padding: 10px 10px 5px 10px;
+    }
+    .THIS .month-select {
+        max-width: 70px;
+        display: inline-block;
+        float: left;
+        margin-right: 5px;
+        width: 30%;
+    }
+    .THIS .month-select .selectDayOfMonth select {
+        padding-right: 15px;
+        max-width: 53px;
+    }
+    .THIS  .monthsList { 
+        width: 68%;
+    }
+    .THIS  .monthsList .marginBottom {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    .THIS .monthsList .slds-button--neutral {
+        margin-bottom: 5px;
+        width: 40px;
+        padding: 0 6px;
+    }
+    .THIS .slds-scope .slds-modal__header {
+        padding: 10px;
+    }
+    .THIS .monthsList .month-checkboxWrap .half-monthList {
+        margin-right: 0;
+    }
+    .THIS .singleDateDiv,
+    .THIS .singleTime {
+        width: 48%;
+    }
+    .THIS .singleDateDiv label,
+    .THIS .singleTime label{
+        display: block;
+    }
+    .THIS .recurring-tab .garyBackground  .recuringTime .clockIcon {
+        position: relative;
+        left: -20px;
+    }
+    
+    .THIS .recurringContent .recurringfrequencyDays {
+        width: 48%;
+    }
+}
+@media screen and (max-width: 360px) {
+    .THIS .recurring-tab .garyBackground .recurStartDate input[type="text"],
+    .THIS .recurring-tab .garyBackground .recurStartDate input[type="date"],
+    .THIS .recurring-tab .garyBackground .recurEndDate input[type="text"],
+    .THIS .recurring-tab .garyBackground .recurEndDate input[type="date"],
+    .THIS .recurringContent .recurFrequency select,
+    .THIS .singleDateDiv input[type="text"],
+    .THIS .singleDateDiv input[type="date"],
+    .THIS .singleTime input[type="text"]{ 
+        font-size:10px;
+    }
+}
+@media screen and (max-width: 359px) {
+    .THIS .singleDateDiv,
+    .THIS .singleTime {
+        width : 100%;
+        display: block;
+        vertical-align: middle;
+    }
+    .THIS .singleDateDiv input[type="text"],
+    .THIS .singleDateDiv input[type="date"],
+    .THIS .singleTime input[type="text"]{
+        width: 100%;
+    }
+    .THIS .singleTime .dropdown,
+    .THIS .singleTime .slds-button.slds-button--icon,
+    .THIS .singleTime .slds-form-element__icon.slds-align-middle{
+        width: 100%;
+    }
+}

@@ -1,0 +1,79 @@
+.THIS.input-query {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 8rem;
+}
+
+.THIS .status-box {
+    width: 100%;
+    height: 35px;
+    margin-bottom:1px;
+}
+.THIS .full-width {
+    width: 100%;
+}
+.THIS .input-text {
+    position: relative;
+    border: 1px solid #d8dde6;
+    border-radius: .25rem;
+    z-index: 6999;
+}
+.THIS .dropdown--max-width {
+    max-width: inherit;
+    width: inherit;
+}
+.THIS .query-inputText {
+    width : 100%;
+    color: #16325c;
+    border: none;
+    transition: border .1s linear,background-color .1s linear;
+    display: inline-block;
+    padding: 0 3rem 0 .75rem;
+    line-height: 1.875rem;
+}
+.THIS .dropdown-icon {
+	position: absolute;
+    margin: 0.5rem 0 0 -1.8rem;
+}
+.THIS .opacity-1 {
+    opacity: 1;
+}
+.THIS .opacity-0 {
+    opacity: 0;
+}
+.THIS .display-inline {
+    display : inline;
+}
+.THIS .select-option:hover {
+    background-color: rgb(244, 246, 249);
+    cursor: pointer;
+}
+.THIS .pill-width {
+    max-width: 6rem;
+    min-width: 2.5rem;
+}
+.THIS .slds-pill_container {
+    display: inline-block;
+    min-height: 0;
+    color: #733749;
+}
+.THIS .slds-pill_container button {
+    color: #733749;
+}
+.THIS .hide-dropdown {
+    width:100%;
+    height:100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 6998;
+}
+.THIS .show {
+    display : block;
+}
+.THIS .hide {
+    display : none;
+}

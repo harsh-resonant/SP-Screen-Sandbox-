@@ -1,0 +1,16 @@
+.THIS .hidden {
+    display: none;    
+}
+
+.THIS .no-notes {
+    background-color: #ffc;
+    
+}
+
+.THIS .note-header {
+    font-weight: bold;
+}
+
+.THIS .noteEmpty {
+    font-style: italic;
+}

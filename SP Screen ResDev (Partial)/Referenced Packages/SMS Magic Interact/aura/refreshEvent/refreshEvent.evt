@@ -1,0 +1,6 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="refresh" type="Boolean" default="false" />
+    <aura:attribute name="source" type="String" default="false" />
+    <aura:attribute name="destination" type="String" default="false" />
+    <aura:attribute name="info" type="object" />
+</aura:event>

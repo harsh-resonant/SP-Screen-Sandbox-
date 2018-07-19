@@ -1,0 +1,103 @@
+<aura:component controller="smagicinteract.FilterComponentServerController" implements="force:hasRecordId,force:hasSObjectName" access="public">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:registerEvent name="paginationCriteria" type="smagicinteract:paginationCriteriaEvent" />
+    <aura:registerEvent name="resetData" type="smagicinteract:resetDataEvent" />
+    <aura:registerEvent name="closeThirdSection" type="smagicinteract:openDetailPanel" />
+    
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.resetFilter}" />
+	<aura:handler action="{!c.resetFilterFromMessageList}" event="smagicinteract:refreshEvent" />    
+    <aura:handler name="getMessageStatusList" event="smagicinteract:responseListEvent" action="{!c.setMessageStatusList}" includeFacets="true" />
+    <aura:handler name="getRelatedRecordList" event="smagicinteract:responseListEvent" action="{!c.setRelatedRecordList}" includeFacets="true" />
+    <aura:handler name="dateRangeEvent" event="smagicinteract:dateRangeEvent" action="{!c.setDateRange}" includeFacets="true" />
+    
+    <!--aura:handler name="change" value="{!v.filterStarred}" action="{!c.applyFilter}" /-->
+    <!--aura:handler name="change" value="{!v.messageStatusList}" action="{!c.applyFilter}" />
+    <aura:handler name="change" value="{!v.relatedRecordList}" action="{!c.applyFilter}" />
+    <aura:handler name="change" value="{!v.userFilterValue}" action="{!c.applyFilter}" />
+    <aura:handler name="change" value="{!v.from}" action="{!c.applyFilter}" />
+    <aura:handler name="change" value="{!v.to}" action="{!c.applyFilter}" /-->
+    
+    <aura:attribute name="disableGranularitySelection" type="Boolean" access="public" default="false" />
+    <aura:attribute name="isDisplayed" type="Boolean" access="public" default="false" />
+    <aura:attribute name="isDisabled" type="Boolean" access="public" default="true" />
+    <aura:attribute name="filterStarred" type="Boolean" access="public" default="false" />
+    <aura:attribute name="messageStatusList" type="List" access="private" />
+    <aura:attribute name="relatedRecordList" type="List" access="private" />
+    
+    <aura:attribute name="userSenderFilterValue" type="String" access="private" default="all" />
+    <aura:attribute name="defaultUserFilterValue" type="String" access="private" default="all" />
+    <aura:attribute name="userFilterValue" type="Boolean" access="private" default="false" />
+    <aura:attribute name="senderFilterValue" type="Boolean" access="private" default="false" />
+    <aura:attribute name="from" type="Date" access="private" />
+    <aura:attribute name="to" type="Date" access="private" />
+    <aura:attribute name="timeoutId" type="String"/>
+    
+    <aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+    
+    <div class="{! v.isDisplayed ? 'display-block' : 'display-none'}">
+        <div class="hidddenBoxWrapper">
+            <div class="filterHead">
+                <lightning:buttonIcon variant="bare" iconName="utility:close" size="medium" alternativeText="Lead" onclick="{! c.closePanel }" class="closeButton" />
+            	<h3>{!$Label.smagicinteract.FILTER}</h3>
+            </div>
+            <div class="filterBox">
+                <div class="detail-card slds-clearfix">
+                    
+                    <div class="star-check">  
+                        <ui:inputCheckBox value="{!v.filterStarred}" click="{!c.applyFilter}"/>
+                        <label>{!$Label.smagicinteract.starred_messages}</label>
+                    </div>
+                    <div class="{! v.disableGranularitySelection ? 'slds-hide ' : ''}" >
+                        <div class="star-check">  
+                            <ui:inputCheckBox value="{!v.userFilterValue}" click="{!c.applyUserSenderFilter}"/>
+                            <label>{!$Label.smagicinteract.user_filter}</label>
+                        </div>
+                    </div>            
+                </div>
+                
+                <div class="{! v.disableGranularitySelection ? 'slds-hide ' : 'detail-card slds-clearfix'}" >
+                    <h3>{!$Label.smagicinteract.SENDERID_SECTION_TITLE}</h3>
+                    <div class="slds-clearfix star-check">  
+                        <ui:inputCheckBox value="{!v.senderFilterValue}" click="{!c.applyUserSenderFilter}"/>
+                        <label>{!$Label.smagicinteract.default_sender}</label>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>{!$Label.smagicinteract.sms_status}</h3>
+                    <smagicinteract:messageStatusMultiselectComponent recordId="{!v.recordId}" />
+                </div>
+                
+                <div class="detail-card">
+                    <h3>{!$Label.smagicinteract.lookup_name}</h3>
+                    <smagicinteract:relatedRecordMultiselectComponent recordId="{!v.recordId}" />
+                </div>
+                <div class="detail-card noBorder">
+                    <div class="dateFields">
+                        <smagicinteract:dateRangeComponent />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="filterFooter">
+                <div class="buttonWrapper">
+                    <lightning:button variant="neutral" onclick="{!c.resetAndApplyFilter}" label="{!$Label.smagicinteract.Clear_Filter}" class="{! v.isDisabled ? 'disableButton' : ''}"  disabled="{!v.isDisabled}"/>
+                    <!--lightning:button variant="brand" onclick="{!c.applyFilter}" label="{!$Label.c.apply}" class="{! v.isDisabled ? '' : 'applyBtn'}" disabled="{! v.isDisabled}" /-->
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AdditionalFields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of additional field to show in the Log a Call Action.</description>
+        <externalId>false</externalId>
+        <label>Log A Call Additional Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Collapse_Log_A_Call_When_Saving__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked -  Log A Call notes will collapse when &apos;Save&apos; is clicked.</description>
+        <externalId>false</externalId>
+        <label>Collapse &apos;Log a Call&apos; when saving notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ControlCallRecordingClassName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to specify the name of the Apex Class that implements the controlling of call recording.</description>
+        <externalId>false</externalId>
+        <label>Call Recording Selector Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DispositionCodeField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the field which value should be sent to ContactWorld as disposition code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The field should be also added to &apos;Log A Call Additional Fields&apos;</inlineHelpText>
+        <label>Log A Call Disposition Code Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flags__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional control flags</inlineHelpText>
+        <label>Flags</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link_Calls_To_Many_Objects__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If set to &apos;true&apos;, the user will be able to link a call to both a &apos;Name&apos; (contact or lead) and a &apos;Related To&apos; (account, opportunity, etc.)</description>
+        <externalId>false</externalId>
+        <label>Link call to Name and Related object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Post_to_Chatter_when_creating_callbacks__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If enabled, creates a chatter post every time you schedule a callback</description>
+        <externalId>false</externalId>
+        <label>Post to Chatter when creating callbacks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Post_to_Chatter_when_saving_note__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If enabled, creates a chatter post every time you write/modify/clear a note using the &apos;Log a call&apos; action</description>
+        <externalId>false</externalId>
+        <label>Post to Chatter when saving note</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SelectPresentedClidClassName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to specify the name of the Apex Class that implements the Presented CLID query.</description>
+        <externalId>false</externalId>
+        <label>Callback Number Selector Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Set_due_date_on_call_task_records__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If set to &apos;true&apos;, when ContactWorld creates a task for a call, the &apos;due date&apos; field will be set</description>
+        <externalId>false</externalId>
+        <label>Set due date on call task records</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>baseURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>URL used to access ContactWorld API.  Please ensure that it is in the list of allowed Remote Sites.</inlineHelpText>
+        <label>ContactWorld URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>callTimeOutMS__c</fullName>
+        <defaultValue>20000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>API call time out time in milliseconds</inlineHelpText>
+        <label>Call Time Out (ms)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>clientId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ContactWorld Account Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>clientSecret__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ContactWorld API Authentication Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

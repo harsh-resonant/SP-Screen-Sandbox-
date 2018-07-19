@@ -1,0 +1,33 @@
+<aura:component controller="smagicinteract.PhoneNumberServerController"
+	implements="force:hasRecordId" access="public">
+    
+	<aura:attribute name="items" type="List" access="public" />
+    <aura:attribute name="selectedPhoneNumber" type="String" access="public" />
+    <aura:attribute name="defaultSelectedPhoneNumber" type="String" access="public" />
+    <aura:attribute name="phoneFieldCSV" type="String" access="public"
+		description="Semicolon separated value of provided phone field api names." />
+    <aura:attribute name="position" type="String" description="position of nubbin" />
+    
+	<aura:registerEvent name="phoneFieldSelectionEvent" type="smagicinteract:selectionEvent" />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.doInit}" />
+    
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+    
+    <div class="senderId">
+        <h3>{!$Label.smagicinteract.To}:</h3>
+        <smagicinteract:dropDownComponent left="-30px" width="200px" position="{!v.position}" aura:id="phoneFieldSelect" items="{!v.items}" onChange="{!c.onPhoneFieldSelection}" height="100px">
+
+        	<aura:set attribute="trigger">
+                <div style="color:white" class="">
+                    <p>
+                        <ui:outputText title="{!v.selectedPhoneNumber}" value="{!v.selectedPhoneNumber}" />
+                    </p>
+                        <lightning:icon iconName="utility:chevrondown" variant="bare" size="small" class="leadIcon"/>
+                </div>
+                
+            </aura:set>
+        </smagicinteract:dropDownComponent>
+        
+	</div>
+</aura:component>

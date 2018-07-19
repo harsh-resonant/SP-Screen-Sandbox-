@@ -1,0 +1,49 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.recipientItem}" action="{!c.doInit}" /> 
+    
+    <aura:attribute name="isCampaignMemberDisplayed" type="boolean"	default="false" access="public"	/>    
+    <aura:attribute name="recipientItem" type="Object" />
+    <aura:attribute name="objectIcon" type="String" />
+    
+    <aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+    
+    <div class="sObjectIcon">
+        <lightning:Icon iconName="{! v.objectIcon}" variant="bare" size="medium" alternativeText="search" class="objectIcon" />
+    </div>
+    <div class="{! 'objectMessage ' + (v.context.isHomeSection ? 'homeSection ' : '')}">
+        <div class="slds-clearfix">
+            <span class="slds-float--left senderName">
+                <ui:outputText title="{!v.recipientItem.recordName}" value="{!v.recipientItem.recordName}" />
+            </span>
+            <span class="slds-float--right sendTime">{!v.recipientItem.latestTextTimeString}</span>
+        </div>
+        <div class="slds-clearfix recordMessageWrap">
+            <aura:If isTrue="{!v.recipientItem.latestTextDirection == 'Outbound'}">
+                <lightning:Icon iconName="utility:arrowup" variant="bare" size="small" alternativeText="search"  class="arrowIcon"/>
+                <aura:set attribute="else">
+                    <lightning:Icon iconName="utility:arrowdown" variant="bare" size="small" alternativeText="search" class="arrowIcon" />
+                </aura:set>
+            </aura:If>
+            <ui:outputText class="textMsg" title="{!v.recipientItem.latestText}" value="{!v.recipientItem.latestText}" />
+            <aura:If isTrue="{!v.recipientItem.objectName == 'Campaign'}">
+                <aura:If isTrue="{!v.isCampaignMemberDisplayed}">
+                    <!-- TODO add custom label-->
+                    <a title="{!$Label.smagicinteract.BACK}" class="campignMember">{!$Label.smagicinteract.BACK}</a>
+                    <aura:set attribute="else">
+                        <a title="Show Members" class="campignMember">Show Members</a>
+                    </aura:set>
+                </aura:If>
+            </aura:If>
+        </div>
+    </div>
+</aura:component>

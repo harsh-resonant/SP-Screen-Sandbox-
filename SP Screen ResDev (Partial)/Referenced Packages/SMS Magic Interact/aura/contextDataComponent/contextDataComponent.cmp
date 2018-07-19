@@ -1,0 +1,24 @@
+<aura:component >
+	<aura:attribute name="uiContext" type="String" access="public"
+		description="Eg. - lightning, classic, sf1" />
+	<aura:attribute name="embedContext" type="String" access="public"
+		description="Eg. - detail, tab, activity" />
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+		}" />
+	<aura:attribute name="onContextChange" type="Aura.Action" description="" />
+	
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+	
+	<aura:method name="setUIContextFromTheme" action="{!c.setUIContextFromTheme}" access="public" 
+		description="A aura method which allow us embed context based on ui theme obtained from server controller">
+		<aura:attribute name="theme" type="String" />
+	</aura:method>
+</aura:component>

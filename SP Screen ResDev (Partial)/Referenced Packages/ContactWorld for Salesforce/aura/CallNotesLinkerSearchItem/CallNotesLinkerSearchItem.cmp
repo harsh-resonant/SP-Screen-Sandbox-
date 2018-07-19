@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:attribute name="fullName" type="String" access="public" />
+    <aura:attribute name="nameSnippet" type="String" access="public" />
+    <span aura:id="container">
+  	</span>
+</aura:component>

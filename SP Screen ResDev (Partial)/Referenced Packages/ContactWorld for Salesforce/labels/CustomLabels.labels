@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CallbackFeedItemBody</fullName>
+        <categories>Callback</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Callback feed item body</shortDescription>
+        <value>Created callback{0}</value>
+    </labels>
+    <labels>
+        <fullName>CallbackFeedItemTitle</fullName>
+        <categories>Callback</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Callback feed item title</shortDescription>
+        <value>Callback</value>
+    </labels>
+    <labels>
+        <fullName>CommentLabel</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Comment label</shortDescription>
+        <value>Comment</value>
+    </labels>
+    <labels>
+        <fullName>CreateButton</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create button</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
+        <fullName>CreatedNoteFeedItemBody</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New note - feed item body</shortDescription>
+        <value>Created new note for a call:</value>
+    </labels>
+    <labels>
+        <fullName>DateInThePastErrorMessage</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message shown when choosen date is in the past.</shortDescription>
+        <value>Please select date and time in the future.</value>
+    </labels>
+    <labels>
+        <fullName>DeletedNoteFeedItemBody</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New note - feed item body</shortDescription>
+        <value>Deleted note for a call</value>
+    </labels>
+    <labels>
+        <fullName>DueDateLabel</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Due date label</shortDescription>
+        <value>Due date</value>
+    </labels>
+    <labels>
+        <fullName>DueTimeLabel</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Due time label</shortDescription>
+        <value>Due time</value>
+    </labels>
+    <labels>
+        <fullName>EmptyTimeValueErrorMessage</fullName>
+        <categories>General</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message shown when time is empty.</shortDescription>
+        <value>Time value is required.</value>
+    </labels>
+    <labels>
+        <fullName>InvalidDispositionCodeField</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Invalid disposition code field</shortDescription>
+        <value>Invalid disposition code field for Task: &apos;{0}&apos;.</value>
+    </labels>
+    <labels>
+        <fullName>LastSavedTime</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Used for displaying the time LAC was last saved.</shortDescription>
+        <value>Last saved</value>
+    </labels>
+    <labels>
+        <fullName>LinkCallButton</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Link call button</shortDescription>
+        <value>Link call to {0}</value>
+    </labels>
+    <labels>
+        <fullName>LinkSuccessful</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message shown when successfully linking the call in LogACall.</shortDescription>
+        <value>You have successfully linked the call.</value>
+    </labels>
+    <labels>
+        <fullName>MissingMasterPicklist</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>A dependent picklist has been configured without its controlling picklist</shortDescription>
+        <value>The controlling picklist for a picklist field is missing. Please contact your system administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Name</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name label</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>NoActiveCallMessage</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No active call message</shortDescription>
+        <value>You have no active call, and your most recent call was not related to this record.</value>
+    </labels>
+    <labels>
+        <fullName>NoAgentId</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Nvm Agent Id not specified</shortDescription>
+        <value>Before logging the call, your administrator must link your user record in Salesforce to ContactWorld by setting your Nvm Agent Id.</value>
+    </labels>
+    <labels>
+        <fullName>NoCallYet</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No call has been placed yet</shortDescription>
+        <value>You haven&apos;t made any call yet. To log a call, you need to place or receive a phone call.</value>
+    </labels>
+    <labels>
+        <fullName>NoDispositionCodeFieldInAdditionalFields</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No disposition code field in additional fields</shortDescription>
+        <value>Log a call additional fields doesn&apos;t contain field: &apos;{0}&apos;.</value>
+    </labels>
+    <labels>
+        <fullName>NotSpecifiedDispositionCodeField</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Disposition code field not specified</shortDescription>
+        <value>Log a call disposition code field not specified in custom settings.</value>
+    </labels>
+    <labels>
+        <fullName>NoteNotSavedError</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>An error occured when attempting to save the note</shortDescription>
+        <value>Your information could not be saved, please try again in a moment.  Contact your System Administrator if this problem continues.</value>
+    </labels>
+    <labels>
+        <fullName>NotesLabel</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notes label</shortDescription>
+        <value>Notes</value>
+    </labels>
+    <labels>
+        <fullName>NotesPlaceholder</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Notes field placeholder</shortDescription>
+        <value>Please enter your call notes...</value>
+    </labels>
+    <labels>
+        <fullName>PersonalCallbackToggleDisabledMessage</fullName>
+        <categories>Callback</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Personal callback toggle disabled message</shortDescription>
+        <value>The personal callback feature is not currently enabled for your account. Contact your account manager to enable it.</value>
+    </labels>
+    <labels>
+        <fullName>PersonalCallbackWrongContextMessage</fullName>
+        <categories>Callback</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Personal callback wrong context message</shortDescription>
+        <value>The personal callback feature is only available for Contact or Lead.</value>
+    </labels>
+    <labels>
+        <fullName>RefreshButton</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Refresh button</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>RelatedTo</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Related To label</shortDescription>
+        <value>Related To</value>
+    </labels>
+    <labels>
+        <fullName>SaveButton</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>SaveNoChanges</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message shown when trying to save but there is no change.</shortDescription>
+        <value>Your notes have already been saved.</value>
+    </labels>
+    <labels>
+        <fullName>SaveNoteButton</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save note button</shortDescription>
+        <value>Save Note</value>
+    </labels>
+    <labels>
+        <fullName>SaveSuccessful</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message shown when saving the notes/additional fields/links in LogACall.</shortDescription>
+        <value>You have successfully saved all your changes.</value>
+    </labels>
+    <labels>
+        <fullName>SendingDispositionCodeFailed</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sending disposition code failed</shortDescription>
+        <value>Note saved successfully but sending disposition code to ContactWorld failed.</value>
+    </labels>
+    <labels>
+        <fullName>StaleDataError</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Attempted to save the note with data older than the more recent save</shortDescription>
+        <value>Your notes are out of date. Would you like to save anyway or reload the latest notes?</value>
+    </labels>
+    <labels>
+        <fullName>TooLongNoteErrorMessage</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Too long note error message</shortDescription>
+        <value>Your note is too long! Maximum length is 32,768</value>
+    </labels>
+    <labels>
+        <fullName>UpdatedNoteFeedItemBody</fullName>
+        <categories>LogACall</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New note - feed item body</shortDescription>
+        <value>Updated note for a call:</value>
+    </labels>
+</CustomLabels>

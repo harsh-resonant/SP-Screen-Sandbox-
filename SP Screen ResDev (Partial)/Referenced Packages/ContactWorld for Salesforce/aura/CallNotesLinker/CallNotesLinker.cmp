@@ -1,0 +1,93 @@
+<aura:component controller="NVMContactWorld.LightningLogACallController" access="public">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="linkTarget" type="String" access="public" />
+    <aura:attribute name="linkObjectId" type="String" access="public" default=""/>
+    <aura:attribute name="linkObjectName" type="String" access="public" />
+    <aura:attribute name="linkObjectType" type="NVMContactWorld.LightningSelectedObjectType" access="public" />
+    <aura:attribute name="lockedIn" type="Boolean" default="true" access="private"/>
+
+    <aura:handler name="change" value="{!v.linkObjectId}" action="{!c.onLinkedObjectIdChanged}"/>
+
+    <aura:attribute name="prevObjectNameSearch" type="String" access="private" />
+
+    <aura:attribute name="objectTypes" type="NVMContactWorld.LightningSelectedObjectType[]" access="private"/>
+    <aura:attribute name="objectTypesDropdownExpanded" type="Boolean" default="false" access="private"/>
+    
+    <aura:attribute name="searchResults" type="NVMContactWorld.FoundObject[]" access="private"/>
+    <aura:attribute name="searchActive" type="Boolean" default="false" access="private"/>
+    
+    <aura:registerEvent name="ModelUpdated" type="NVMContactWorld:LogACallModelUpdate" />
+
+    <aura:if isTrue="{!v.linkTarget=='who'}">
+      <label class="slds-form-element__label">Name</label>
+        <aura:set attribute="else">
+          <label class="slds-form-element__label">Related To</label>
+        </aura:set>
+    </aura:if>
+    
+	<div class="slds-form-element__control slds-grid slds-box--border">
+      <div class="dropdown--trigger slds-dropdown-trigger--click slds-align-middle slds-m-left--xx-small slds-shrink-none">
+        <NVMContactWorld:svg svgPath="{!'/resource/NVMContactWorld__Assets/assets/lightning-standard-icons.svg#' + v.linkObjectType.CssClass}" class="{!'slds-icon slds-icon-standard-' + v.linkObjectType.CssClass + ' slds-icon--small'}"/>
+        <ui:button aura:id="dropdownButton" class="slds-button--icon slds-button--icon-small" press="{!c.onCategoryDropdown}">
+            <NVMContactWorld:svg svgPath="/resource/NVMContactWorld__Assets/assets/lightning-utility-icons.svg#down" class="slds-button--icon slds-icon-text-default" size="x-small" category="util" name="down" />
+            <span class="slds-assistive-text">Filter by object</span>
+        </ui:button>
+      </div>
+      <div aura:id="searchBoxDiv" class="slds-input-has-icon slds-input-has-icon--right slds-grow">
+        <aura:if isTrue="{!v.lockedIn}">
+                <input class="locked-in slds-lookup__search-input slds-input--bare" type="search" value="{!v.linkObjectName}" readonly="readonly" onclick="{!c.releaseAndClear}" />
+            <aura:set attribute="else">
+                <NVMContactWorld:svg svgPath="/resource/NVMContactWorld__Assets/assets/lightning-utility-icons.svg#search" class="slds-input__icon"/>
+                <input id="{!'text-input-' + v.linkTarget}" class="slds-lookup__search-input slds-input--bare" type="search" placeholder="{!'Search ' + v.linkObjectType.Label}" value="{!v.linkObjectName}" onkeyup="{!c.doSearch}" />
+            </aura:set>
+        </aura:if>
+      </div>
+    </div>
+
+    <div class="slds-form--stacked slds-grow">        
+  
+        <aura:if isTrue="{!and(v.searchResults != null, v.searchActive)}">
+        <div class="objectTypePanel">
+          <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open">
+            <div class="slds-dropdown slds-dropdown--left slds-dropdown--small">
+              <ul class="dropdown__list slds-dropdown--length-with-icon-10" role="menu">
+                <aura:iteration items="{!v.searchResults}" var="item">
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="0" data-link-id="{!item.ObjectId}" data-link-name="{!item.Name}" onclick="{!c.doLink}">
+                    <span class="slds-truncate">
+                      <NVMContactWorld:svg svgPath="{!'/resource/NVMContactWorld__Assets/assets/lightning-standard-icons.svg#' + v.linkObjectType.CssClass}" class="{!'slds-icon slds-icon--small slds-icon-standard-' + v.linkObjectType.CssClass + ' slds-m-right--small'}"/>
+                      <NVMContactWorld:CallNotesLinkerSearchItem fullName="{!item.Name}" nameSnippet="{!v.linkObjectName}" />
+                    </span>
+                  </a>
+                </li>
+                </aura:iteration>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </aura:if>
+
+        <aura:if isTrue="{!and(v.searchActive == false, v.objectTypesDropdownExpanded == true)}">
+        <div class="objectTypePanel" aura:id="objectTypes">
+          <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open">
+            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left">
+              <ul class="dropdown__list" role="menu">
+                <aura:iteration items="{!v.objectTypes}" var="item">
+                  <li class="slds-dropdown__item" role="presentation">
+                    <a href="javascript:void(0);" role="menuitem" tabindex="0" data-object-type-css="{!item.CssClass}" data-object-type-label="{!item.Label}" data-object-type="{!item.ObjectType}" onclick="{!c.changeObjectType}">
+                      <span class="slds-truncate">
+                        <NVMContactWorld:svg svgPath="{!'/resource/NVMContactWorld__Assets/assets/lightning-standard-icons.svg#' + item.CssClass}" class="{!'slds-icon slds-icon--small slds-icon-standard-' + item.CssClass + ' objectTypeIcon'}" />
+                        <span class="objectType">{!item.Label}</span>
+                      </span>
+                    </a>
+                  </li>
+                </aura:iteration>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </aura:if>
+    </div>
+</aura:component>

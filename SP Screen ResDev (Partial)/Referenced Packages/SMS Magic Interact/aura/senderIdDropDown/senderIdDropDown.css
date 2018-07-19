@@ -1,0 +1,49 @@
+.THIS.senderId h3{
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+}
+.THIS.senderId p {
+    display: inline-block;  
+    vertical-align: middle;
+}
+.THIS.senderId svg {
+    height: 14px;
+}
+.THIS.senderId .slds-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.THIS scrollbar{
+
+   -moz-appearance: none !important;
+   background: rgb(0,255,0) !important;
+}
+.THIS thumb,.THIS scrollbarbutton {
+   -moz-appearance: none !important;
+   background-color: rgb(0,0,255) !important;
+}
+
+.THIS thumb:hover,.THIS scrollbarbutton:hover {
+   -moz-appearance: none !important;
+   background-color: rgb(255,0,0) !important;
+}
+
+.THIS scrollbarbutton {
+   display: none !important;
+}
+
+.THIS scrollbar[orient="vertical"] {
+  min-width: 15px !important;
+}
+.THIS.senderId.quick-reply .slds-popover.popover-body.openDown  {
+    left: 0;
+}
+@media only screen and (max-width: 767px){
+    .THIS.senderId h3{
+        font-size:12px;
+    }
+}

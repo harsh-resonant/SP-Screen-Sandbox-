@@ -1,0 +1,37 @@
+<apex:page sidebar="false" docType="html-5.0" standardStylesheets="false" showHeader="false">
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrapmin, '/bootstrap.min.css')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.select2min, '/select2.min.css')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.select2bootstrapcss, '/select2-bootstrap.css')}"/>
+    <apex:outputPanel id="opnl_step4">
+        <div class="panel">
+            <div class="panel-heading panel-title">
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <apex:image value="{!URLFOR($Resource.logo,'top_logo.png')}"/>
+                                </div>
+                                <div class="col-md-10 text-center">
+                                    <!-- <h2 style="font-family:Calluna Sans Light;"><em>Schedule a Free Consultation</em></h2> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center style="margin-top: 100px;">
+                    <h3>
+                        <p style="font-family:verdana;">                                    
+                            <br />
+                            Thank you for your enquiry for a free consultation, we will be in contact within the next business day.
+                        </p>  
+                    </h3>
+                </center>                      
+            </div>
+            <div class="newpanelfooter">
+            </div>
+        </div>
+    </apex:outputPanel>
+</apex:page>

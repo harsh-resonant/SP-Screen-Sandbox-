@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="from" type="Date" />
+    <aura:attribute name="to" type="Date" />
+    <aura:attribute name="message" type="String" />
+</aura:event>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Issue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Issues</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Classification --></label>
+        <name>Classification__c</name>
+        <picklistValues>
+            <masterLabel>Diamond Door</masterLabel>
+            <translation><!-- Diamond Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diamond Window</masterLabel>
+            <translation><!-- Diamond Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Escape</masterLabel>
+            <translation><!-- Fire Escape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flyscreen</masterLabel>
+            <translation><!-- Flyscreen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lock</masterLabel>
+            <translation><!-- Lock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retractable Screen</masterLabel>
+            <translation><!-- Retractable Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView Hinged Door</masterLabel>
+            <translation><!-- SecureView Hinged Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView Sliding Door</masterLabel>
+            <translation><!-- SecureView Sliding Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SecureView Window</masterLabel>
+            <translation><!-- SecureView Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steel</masterLabel>
+            <translation><!-- Steel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed Hinged Door</masterLabel>
+            <translation><!-- Xceed Hinged Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed Sliding Door</masterLabel>
+            <translation><!-- Xceed Sliding Door --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xceed Window</masterLabel>
+            <translation><!-- Xceed Window --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Completion Date ETA --></label>
+        <name>Completion_Date_ETA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Project Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Identified --></label>
+        <name>Date_Identified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Resolved --></label>
+        <name>Date_Resolved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installer --></label>
+        <name>Installer__c</name>
+        <picklistValues>
+            <masterLabel>Adam Covey</masterLabel>
+            <translation><!-- Adam Covey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adam Williams</masterLabel>
+            <translation><!-- Adam Williams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brent Birch</masterLabel>
+            <translation><!-- Brent Birch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlo Botha</masterLabel>
+            <translation><!-- Carlo Botha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Bateman</masterLabel>
+            <translation><!-- John Bateman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justin Griffiths</masterLabel>
+            <translation><!-- Justin Griffiths --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Installed: Factory</masterLabel>
+            <translation><!-- Not Installed: Factory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russell Thorn</masterLabel>
+            <translation><!-- Russell Thorn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scott Turner</masterLabel>
+            <translation><!-- Scott Turner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shaun Hutchings</masterLabel>
+            <translation><!-- Shaun Hutchings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steve Lawrence</masterLabel>
+            <translation><!-- Steve Lawrence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tony Eddie</masterLabel>
+            <translation><!-- Tony Eddie --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Issue Type --></label>
+        <name>Issue_Category__c</name>
+        <picklistValues>
+            <masterLabel>Damaged in Transit</masterLabel>
+            <translation><!-- Damaged in Transit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete Accessories given to Installer</masterLabel>
+            <translation><!-- Incomplete Accessories given to Installer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Built IN-HOUSE</masterLabel>
+            <translation><!-- Incorrect Built IN-HOUSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect CM</masterLabel>
+            <translation><!-- Incorrect CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Install</masterLabel>
+            <translation><!-- Incorrect Install --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect details on Sales Quote from Sales Rep</masterLabel>
+            <translation><!-- Incorrect details on Sales Quote from Sales Rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrectly Built CWS</masterLabel>
+            <translation><!-- Incorrectly Built CWS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrectly Built ROCKFORD</masterLabel>
+            <translation><!-- Incorrectly Built ROCKFORD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrectly Ordered</masterLabel>
+            <translation><!-- Incorrectly Ordered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lock CommandeX</masterLabel>
+            <translation><!-- Lock CommandeX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lock: Other</masterLabel>
+            <translation><!-- Lock: Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair: Customer at fault</masterLabel>
+            <translation><!-- Repair: Customer at fault --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair: warranty issue</masterLabel>
+            <translation><!-- Repair: warranty issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- New Install Project --></label>
+        <name>New_Install_Project__c</name>
+        <relationshipLabel><!-- Project Issues --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project/Action Plan Required --></label>
+        <name>Project_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rework Owner --></label>
+        <name>Rework__c</name>
+        <picklistValues>
+            <masterLabel>ACE</masterLabel>
+            <translation><!-- ACE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CW Systems</masterLabel>
+            <translation><!-- CW Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CommandeX</masterLabel>
+            <translation><!-- CommandeX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rockford</masterLabel>
+            <translation><!-- Rockford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SP Screens inhouse</masterLabel>
+            <translation><!-- SP Screens inhouse --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Incomplete Install</masterLabel>
+            <translation><!-- Incomplete Install --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rework</masterLabel>
+            <translation><!-- Rework --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty</masterLabel>
+            <translation><!-- Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- $ Value of Cost of Rework --></label>
+        <name>Value_of_Cost_of_Rework__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Issue Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

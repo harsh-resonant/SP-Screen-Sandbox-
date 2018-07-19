@@ -1,0 +1,63 @@
+<apex:page controller="NVMContactWorld.CreateCallbackActionController" showHeader="false" action="{!init}">
+
+  <apex:stylesheet value="{!URLFOR($Resource.NVMContactWorld__CreateCallbackCss)}"/>
+  <script type='text/javascript' src='/canvas/sdk/js/publisher.js'/> 
+  
+  <script>
+        function refreshFeed() {           
+          if (document.querySelectorAll('.errorMsg').length == 0) {
+              Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : { feed: true }});
+          }        
+        }
+  </script>  
+  
+  <apex:outputPanel id="featureDisabledPanel" rendered="{!NOT(isPersonalCallbacksToggleEnabled)}">
+    <apex:outputText value="{!$Label.nvmcontactworld__personalcallbacktoggledisabledmessage}"/>  
+  </apex:outputPanel>
+  <apex:outputPanel id="wrongContextPanel" rendered="{!NOT(isInContactOrLeadContext)}">
+    <apex:outputText value="{!$Label.nvmcontactworld__personalcallbackwrongcontextmessage}"/>    
+  </apex:outputPanel>
+  <apex:outputPanel id="createCallbackPanel" rendered="{!(isPersonalCallbacksToggleEnabled && isInContactOrLeadContext)}">
+  <div class="quickActionPanel">
+    
+    <apex:form id="callbackForm"> 
+              
+        <div class="quickActionForm">
+
+          <div class="quickActionLine dueDate">
+            <div class="quickActionFieldLabel">
+              <label><span class="required">* </span>{!$Label.DueDateLabel}</label>
+            </div>
+            <div class="quickActionFieldElement">
+              <apex:inputField value="{!callbackTask.ActivityDate}" required="true"/>
+            </div>
+
+            <div class="quickActionFieldTimeLabel">
+              <label><span class="required">* </span>{!$Label.DueTimeLabel}</label>
+            </div>
+            <apex:selectList onfocus="this.size=10;" 
+            onblur="this.size=1;" 
+            onchange="this.size=1; this.blur();" value="{!selectedTime}" multiselect="false" size="1">
+                <apex:selectOptions value="{!times}" />
+            </apex:selectList>
+          </div>
+
+          <div class="quickActionLine comment">
+            <div class="quickActionFieldLabel">
+              <label>{!$Label.CommentLabel}</label>
+            </div>
+            <div class="quickActionFieldElement">
+              <apex:inputField value="{!callbackTask.Description}" />
+            </div>
+          </div>          
+        </div>
+
+        <div class="quickActionBottomBar">              
+          <apex:commandButton action="{!createCallback}" rerender="callbackForm" value="{!$Label.nvmcontactworld__createbutton}" oncomplete="refreshFeed()"/>          
+        </div>                    
+      </apex:form>    
+    
+  </div>
+  </apex:outputPanel>      
+
+</apex:page>

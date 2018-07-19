@@ -1,0 +1,27 @@
+<aura:component controller="smagicinteract.SenderServerController">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="senderIdList" type="smagicinteract.PickListResponseTo" access="private" />
+    <aura:attribute name="defaultSelectedSenderId" type="String" access="public" />
+    <aura:attribute name="selectedSenderId" type="string" access="public" />
+    <aura:attribute name="position" type="String" description="position of nubbin" />
+    
+    <aura:registerEvent name="senderidSelection" type="smagicinteract:selectionEvent"/>
+    
+    <smagicinteract:NotificationManager aura:id="NotificationManager" />
+    
+    <div class="{! 'senderId ' + (v.position == 'down' ? 'quick-reply' : '')}">
+        <h3>{!$Label.smagicinteract.date_from}:</h3>
+        <smagicinteract:dropDownComponent left="" position="{!v.position}" aura:id="senderIdDropDown" items="{!v.senderIdList}" onChange="{!c.selectedSenderId}" height="100px">
+        	<aura:set attribute="trigger">
+                <div style="color:white" class="" title="{!v.selectedSenderId}">
+                    <p>
+                        <ui:outputText title="{!v.selectedSenderId}" value="{!v.selectedSenderId}" />
+                    </p>
+                        <lightning:icon iconName="utility:chevrondown" variant="bare" size="small" class="leadIcon"/>
+                </div>
+                
+            </aura:set>
+        </smagicinteract:dropDownComponent>
+        
+    </div>
+</aura:component>

@@ -1,0 +1,97 @@
+<aura:component controller="smagicinteract.ConversationsServerController">
+	<!--aura:handler name="init" value="{!this}" action="{!c.doInit}"/-->
+	<aura:attribute name="conversationType" type="List" />
+	<aura:attribute name="openSearchPanel" type="boolean" default="false" />
+	<aura:attribute name="selectedConversationType" type="object" />
+	<aura:attribute name="unreadCount" type="String" default="0" />
+	<aura:attribute name="searchText" type="String" />
+	<aura:attribute name="searchUnreadOnly" type="Boolean" default="false" />
+
+	<aura:attribute name="context" type="Object" access="public"
+		description="{
+			isLightning: boolean,
+			isClassic: boolean,
+			isSf1: boolean,
+			isDetailPage: boolean,
+			isCustomTab: boolean,
+			isActivitySection: boolean,
+            isHomeSection : boolean
+	}" />
+
+	<aura:handler name="change" value="{!v.conversationType}"
+		action="{!c.setDefaultOption}" />
+	<aura:handler name="change" value="{!v.selectedConversationType}"
+		action="{!c.fireLoadRecipientEvent}" />
+	<aura:registerEvent name="changedConversationType"
+		type="smagicinteract:requestRecipientList" />
+	<aura:registerEvent name="applyRecipientFilter"
+		type="smagicinteract:requestRecipientList" />
+	<div class="recipientHeader">
+		<div
+			class="{! not(v.openSearchPanel) ? 'slds-clearfix slds-show' : 'slds-hide'}">
+			<div class="slds-float--left">
+				<smagicinteract:dropDownComponent aura:id="lookupList" height="100px"
+					width="200px" position="down" onChange="{!c.selectedOption}">
+					<aura:set attribute="trigger">
+						<div>
+							<h4>
+                                <ui:outputText title="{!v.selectedConversationType.label}" value="{!v.selectedConversationType.label}" />
+                            </h4>
+							<lightning:Icon iconName="utility:down" variant="bare"
+								size="small" alternativeText="search" class="caretIcon" />
+						</div>
+					</aura:set>
+					<aura:set attribute="body">
+						<ul>
+							<aura:iteration items="{!v.conversationType}" var="conversation">
+                                <li class="{! v.selectedConversationType.name == conversation.name ? 'active' : '' }" id="{!conversation.name}" onclick="{!c.onSelection}">
+                                    <ui:outputText title="{!conversation.label}" value="{!conversation.label}" />
+                                </li>
+							</aura:iteration>
+						</ul>
+					</aura:set>
+				</smagicinteract:dropDownComponent>
+			</div>
+			<!--<ui:inputCheckBox value="{!v.searchUnreadOnly}" click="{!c.applyRecipientFilter}"/>-->
+            
+            <div class="slds-button-group" role="group">
+                <button class="{! 'slds-button slds-button--neutral ' + (v.searchUnreadOnly != true ? 'clicked' : '')}" id="false" onclick="{!c.applyRecipientFilter}">{!$Label.smagicinteract.All_Recipient_Label}</button>
+                <button class="{! 'slds-button slds-button--neutral message-count-number ' + (v.searchUnreadOnly == true ? 'clicked' : '')}" id="true" onclick="{!c.applyRecipientFilter}">
+                    {!$Label.smagicinteract.New_Recipient_Label} ({!v.unreadCount})
+                </button>
+            </div>
+            
+			<!--lightning:input aura:id="recipientToggle" type="toggle"
+				label="All/New Recipient" name="recipientToggle"
+				checked="{!v.searchUnreadOnly}"
+				messageToggleActive="{!$Label.smagicinteract.New_Recipient_Label}"
+				messageToggleInactive="{!$Label.smagicinteract.All_Recipient_Label}"
+				onchange="{!c.applyRecipientFilter}" /-->
+			<div class="slds-float--right actionButtons">
+				<lightning:buttonIcon iconName="utility:search" variant="bare"
+					size="medium" onclick="{!c.toggleTextSearchPanel}"
+					alternativeText="search" />
+				<!--lightning:buttonIcon iconName="utility:add" variant="bare" size="medium" onclick="{!c.addLogic}" alternativeText="add"/>
+                   <lightning:buttonIcon iconName="utility:settings" variant="bare" size="medium" onclick="{!c.openPanel}" alternativeText="search"/-->
+			</div>
+		</div>
+		<div
+			class="{! v.openSearchPanel ? 'slds-clearfix slds-show' : 'slds-hide'}">
+			<div class="slds-float--left backButton">
+				<lightning:buttonIcon iconName="utility:back" variant="bare"
+					size="medium" onclick="{!c.toggleTextSearchPanel}"
+					alternativeText="add" />
+			</div>
+			<div class="slds-float--right searchBox">
+				<ui:inputText value="{!v.searchText}" updateOn="keyup"
+                              keyup="{!c.applyTextFilter}"
+					placeholder="search" />
+				<lightning:buttonIcon iconName="utility:search" variant="bare"
+					size="medium" onclick="{!c.applyRecipientFilter}"
+					alternativeText="search" />
+			</div>
+		</div>
+        <!--<div class="gradientBorder"></div>-->
+	</div>
+	<smagicinteract:NotificationManager aura:id="NotificationManager" />
+</aura:component>

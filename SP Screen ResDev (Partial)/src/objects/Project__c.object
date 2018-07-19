@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Check_Measure_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Check Measure Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Check_Measurer__c</fullName>
+        <description>select who CM job</description>
+        <externalId>false</externalId>
+        <label>Check Measurer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACE METALWORKS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Adam Williams</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brent Birch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carlo Botha</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Craig Howe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>David Corner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>David Spencer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>John Bateman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>John Hemming</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Keith Kelman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ross McCreath</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Russell Thorn</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scott Turner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steve Lawrence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tony Eddy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Justen Radich</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Adam Covey</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Michelle Difelice</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Shaun Hutchings</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContactId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__c</formula>
+        <label>Contact Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dry__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Dry</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Important_Notes__c</fullName>
+        <description>Please add any important notes about this job</description>
+        <externalId>false</externalId>
+        <label>Important Notes</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Inhouse_manufactured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Inhouse manufactured</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Install_time_hours__c</fullName>
+        <description>Please add  how many hours that need to be booked for the install</description>
+        <externalId>false</externalId>
+        <label>Install time (hours)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Installation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Installer__c</fullName>
+        <externalId>false</externalId>
+        <label>Installer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACE METAL WORKS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Adam Williams</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brent Birch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carlo Botha</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>David Corner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>John Bateman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Justen Radich</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Justin G</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ross McCreath</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Russell Thorn</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scott Turner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steve Lawrence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tony Eddy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Adam Covey</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Darryl Donaldson</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Shaun Hutchings</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Installers__c</fullName>
+        <description>How many installers are required to complete job</description>
+        <externalId>false</externalId>
+        <label>#  Installers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Job_at_Kirrawee_notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Job at Kirrawee notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Ladder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ladder</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_Invoice_Received_Factory_Use_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>New Invoice Received (Factory Use Only)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Contact__r.MobilePhone</formula>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Powdercoating_Sent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Powdercoating Sent Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Powdercoating__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box if powdercoating required</description>
+        <externalId>false</externalId>
+        <label>Powdercoating</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Products_Ordered__c</fullName>
+        <externalId>false</externalId>
+        <label>Products Ordered</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aluminium Fence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aluminium Gate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aluminium Panel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diamond Grille Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diamond Grille Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fire Escape</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flyscreen Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flyscreen Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pet Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pleated Retractable Screen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retractable Roll-Away Screen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView hinged door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView Sliding door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SecureView window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steel Door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steel Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed hinged door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed Sliding door</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xceed Window</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Colonial Castings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CWS retractable screens</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Rockford Slats and Gates</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Rockford: Flydoors</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Rockford: Flyscreens</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Rockford: secureview or Xceed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>SP Screens Inhouse: Diamond</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>SP Screens Inhouse: Flydoors</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>SP Screens Inhouse: Flyscreen</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>SP Screens Inhouse: SecureView</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>SP Screens Inhouse: Slates and Gates</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+                <value>
+                    <fullName>Steel ACE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Issue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Issue</label>
+        <referenceTo>Project_Issue__c</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>REWORK_Installation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>REWORK Installation Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>REWORK_time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>REWORK time (Hours)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROCKFORD_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>ROCKFORD Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>STEEL_Check_Measurer__c</fullName>
+        <externalId>false</externalId>
+        <label>STEEL Check Measurer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Peter Ace Metal Works</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SUPPLY_ONLY_edit_ActionPlan_as_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>SUPPLY ONLY (edit APlan as required)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Side_rack_required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Side rack required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Suburb__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Contact__r.MailingCity</formula>
+        <label>Suburb</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Order_Number_RF_CWS_ACE__c</fullName>
+        <description>Please put supplier initials and PO #</description>
+        <externalId>false</externalId>
+        <label>Supplier Order Number (RF/CWS/ACE)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Install</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rework</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>key_in_factory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>key in-factory</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>key_on_site__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>key on-site</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Project</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>35</label>
+    </listViews>
+    <listViews>
+        <fullName>Jobs_ready_for_install</fullName>
+        <booleanFilter>1</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Installation_Date__c</columns>
+        <columns>Install_time_hours__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Installation_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Jobs ready for install.</label>
+    </listViews>
+    <nameField>
+        <label>Project Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Projects</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>New_Install</fullName>
+        <active>true</active>
+        <label>New Install</label>
+        <picklistValues>
+            <picklist>Check_Measurer__c</picklist>
+            <values>
+                <fullName>ACE METALWORKS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adam Williams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brent Birch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carlo Botha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Howe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Bateman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hemming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justen Radich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keith Kelman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ross McCreath</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russell Thorn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Turner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steve Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tony Eddy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Installer__c</picklist>
+            <values>
+                <fullName>ACE METAL WORKS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adam Williams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brent Birch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carlo Botha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Bateman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justen Radich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ross McCreath</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russell Thorn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Turner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steve Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tony Eddy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Installers__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Ordered__c</picklist>
+            <values>
+                <fullName>Aluminium Fence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aluminium Gate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aluminium Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colonial Castings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Grille Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Grille Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fire Escape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyscreen Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyscreen Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pleated Retractable Screen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retractable Roll-Away Screen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView Sliding door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView hinged door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed Sliding door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed hinged door</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>STEEL_Check_Measurer__c</picklist>
+            <values>
+                <fullName>Peter Ace Metal Works</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>New Install</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rework_Project</fullName>
+        <active>true</active>
+        <label>Rework Project</label>
+        <picklistValues>
+            <picklist>Check_Measurer__c</picklist>
+            <values>
+                <fullName>ACE METALWORKS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adam Williams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brent Birch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carlo Botha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craig Howe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Bateman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Hemming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justen Radich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keith Kelman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ross McCreath</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russell Thorn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Turner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steve Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tony Eddy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Installer__c</picklist>
+            <values>
+                <fullName>ACE METAL WORKS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adam Williams</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brent Birch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carlo Botha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>David Corner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>John Bateman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justen Radich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Justin G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ross McCreath</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russell Thorn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scott Turner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steve Lawrence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tony Eddy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Installers__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products_Ordered__c</picklist>
+            <values>
+                <fullName>Aluminium Fence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aluminium Gate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aluminium Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colonial Castings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Grille Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Grille Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fire Escape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyscreen Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyscreen Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pleated Retractable Screen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retractable Roll-Away Screen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView Sliding door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView hinged door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SecureView window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel Door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed Sliding door</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed Window</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xceed hinged door</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>STEEL_Check_Measurer__c</picklist>
+            <values>
+                <fullName>Peter Ace Metal Works</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>New Install</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rework</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project_Issue__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Installation_Date__c</customTabListAdditionalFields>
+        <listViewButtons>Create_Project_Action_Plans</listViewButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Create_Action_Plan</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Action Plan</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ActionPlanCreation?refType=Project&amp;refId={!Project__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Project_Action_Plans</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Project Action Plans</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var records = {!GETRECORDIDS(  $ObjectType.Project__c  )} ;
+var oName = &apos;Project__c&apos;;
+var error = false;
+var msj = &apos;&apos;;
+
+if( records.length &gt; 40 ) { 
+error = true; 
+msj =&apos;{!$Label.ap_Errors_moreThan20records}&apos;;
+}
+if( records.length &lt; 1 ){
+error = true;
+msj = &apos;{!$Label.ap_Errors_selectOneRecord}&apos;; 
+}
+
+if( error ) {
+alert(msj); 
+}
+else{
+location.href = &apos;/apex/ActionPlanCreation?refId=&apos;+records+&apos;&amp;refType=&apos;+oName;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_SMS</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send SMS</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-1.10.2.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/resource/smagicinteract__smJQuery/js/jquery-ui-1.10.4.custom.min.js&apos;)} 
+{!REQUIRESCRIPT(&quot;/resource/smagicinteract__sendSMSJS&quot;)} 
+
+var packagePrefix = &quot;smagicinteract__&quot;; 
+var recordType = &apos;Project__c&apos;; 
+var idToUpdate = &apos;{!Project__c.Id}&apos; 
+var nameField = &apos;Name&apos;; 
+var mobileField = &apos;Phone__c&apos;; 
+var optOutField = &apos;&apos;;
+var optOutDefaultValue = &apos;no&apos;;
+var smsType = &apos;&apos;; 
+var userId = &apos;{!$User.Id}&apos;; 
+var elementIdVar = &apos;&apos;; 
+var showUserDropDown = false; 
+var dialogTitle = &apos;&apos;;
+var cssUrl = &apos;{!URLFOR(&apos;/resource/smagicinteract__smJQuery/css/sm-theme/jquery-ui-1.10.4.custom.min.css&apos;)}&apos;;
+
+sendSMS(recordType, idToUpdate, userId, nameField, mobileField, optOutField, optOutDefaultValue, smsType, elementIdVar, packagePrefix, showUserDropDown, dialogTitle, cssUrl);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Survey</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Survey</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.location = &quot;apex/TIMBASURVEYS__collectionhub?cIds={!URLENCODE(Project__c.ContactId__c)}&amp;retURL=&quot; + encodeURIComponent(window.location);</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,5 @@
+<apex:page docType="html-5.0" title="Dial Contact using ContactWorld" standardController="Contact" standardStylesheets="false" sidebar="false" showHeader="false" showChat="false">
+  
+    <c:NVMCall SObjectToCall="{!contact}" />
+
+</apex:page>

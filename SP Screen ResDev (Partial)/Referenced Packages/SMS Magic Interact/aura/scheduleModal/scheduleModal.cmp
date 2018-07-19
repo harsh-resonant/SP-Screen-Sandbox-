@@ -1,0 +1,193 @@
+<aura:component controller="smagicinteract.ScheduleServerController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="scheduleEvent" type="smagicinteract:scheduleEvent" />
+    <aura:handler name="change" value="{!v.startDate}" action="{!c.checkStartDate}" />
+    <aura:handler name="change" value="{!v.endDate}" action="{!c.checkEndDate}" />
+    <aura:handler name="change" value="{!v.time}" action="{!c.editedTiming}" />
+    <aura:handler name="change" value="{!v.schedulerName}" action="{!c.changeFooterText}" />
+    
+    <aura:attribute name="canScheduleMessage" type="Boolean" default="false" />
+    <aura:attribute name="canScheduleRecurringMessage" type="Boolean" default="false" />
+    
+    <aura:attribute name="disableSchedule" type="Boolean" default="true" />
+    <aura:attribute name="startDate" type="Date" />
+    <aura:attribute name="endDate" type="Date" />
+    <aura:attribute name="orgTimeZoneLabel" type="String" />
+    <aura:attribute name="orgTimeZoneID" type="String" />
+    <aura:attribute name="time" type="String" />
+    <aura:attribute name="frequency" type="String" default="Daily" />
+    <aura:attribute name="frequencyValue" type="String" default="Day" />
+    <aura:attribute name="daysList" type="List" />
+    <aura:attribute name="monthsDaysList" type="List" />
+    <aura:attribute name="daysSelected" type="List" />
+    <aura:attribute name="monthsSelected" type="List" />
+    <!--aura:attribute name="monthSelectedYearly" type="Map" /-->
+    <aura:attribute name="isRecurring" type="Boolean" default="false" />
+    <aura:attribute name="allDays" type="Boolean" />
+    <aura:attribute name="allMonths" type="Boolean" />
+    <!--aura:attribute name="allMonthsYearly" type="Boolean" /-->
+    <aura:attribute name="endDateEnable" type="Boolean" default="false" />
+    <aura:attribute name="repeatAfter" type="String" default="1" />
+    <aura:attribute name="scheduleMessage" type="String" default="" />
+    <aura:attribute name="scheduledMessage" type="String" default="" />
+    
+    <aura:attribute name="dayOfMonth" type="String" default="1"/>
+    <aura:attribute name="schedulerName" type="String" />
+	<aura:attribute name="cronExpression" type="String" />
+    
+    <aura:method name="openModal" action="{!c.openModal}" />
+    <aura:method name="resetSchedule" action="{!c.resetSchedule}" />
+    <aura:if isTrue="{!v.canScheduleMessage}" >
+    <smagicinteract:modalComponent aura:id="Modal" >
+        <aura:set attribute="headerComp">
+            <div class="headerDiv">
+                <div class="input-text">
+                    <ui:inputText aura:id="inputTextId" placeholder="{!$Label.smagicinteract.SCHEDULER_NAME_PLACEHOLDER}" value="{!v.schedulerName}" />
+                    <lightning:buttonIcon variant="bare" iconName="utility:edit" size="small" alternativeText="Selected" class="dropdown-icon" />
+                </div>
+                <div class="headerText">
+                    {!$Label.smagicinteract.SCHEDULER_HEADER}
+                </div>
+            </div>
+        </aura:set>
+        <aura:set attribute="bodyComp">
+            <aura:if isTrue="{!v.canScheduleRecurringMessage}" >
+            <div class="slds-tabs--default bodyStyle">
+                <ul class="slds-tabs--default__nav tabMenu" role="tablist">
+                    <li class="{!join(' ', 'slds-tabs--default__item', (v.isRecurring ? '' : 'slds-active'))}" aura:id="Tab1" title="{!$Label.smagicinteract.SINGLE}" role="presentation" onclick="{!c.tabToggle}"><a class="slds-tabs--default__link"  id="Single">{!$Label.smagicinteract.SINGLE}</a></li>
+                    <li class="{!join(' ', 'slds-tabs--default__item', (v.isRecurring ? 'slds-active' : ''))}" aura:id="Tab2" title="{!$Label.smagicinteract.RECURRING}" role="presentation" onclick="{!c.tabToggle}"><a class="slds-tabs--default__link"  id="Recurring">{!$Label.smagicinteract.RECURRING}</a></li>
+                </ul>
+            </div>
+            </aura:if>
+            <div id="Single" class="{!join(' ', 'singleDiv garyBackground',(v.isRecurring ? 'slds-hide':'slds-show'),(v.canScheduleRecurringMessage ? '':'onlySingleDiv'))}" aura:id="Single" role="tabpanel" aria-labelledby="tab-default-1__item">
+                <div class="singleDateDiv" aura:id ="startDateDiv">    
+                    <ui:inputDate aura:id="date" label="{!$Label.smagicinteract.date}" class="form-control" value="{!v.startDate}" displayDatePicker="true" />
+                </div>
+                <div class="singleTime">
+                    <smagicinteract:inputTime time="{!v.time}" defaultTime="12:00 pm"/>
+                </div>
+                <div class="time-zone">
+                    <label>{!$Label.smagicinteract.TIME_ZONE}</label>
+                    <p>{!v.orgTimeZoneLabel}</p>
+                </div>
+            </div>
+            <aura:if isTrue="{!v.canScheduleRecurringMessage}" >
+            <div id="tab-default-2" class="{!join(' ', 'recurring-tab', (v.isRecurring ? 'slds-show':'slds-hide'))}" aura:id="Recurring" role="tabpanel" aria-labelledby="tab-default-2__item">
+                <div class="slds-tabs--default slds-clearfix garyBackground">
+                    <div class="recurStartDate" aura:id ="startDateDiv">    
+                        <ui:inputDate aura:id="date" label="{!$Label.smagicinteract.SC_START_DATE}" class="form-control"   value="{!v.startDate}" displayDatePicker="true" />
+                    </div>
+                    <div class="recurEndDate">
+                        <div class="endDateCheckBox">
+                            <ui:inputCheckbox aura:id="checkboxEndDate" label="{!$Label.smagicinteract.SC_END_DATE}" change="{!c.endDateCheckBox}" value="{!v.endDateEnable}"/>
+                        </div>
+                        <div aura:id="endDate" class="endDateDiv endDateDivEnable">    
+                            <ui:inputDate aura:id="date" disabled="{!!v.endDateEnable}"  class="form-control"   value="{!v.endDate}" displayDatePicker="true" />
+                        </div>
+                    </div>
+                    <div class="recuringTime">
+                        <smagicinteract:inputTime time="{!v.time}" defaultTime="12:00 pm"/>
+                    </div>
+                    <div class="height">
+                        <div aura:id="endDateContent" class="recurringText">
+                            {!$Label.smagicinteract.SC_RECURRING_MESSAGE}
+                        </div>
+                    </div>
+                </div>
+                <div class="recurringContent slds-clearfix">
+                    <div class="slds-clearfix">
+                        <div class="recurFrequency">
+                            <lightning:select name="selectItem" label="Frequency" value="{!v.frequency}" onchange="{!c.selectFrequency}">
+                                <option value="Daily">{!$Label.smagicinteract.SC_DAILY}</option>
+                                <option value="Weekly">{!$Label.smagicinteract.SC_WEEKLY}</option>
+                                <option value="Monthly">{!$Label.smagicinteract.SC_MONTHLY}</option>
+                                <option value="Yearly">{!$Label.smagicinteract.SC_YEARLY}</option>
+                            </lightning:select>
+                        </div>
+                        <div class="time-zone">
+                            <label>{!$Label.smagicinteract.TIME_ZONE}</label>
+                            <p>{!v.orgTimeZoneLabel}</p>
+                        </div>
+                        <div aura:id="frequencyDiv" class="recurringfrequencyDays">
+                            <div class="select-daywrapper">
+                                <lightning:select name="selectItem" label="{!$Label.smagicinteract.SC_REPEAT_EVERY}" value="{!v.repeatAfter}" onchange="{!c.frequencyChange}">
+                                    <aura:iteration items="{!v.daysList}" indexVar="i" var="day">
+                                        <option value="{!day}">{!day}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="day-text">
+                                {!v.frequencyValue}
+                            </div>
+                        </div>
+                    </div>
+                    <div aura:id="weekButtonList" class="buttonList weekButtonList slds-clearfix slds-hide">
+                        <div class="label">{!$Label.smagicinteract.SC_WEEK_DAYS}</div>
+                        <div aura:id="weekDayList" class="marginBottom week-daylist  slds-button-group" role="group">
+                                <button class="slds-button slds-button--neutral" id="0" aura:id="0" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_MON}</button>
+                                <button class="slds-button slds-button--neutral" id="1" aura:id="1" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_TUE}</button>
+                                <button class="slds-button slds-button--neutral" id="2" aura:id="2" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_WED}</button>
+                                <button class="slds-button slds-button--neutral" id="3" aura:id="3" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_THU}</button>
+                                <button class="slds-button slds-button--neutral" id="4" aura:id="4" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_FRI}</button>
+                                <button class="slds-button slds-button--neutral" id="5" aura:id="5" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_SAT}</button>
+                                <button class="slds-button slds-button--neutral" id="6" aura:id="6" onclick="{!c.selectDay}">{!$Label.smagicinteract.SC_SUN}</button>
+                        </div>
+                        <div class="checkboxDays" >
+                            <ui:inputCheckbox aura:id="checkboxWeek" label="{!$Label.smagicinteract.SC_ALL_DAYS}" value="{!v.allDays}" change="{!c.allDays}"/>
+                        </div>
+                    </div>
+                    <div aura:id="monthButtonList" class="buttonList monthButtonList slds-hide slds-clearfix">
+                        <div class="month-select">
+                            <div class="selectDayOfMonth">
+                                <lightning:select name="selectItem" value="{!v.dayOfMonth}" label="{!$Label.smagicinteract.SC_DAY}" onchange="{!c.showOnlyValidMonths}">
+                                    <aura:iteration items="{!v.monthsDaysList}" indexVar="i" var="day">
+                                        <option value="{!i+1}">{!day}</option>
+                                    </aura:iteration>
+                                </lightning:select> 
+                            </div> 
+                            <div class="ofStyle">{!$Label.smagicinteract.SC_OF}</div>
+                        </div>
+                        <div class="monthsList">
+                            <div class="label">{!$Label.smagicinteract.SC_MONTH}</div>
+                            <div class="slds-button-group  marginBottom" role="group">
+                                <button class="slds-button slds-button--neutral" id="00" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="00" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_JAN}</button>
+                                    <button class="slds-button slds-button--neutral" id="01" disabled="{!if(v.dayOfMonth >29,true,false)}" aura:id="01" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_FEB}</button>
+                                    <button class="slds-button slds-button--neutral" id="02" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="02" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_MAR}</button>
+                                    <button class="slds-button slds-button--neutral" id="03" disabled="{!if(v.dayOfMonth >30,true,false)}" aura:id="03" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_APR}</button>
+                                    <button class="slds-button slds-button--neutral" id="04" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="04" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_May}</button>
+                                    <button class="slds-button slds-button--neutral" id="05" disabled="{!if(v.dayOfMonth >30,true,false)}" aura:id="05" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_JUN}</button>
+                                    <button class="slds-button slds-button--neutral" id="06" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="06" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_JUL}</button>
+                                    <button class="slds-button slds-button--neutral" id="07" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="07" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_AUG}</button>
+                            </div>
+                            <div class=" slds-clearfix month-checkboxWrap">
+                                <div style="margin-left:0px;" class="marginBottom half-monthList slds-button-group" role="group">
+                                        <button class="slds-button slds-button--neutral" id="08" disabled="{!if(v.dayOfMonth >30,true,false)}" aura:id="08" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_SEP}</button>
+                                        <button class="slds-button slds-button--neutral" id="09" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="09" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_OCT}</button>
+                                        <button class="slds-button slds-button--neutral" id="010" disabled="{!if(v.dayOfMonth >30,true,false)}" aura:id="010" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_NOV}</button>
+                                        <button class="slds-button slds-button--neutral" id="011" disabled="{!if(v.dayOfMonth >31,true,false)}" aura:id="011" onclick="{!c.selectMonthly}">{!$Label.smagicinteract.SC_DEC}</button>
+                                </div>
+                                <div class=" checkboxDays" >
+                                    <ui:inputCheckbox aura:id="checkboxMonthly" disabled="{!if(v.dayOfMonth >29,true,false)}" label="{!$Label.smagicinteract.SC_ALL_MONTHS}" change="{!c.allMonthsToggle}" value="{!v.allMonths}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            </aura:if>
+        </aura:set>
+        <aura:set attribute="footerComp">
+            <div class="slds-modal__footer slds-clearfix footer-wrap">
+                <div class="footerText ">
+                    <div class="slds-show" aura:id="scheduleinfo">
+                        {!v.scheduleMessage}
+                    </div>
+                </div>
+                <lightning:button variant="neutral"  label="{!$Label.smagicinteract.CANCEL}" onclick="{! c.cancel }" />
+                <lightning:button variant="brand" label="{!$Label.smagicinteract.DONE}" onclick="{! c.schedule }" disabled="{!v.disableSchedule}"/>
+            </div>
+            <div class="hidden-spaceBox" aura:id="hiddenSpace"></div>
+        </aura:set>
+    </smagicinteract:modalComponent>
+    </aura:if>
+</aura:component>

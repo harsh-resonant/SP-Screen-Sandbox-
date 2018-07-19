@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_15045170</developerName>
+        <masterLabel>Installations &amp; CM</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>SUBJECT</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Check_Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD: CWS Book Check-Measure / enter date</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Syd Inhouse: Book Check-Measure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebook CM, Customer wasnt there when Tony turned up</sourceValue>
+            </sourceValues>
+            <value>CM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SYD: CWS Book Customer Install (if not other product ordered)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Customer Install via installation WO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD Inhouse: Order Completed. QC Passed: Ready to Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD Inhouse: Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD: CWS Product Received CCW QC Passed: Ready to Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>rework</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebook rework, customer had to cancel from 10/11</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Possible warranty?  Roll down not clipping at the bottom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SYD ROCK:Book Customer Install</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>REBOOK INSTALL</sourceValue>
+            </sourceValues>
+            <value>INSTALLATION</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>WHAT_NAME</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ASSIGNED</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>amanda</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>BNE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DUE_DATE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>ETA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Install,installation,CM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_15045170</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BNE_INSTALLS &amp; CM: USE THIS ONE</name>
+    <params>
+        <name>closed</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>t</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

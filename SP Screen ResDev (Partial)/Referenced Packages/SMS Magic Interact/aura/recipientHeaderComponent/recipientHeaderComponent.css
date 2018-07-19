@@ -1,0 +1,153 @@
+.THIS.recipientHeader {
+    padding: 15px;
+    height: 58px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+.THIS.recipientHeader .gradientBorder {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #c35f79;
+    background: -webkit-linear-gradient(left, #c35f79 0%,#fe8080 100%);
+    background: linear-gradient(to right, #c35f79 0%,#fe8080 100%); 
+}
+
+.THIS.recipientHeader .slds-button:focus,
+.THIS.recipientHeader .slds-button:hover  {
+    box-shadow: none;
+    outline: 0;
+}
+.THIS.recipientHeader h4 {
+    margin: 0 10px 0 0;
+    color: #636161;
+    display: inline-block;
+    font: 600 15px/25px "Salesforce Sans",sans-serif;
+    width: 140px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.THIS.recipientHeader .caretIcon {
+    cursor: pointer;
+}
+
+.THIS.recipientHeader .message-count-number {
+    padding: 0 5px;
+}
+.THIS.recipientHeader input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+.THIS.recipientHeader .slds-badge {
+    height: 20px;
+    min-width: 20px;
+    border-radius: 10px;
+    padding: 0 4px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    background-color: #1589EE;
+    margin-left: 10px;
+    font: 400 11px/21px "Salesforce Sans", sans-serif;
+}
+.THIS.recipientHeader .caretIcon svg{
+    fill: #636161;
+    height: 14px;
+    width: 14px;
+}
+.THIS.recipientHeader .actionButtons button {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+.THIS.recipientHeader .actionButtons button:first-child {
+    margin-left: 0;
+}
+.THIS.recipientHeader button svg{
+    height: 16px;
+    width: 16px;
+    fill: #733749;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput {
+    display: inline-block;
+    vertical-align: middle;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-form-element__label.slds-m-bottom--none span {
+    display: none;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-form-element__label.slds-m-bottom--none {
+    height: 0;
+    width: 0;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-checkbox--faux_container {
+    width: 100px;
+    position: relative;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-checkbox--faux_container .slds-checkbox--faux {
+    margin: 0 auto;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-checkbox--faux_container .slds-checkbox--on {
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.THIS.recipientHeader .slds-form-element.lightningInput .slds-checkbox--faux_container .slds-checkbox--off {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.THIS.recipientHeader .backButton {
+    width:25px;
+}
+.THIS.recipientHeader .searchBox {
+    width:90%; 
+}
+.THIS.recipientHeader .searchBox input {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #d8dde6;
+    padding: 0px 5px;
+    background: transparent;
+    border-radius: 0;
+}
+.THIS.recipientHeader .searchBox input:focus {
+    box-shadow: none;
+    outline: 0;
+}
+.THIS.recipientHeader .searchBox button {
+    float: right;
+    margin-top: 5px;
+}
+.THIS.recipientHeader li.active,
+.THIS.recipientHeader li:hover {
+    background-color: rgb(244, 246, 249);
+    color: rgb(22, 50, 92);
+}
+.THIS.recipientHeader .slds-button--neutral {
+    height: 28px;
+    line-height: 24px;
+}
+.THIS.recipientHeader .slds-button-group {
+    display: inline;
+}
+.THIS.recipientHeader .slds-button-group .clicked {
+    background-color: #54698d;
+    color: white;
+}
+
+@media only screen and (max-width: 767px) { 
+    .THIS.recipientHeader .slds-button--neutral {
+        padding: 0 8px;
+    }
+}
+@media only screen and (max-width: 340px) { 
+    .THIS.recipientHeader h4 {
+        width: 100px;
+    }
+}

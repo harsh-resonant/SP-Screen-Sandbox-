@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:registerEvent name="dateRangeEvent" type="smagicinteract:dateRangeEvent" />
+    <aura:handler event="smagicinteract:resetDataEvent" action="{!c.resetData}" />
+
+    <aura:attribute name="from" type="Date" />
+    <aura:attribute name="to" type="Date" />
+    <aura:attribute name="errorMessage" type="String" default="" />
+    <aura:handler name="change" value="{!v.from}" action="{!c.validate}"/>
+    <aura:handler name="change" value="{!v.to}" action="{!c.validate}"/>
+     <h3>{!$Label.smagicinteract.date}</h3>
+    <div class="{! 'slds-grid slds-wrap slds-grid--pull pickDate ' + (v.errorMessage != '' ? 'errorDate' : '') }">
+        <div class="slds-col slds-size--1-of-2 slds-medium-size--1-of-2 slds-large-size--1-of-2">
+            <div class="fromDateBox">
+            <ui:inputDate label="{!$Label.smagicinteract.date_from}" class="from" value="{!v.from}" displayDatePicker="true" />
+        </div>
+        </div>
+        <div class="slds-col slds-size--1-of-2 slds-medium-size--1-of-2 slds-large-size--1-of-2">
+            <div class="toDateBox">
+            <ui:inputDate label="{!$Label.smagicinteract.date_to}" class="to" value="{!v.to}" displayDatePicker="true" />
+        </div>
+        </div>
+        <span class="dateError">{!v.errorMessage}</span>
+        
+    </div>
+</aura:component>
